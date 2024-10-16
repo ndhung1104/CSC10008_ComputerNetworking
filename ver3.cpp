@@ -5,12 +5,19 @@
 #include <sstream>
 #include <algorithm> 
 #include <vector>
+#include <chrono>
+#include <thread>
+#include <ctime>
+#include <tuple>
 
 std::string client_id = "406151454730-q8sbba0gq585nojc2al4351s27ksog0g.apps.googleusercontent.com";
 std::string client_secret = "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";
 std::string redirect_uri = "urn:ietf:wg:oauth:2.0:oob"; // Redirect for installed apps
 
-// Helper function to handle HTTP response
+const int emailCheckInterval = 60; // e.g., 60 seconds (you can adjust this)
+const int bufferTime = 10; // buffer time to refresh token slightly before it expires
+
+
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
     ((std::string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
@@ -22,7 +29,7 @@ std::string decodeBase64(const std::string& encoded_str) {
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz"
         "0123456789+/";
-    
+
     int in_len = encoded_str.size();
     int i = 0;
     int j = 0;
@@ -63,32 +70,46 @@ std::string decodeBase64(const std::string& encoded_str) {
     return decoded_str;
 }
 
-// Base64Url decoder
-std::string decodeBase64Url(const std::string& input) {
-    std::string base64 = input;
-    std::replace(base64.begin(), base64.end(), '-', '+');
-    std::replace(base64.begin(), base64.end(), '_', '/');
-    while (base64.size() % 4) {
-        base64 += '=';
+std::tuple<std::string, std::string, int> extractTokens(const std::string& response) {
+    std::string accessTokenKey = "\"access_token\": \"";
+    std::string refreshTokenKey = "\"refresh_token\": \"";
+    std::string expiresInKey = "\"expires_in\": ";
+    size_t startPos, endPos;
+    
+    // Extract access token
+    startPos = response.find(accessTokenKey);
+    std::string accessToken = "";
+    if (startPos != std::string::npos) {
+        startPos += accessTokenKey.length();
+        endPos = response.find("\"", startPos);
+        accessToken = response.substr(startPos, endPos - startPos);
     }
     
-    // Your base64 decoding function here
-    // For simplicity, we return base64 here, but you need to decode it in practice
-    return base64;
+    // Extract refresh token
+    startPos = response.find(refreshTokenKey);
+    std::string refreshToken = "";
+    if (startPos != std::string::npos) {
+        startPos += refreshTokenKey.length();
+        endPos = response.find("\"", startPos);
+        refreshToken = response.substr(startPos, endPos - startPos);
+    }
+
+    // Extract expires_in
+    startPos = response.find(expiresInKey);
+    int expiresIn = 0;
+    if (startPos != std::string::npos) {
+        startPos += expiresInKey.length();
+        endPos = response.find(",", startPos);
+        if (endPos == std::string::npos) {
+            endPos = response.find("}", startPos);
+        }
+        expiresIn = std::stoi(response.substr(startPos, endPos - startPos));
+    }
+    
+    return std::make_tuple(accessToken, refreshToken, expiresIn);
 }
 
-std::string extractAccessToken(const std::string& response) {
-    std::string tokenKey = "\"access_token\": \"";
-    size_t startPos = response.find(tokenKey);
-    if (startPos == std::string::npos) return "";
-    
-    startPos += tokenKey.length();
-    size_t endPos = response.find("\"", startPos);
-    
-    return response.substr(startPos, endPos - startPos);
-}
-
-std::string getAccessToken(const std::string& auth_code, const std::string& client_id, const std::string& client_secret, const std::string& redirect_uri) {
+std::tuple<std::string, std::string, int> getAccessToken(const std::string& auth_code, const std::string& client_id, const std::string& client_secret, const std::string& redirect_uri) {
     CURL* curl;
     CURLcode res;
     std::string readBuffer;
@@ -108,18 +129,18 @@ std::string getAccessToken(const std::string& auth_code, const std::string& clie
         
         res = curl_easy_perform(curl);
         
-        // if(res != CURLE_OK) {
-        //     fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-        // } else {
-        //     std::cout << "Response: " << readBuffer << std::endl; // Debugging: print the response
-        // }
+        // Debugging output
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        } else {
+            std::cout << "Response: " << readBuffer << std::endl;
+        }
 
         curl_easy_cleanup(curl);
     }
     
-    return extractAccessToken(readBuffer);  // Parse and return the access token
+    return extractTokens(readBuffer);  // Parse and return access token, refresh token, and expires_in
 }
-
 
 // Function to get email details (sender, subject, and body) using message ID
 void getEmailDetails(const std::string& access_token, const std::string& message_id) {
@@ -151,6 +172,11 @@ void getEmailDetails(const std::string& access_token, const std::string& message
             if (Json::parseFromStream(builder, s, &jsonData, &errs)) {
                 // Look for headers: 'From', 'Subject'
                 std::string sender, subject, body;
+
+                long long internalDate = jsonData["internalDate"].asString().empty() ? 0 : std::stoll(jsonData["internalDate"].asString());
+                // std::time_t timestamp = internalDate / 1000; // Convert milliseconds to seconds
+
+
                 for (const auto& header : jsonData["payload"]["headers"]) {
                     if (header["name"].asString() == "From") {
                         sender = header["value"].asString();
@@ -176,6 +202,7 @@ void getEmailDetails(const std::string& access_token, const std::string& message
                 // Display the email details
                 std::cout << "Sender: " << sender << std::endl;
                 std::cout << "Subject: " << subject << std::endl;
+                std::cout << "Timestamp: " << internalDate << std::endl;
                 std::cout << "Body (truncated): " << body << std::endl;
             }
         }
@@ -184,7 +211,6 @@ void getEmailDetails(const std::string& access_token, const std::string& message
         curl_slist_free_all(headers);
     }
 }
-
 
 // Function to retrieve a list of email IDs and call getEmailDetails on each
 void getEmailList(const std::string& access_token) {
@@ -265,8 +291,6 @@ std::string refreshAccessToken(const std::string& refresh_token, const std::stri
     return readBuffer.substr(startPos, endPos - startPos);
 }
 
-
-
 int main() {
     std::string auth_code;
     std::cout << "Visit the following URL to get the authorization code:" << std::endl;
@@ -277,15 +301,72 @@ int main() {
     std::cout << "Enter the authorization code: ";
     std::cin >> auth_code;
 
-    std::string access_token = getAccessToken(auth_code, client_id, client_secret, redirect_uri);
-    if (!access_token.empty()) {
-        std::cout << "Access Token: " << access_token << std::endl;
-        // Now use access_token to make authorized requests
-        // getUserEmail(access_token);
-        getEmailList(access_token);
-    } else {
+    // Get initial access and refresh tokens
+    auto tokens = getAccessToken(auth_code, client_id, client_secret, redirect_uri);
+    std::string access_token = std::get<0>(tokens);
+    std::string refresh_token = std::get<1>(tokens);
+    int expires_in = std::get<2>(tokens);
+
+    // Check if we successfully obtained an access token
+    if (access_token.empty()) {
         std::cerr << "Failed to retrieve access token!" << std::endl;
+        return 1;
+    }
+
+    // Calculate the initial expiration time
+    auto tokenExpiryTime = std::chrono::system_clock::now() + std::chrono::seconds(expires_in - bufferTime);
+
+    // Continuous loop to check for new emails and refresh tokens when necessary
+    while (true) {
+        // Refresh the token if it has expired
+        if (std::chrono::system_clock::now() >= tokenExpiryTime) {
+            access_token = refreshAccessToken(refresh_token, client_id, client_secret);
+            if (access_token.empty()) {
+                std::cerr << "Failed to refresh access token!" << std::endl;
+                break;
+            }
+            std::cout << "Access Token refreshed successfully!" << std::endl;
+
+            // Reset the token expiry time (e.g., assuming new token valid for the same amount of time)
+            tokenExpiryTime = std::chrono::system_clock::now() + std::chrono::seconds(expires_in - bufferTime);
+        }
+
+        // Check for new emails
+        getEmailList(access_token);
+
+        // Sleep for the email check interval before checking again
+        std::this_thread::sleep_for(std::chrono::seconds(emailCheckInterval));
     }
 
     return 0;
 }
+
+// int main() {
+//     std::string auth_code;
+//     std::cout << "Visit the following URL to get the authorization code:" << std::endl;
+//     std::cout << "https://accounts.google.com/o/oauth2/auth?client_id=" << client_id
+//               << "&redirect_uri=" << redirect_uri
+//               << "&scope=https://www.googleapis.com/auth/gmail.readonly"
+//               << "&response_type=code" << std::endl;
+//     std::cout << "Enter the authorization code: ";
+//     std::cin >> auth_code;
+
+//     auto tokens = getAccessToken(auth_code, client_id, client_secret, redirect_uri);
+//     std::string access_token = std::get<0>(tokens);
+//     std::string refresh_token = std::get<1>(tokens);
+//     int expires_in = std::get<2>(tokens);
+
+//     if (!access_token.empty()) {
+//         std::cout << "Access Token: " << access_token << std::endl;
+//         std::cout << "Refresh Token: " << refresh_token << std::endl;
+//         std::cout << "Expires In: " << expires_in << " seconds" << std::endl;
+        
+//         // Now use access_token to make authorized requests
+//         getEmailList(access_token);
+//     } else {
+//         std::cerr << "Failed to retrieve access token!" << std::endl;
+//     }
+
+//     return 0;
+// }
+
