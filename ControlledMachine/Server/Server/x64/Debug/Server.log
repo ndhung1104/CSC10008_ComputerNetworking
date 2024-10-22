@@ -1,0 +1,3 @@
+﻿  Server.cpp
+D:\Server\Server\Server.cpp(101,19): warning C4244: 'initializing': conversion from 'std::streamsize' to 'int', possible loss of data
+  Server.vcxproj -> D:\Server\x64\Debug\Server.exe
