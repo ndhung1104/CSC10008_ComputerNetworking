@@ -44,7 +44,7 @@ int main() {
 
 	sockaddr_in clientService;
 	clientService.sin_family = AF_INET;
-	InetPton(AF_INET, L"127.0.0.1", &clientService.sin_addr.s_addr);
+	InetPton(AF_INET, "127.0.0.1", &clientService.sin_addr.s_addr);
 	clientService.sin_port = htons(port);
 	if (connect(clientSocket, (SOCKADDR*)&clientService, sizeof(clientService)) == SOCKET_ERROR) {
 		cout << "Client: connect() - Failed to conect." << endl;

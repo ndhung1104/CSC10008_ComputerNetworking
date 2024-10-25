@@ -44,7 +44,7 @@ int main() {
 
 	sockaddr_in service;
 	service.sin_family = AF_INET;
-	InetPton(AF_INET, L"127.0.0.1", &service.sin_addr.s_addr);
+	inet_pton(AF_INET, "192.168.1.7", &service.sin_addr.s_addr);
 	service.sin_port = htons(port);
 	if (bind(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
 		cout << "bind() failed: " << WSAGetLastError() << endl;
