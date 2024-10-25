@@ -10,15 +10,9 @@
 #include <ctime>
 #include <tuple>
 
-struct TokenResponse {
-    std::string access_token;
-    int expires_in; // Expiration time in seconds
-};
-
 std::string client_id = "406151454730-q8sbba0gq585nojc2al4351s27ksog0g.apps.googleusercontent.com";
 std::string client_secret = "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";
 std::string redirect_uri = "urn:ietf:wg:oauth:2.0:oob"; // Redirect for installed apps
-std::string refresh_token = "1//0eBLg35dCpHuECgYIARAAGA4SNgF-L9IrEeqxIwKXoT80MWkuvQVW8OlYZtJCScQHJuXQo0WlzfiTBgTNdJjCFvFvj7OlrrWaIA";
 
 const int emailCheckInterval = 60; // e.g., 60 seconds (you can adjust this)
 const int bufferTime = 10; // buffer time to refresh token slightly before it expires
@@ -257,75 +251,13 @@ void getEmailList(const std::string& access_token) {
     }
 }
 
-// std::string refreshAccessToken(const std::string& refresh_token, const std::string& client_id, const std::string& client_secret) {
-//     CURL* curl;
-//     CURLcode res;
-//     std::string readBuffer;
-
-//     curl_global_init(CURL_GLOBAL_DEFAULT);
-//     curl = curl_easy_init();
-//     if (curl) {
-//         std::string postFields = "client_id=" + client_id +
-//                                  "&client_secret=" + client_secret +
-//                                  "&refresh_token=" + refresh_token +
-//                                  "&grant_type=refresh_token";
-        
-//         curl_easy_setopt(curl, CURLOPT_URL, "https://oauth2.googleapis.com/token");
-//         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postFields.c_str());
-//         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-//         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-
-//         res = curl_easy_perform(curl);
-//         if (res != CURLE_OK) {
-//             fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-//             return "";
-//         }
-
-//         curl_easy_cleanup(curl);
-//     }
-
-//     curl_global_cleanup();
-
-//     // Parse the access token from response manually
-//     // std::string tokenKey = "\"access_token\": \"";
-//     // size_t startPos = readBuffer.find(tokenKey);
-//     // if (startPos == std::string::npos) return "";
-    
-//     // startPos += tokenKey.length();
-//     // size_t endPos = readBuffer.find("\"", startPos);
-    
-//     // return readBuffer.substr(startPos, endPos - startPos);
-    
-//     Json::CharReaderBuilder readerBuilder;
-//     Json::Value jsonResponse;
-//     std::string errs;
-
-//     std::stringstream ss(readBuffer);
-//     if (!Json::parseFromStream(readerBuilder, ss, &jsonResponse, &errs)) {
-//         std::cerr << "Failed to parse JSON: " << errs << std::endl;
-//         return tokenResponse;
-//     }
-
-//     // Extract the access token and expires_in from the JSON response
-//     if (jsonResponse.isMember("access_token")) {
-//         tokenResponse.access_token = jsonResponse["access_token"].asString();
-//     }
-//     if (jsonResponse.isMember("expires_in")) {
-//         tokenResponse.expires_in = jsonResponse["expires_in"].asInt(); // Expires in seconds
-//     }
-
-//     return tokenResponse;
-// }
-
-TokenResponse refreshAccessToken(const std::string& refresh_token, const std::string& client_id, const std::string& client_secret) {
+std::string refreshAccessToken(const std::string& refresh_token, const std::string& client_id, const std::string& client_secret) {
     CURL* curl;
     CURLcode res;
     std::string readBuffer;
 
     curl_global_init(CURL_GLOBAL_DEFAULT);
     curl = curl_easy_init();
-    TokenResponse tokenResponse = {"", 0}; // Initialize with empty token and 0 expiration
-
     if (curl) {
         std::string postFields = "client_id=" + client_id +
                                  "&client_secret=" + client_secret +
@@ -340,7 +272,7 @@ TokenResponse refreshAccessToken(const std::string& refresh_token, const std::st
         res = curl_easy_perform(curl);
         if (res != CURLE_OK) {
             fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return tokenResponse;
+            return "";
         }
 
         curl_easy_cleanup(curl);
@@ -348,61 +280,38 @@ TokenResponse refreshAccessToken(const std::string& refresh_token, const std::st
 
     curl_global_cleanup();
 
-    // Parse the JSON response to extract access_token and expires_in
-    Json::CharReaderBuilder readerBuilder;
-    Json::Value jsonResponse;
-    std::string errs;
-    std::cout << readBuffer;
-    std::stringstream ss(readBuffer);
-    if (!Json::parseFromStream(readerBuilder, ss, &jsonResponse, &errs)) {
-        std::cerr << "Failed to parse JSON: " << errs << std::endl;
-        return tokenResponse;
-    }
-
-    // Extract the access token and expires_in from the JSON response
-    if (jsonResponse.isMember("access_token")) {
-        tokenResponse.access_token = jsonResponse["access_token"].asString();
-    }
-    if (jsonResponse.isMember("expires_in")) {
-        tokenResponse.expires_in = jsonResponse["expires_in"].asInt(); // Expires in seconds
-    }
-
-    return tokenResponse;
+    // Parse the access token from response manually
+    std::string tokenKey = "\"access_token\": \"";
+    size_t startPos = readBuffer.find(tokenKey);
+    if (startPos == std::string::npos) return "";
+    
+    startPos += tokenKey.length();
+    size_t endPos = readBuffer.find("\"", startPos);
+    
+    return readBuffer.substr(startPos, endPos - startPos);
 }
 
 int main() {
-    
-    TokenResponse tokenData = refreshAccessToken(refresh_token, client_id, client_secret);
-    if (!tokenData.access_token.empty()) {
-        std::cout << "New Access Token: " << tokenData.access_token << std::endl;
-        std::cout << "Expires In: " << tokenData.expires_in << " seconds" << std::endl;
+    std::string auth_code;
+    std::cout << "Visit the following URL to get the authorization code:" << std::endl;
+    std::cout << "https://accounts.google.com/o/oauth2/auth?client_id=" << client_id
+              << "&redirect_uri=" << redirect_uri
+              << "&scope=https://www.googleapis.com/auth/gmail.readonly"
+              << "&response_type=code" << std::endl;
+    std::cout << "Enter the authorization code: ";
+    std::cin >> auth_code;
 
-        // Store the current time and calculate when the token will expire
-        time_t now = time(nullptr);
-        time_t expirationTime = now + tokenData.expires_in;
-        
-        // Logic to check expiration later and refresh the token before it expires
-    }
-    
-    // std::string auth_code;
-    // std::cout << "Visit the following URL to get the authorization code:" << std::endl;
-    // std::cout << "https://accounts.google.com/o/oauth2/auth?client_id=" << client_id
-    //           << "&redirect_uri=" << redirect_uri
-    //           << "&scope=https://www.googleapis.com/auth/gmail.readonly"
-    //           << "&response_type=code" << std::endl;
-    // std::cout << "Enter the authorization code: ";
-    // std::cin >> auth_code;
-
-    // // Get initial access and refresh tokens
-    // auto tokens = getAccessToken(auth_code, client_id, client_secret, redirect_uri);
-    std::string access_token = tokenData.access_token;
-    int expires_in = tokenData.expires_in;
+    // Get initial access and refresh tokens
+    auto tokens = getAccessToken(auth_code, client_id, client_secret, redirect_uri);
+    std::string access_token = std::get<0>(tokens);
+    std::string refresh_token = std::get<1>(tokens);
+    int expires_in = std::get<2>(tokens);
 
     // Check if we successfully obtained an access token
-    // if (access_token.empty()) {
-    //     std::cerr << "Failed to retrieve access token!" << std::endl;
-    //     return 1;
-    // }
+    if (access_token.empty()) {
+        std::cerr << "Failed to retrieve access token!" << std::endl;
+        return 1;
+    }
 
     // Calculate the initial expiration time
     auto tokenExpiryTime = std::chrono::system_clock::now() + std::chrono::seconds(expires_in - bufferTime);
@@ -411,19 +320,12 @@ int main() {
     while (true) {
         // Refresh the token if it has expired
         if (std::chrono::system_clock::now() >= tokenExpiryTime) {
-            tokenData = refreshAccessToken(refresh_token, client_id, client_secret);
-            access_token = tokenData.access_token;
-            expires_in = tokenData.expires_in;
-            if (!tokenData.access_token.empty()) {
-                std::cout << "New Access Token: " << tokenData.access_token << std::endl;
-                std::cout << "Expires In: " << tokenData.expires_in << " seconds" << std::endl;
-
-                // Store the current time and calculate when the token will expire
-                time_t now = time(nullptr);
-                time_t expirationTime = now + tokenData.expires_in;
-                
-                // Logic to check expiration later and refresh the token before it expires
+            access_token = refreshAccessToken(refresh_token, client_id, client_secret);
+            if (access_token.empty()) {
+                std::cerr << "Failed to refresh access token!" << std::endl;
+                break;
             }
+            std::cout << "Access Token refreshed successfully!" << std::endl;
 
             // Reset the token expiry time (e.g., assuming new token valid for the same amount of time)
             tokenExpiryTime = std::chrono::system_clock::now() + std::chrono::seconds(expires_in - bufferTime);

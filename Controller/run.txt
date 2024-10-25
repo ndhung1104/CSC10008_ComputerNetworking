@@ -1,7 +1,1 @@
 g++ main.cpp jsoncpp.cpp -o main -I".\lib\curl\include" -L".\lib\curl\lib" -lcurl
-
-
-
-ya29.a0AeDClZCb7moSh1XcIyE_bpp_1qBTDO-XOpkWKeKnHdxcqzg1Ck0Gg-c3D5fkSt0xegxzcznQDP3E-jPMhEFESXbSd0_zrcCFOUrMGERNvZ5oBssXVAKYY1jzjTXvEbbvbT_XXLPwaJIu1sLiXh_N24QhgkvVGmR8p2cWJoKNaCgYKAUkSARESFQHGX2MiwOQTIDm1SbJaZ3Jz4lK9YA0175
-1//0eIEkjQbra3JLCgYIARAAGA4SNgF-L9Irmy1vV95LbvzisbEF4aQMZYpIPU3H4-_lejLLIG43JVL0AlxE3QA6OLw4j0c_NkVfXA
-3599
