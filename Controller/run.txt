@@ -1,4 +1,4 @@
-g++ main.cpp jsoncpp.cpp -o main -I".\lib\curl\include" -L".\lib\curl\lib" -lcurl
+g++ *.cpp -o main -I".\lib\curl\include" -L".\lib\curl\lib" -lcurl
 
 
 

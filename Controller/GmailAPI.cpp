@@ -3,13 +3,23 @@
 #include "json/json.h"
 #include <iostream>
 #include <sstream>
-#include <vector>
+#include <regex>
 
 GmailAPI::GmailAPI(GoogleOAuth& oauth) : oauth(oauth) {}
 
 size_t GmailAPI::WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
     ((std::string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
+}
+
+std::string GmailAPI::extractEmail(const std::string& fullSender) {
+    std::regex emailRegex("<(.+?)>");
+    std::smatch match;
+    
+    if (std::regex_search(fullSender, match, emailRegex)) {
+        return match[1];  // Extracted email address
+    }
+    return fullSender;  // Return original if no match is found
 }
 
 std::string GmailAPI::decodeBase64(const std::string& encoded_str) {
@@ -91,7 +101,8 @@ void GmailAPI::getEmailDetails(const std::string& access_token, const std::strin
 
                 for (const auto& header : jsonData["payload"]["headers"]) {
                     if (header["name"].asString() == "From") {
-                        sender = header["value"].asString();
+                        std::string fullSender = header["value"].asString();
+                        sender = extractEmail(fullSender);  // Extracted email address only
                     }
                     if (header["name"].asString() == "Subject") {
                         subject = header["value"].asString();
@@ -116,6 +127,12 @@ void GmailAPI::getEmailDetails(const std::string& access_token, const std::strin
                 std::cout << "Subject: " << subject << std::endl;
                 std::cout << "Timestamp: " << internalDate << std::endl;
                 std::cout << "Body (truncated): " << body << std::endl;
+                email newMail;
+                newMail.sender = sender;
+                newMail.internalDate = internalDate;
+                newMail.subject = subject;
+                newMail.body = body;
+                receivedEmail.push_back(newMail);
             }
         }
         curl_easy_cleanup(curl);
@@ -212,3 +229,4 @@ bool GmailAPI::markAsRead(const std::string& access_token, const std::string& me
 
     return success;
 }
+
