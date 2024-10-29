@@ -1,5 +1,9 @@
 #pragma once
 #include <string>
+#include <windows.h>
+#include<iostream>
+#include<fstream>
+#include<vector>
 
 class Computer
 {
