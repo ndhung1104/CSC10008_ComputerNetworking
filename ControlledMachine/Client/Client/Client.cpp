@@ -119,17 +119,17 @@
 //	return 0;
 //}
 
-#include "stdafx.h"
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#include "iostream"
-#include <fstream>
-#include <string>
+// #include "stdafx.h"
+// #include <winsock2.h>
+// #include <ws2tcpip.h>
+// #include "iostream"
+// #include <fstream>
+// #include <string>
 #include "EmailMonitor.h"
 
-#pragma comment(lib, "Ws2_32.lib")
+// #pragma comment(lib, "Ws2_32.lib")
 
-#define bufferSize 1024
+// #define bufferSize 1024
 
 const std::string client_id = "406151454730-q8sbba0gq585nojc2al4351s27ksog0g.apps.googleusercontent.com";
 const std::string client_secret = "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";
@@ -138,38 +138,38 @@ const std::string refresh_token = "1//0eaewHpRVZdWcCgYIARAAGA4SNgF-L9IrFKbFWQHsu
     
     
 
-void receiveFile(SOCKET clientSocket, const char* output_filename) {
-    ofstream file(output_filename, ios::binary);
-    if (!file.is_open()) {
-        cout << "Failed to create file: " << output_filename << endl;
-        return;
-    }
+// void receiveFile(SOCKET clientSocket, const char* output_filename) {
+//     ofstream file(output_filename, ios::binary);
+//     if (!file.is_open()) {
+//         cout << "Failed to create file: " << output_filename << endl;
+//         return;
+//     }
 
-    // Nhận kích thước tệp
-    int file_size;
-    recv(clientSocket, (char*)&file_size, sizeof(file_size), 0);
+//     // Nhận kích thước tệp
+//     int file_size;
+//     recv(clientSocket, (char*)&file_size, sizeof(file_size), 0);
 
-    // Nhận nội dung tệp
-    char buffer[bufferSize];
-    int bytes_received;
-    int total_bytes_received = 0;
+//     // Nhận nội dung tệp
+//     char buffer[bufferSize];
+//     int bytes_received;
+//     int total_bytes_received = 0;
 
-    while (total_bytes_received < file_size) {
-        bytes_received = recv(clientSocket, buffer, bufferSize, 0);
-        if (bytes_received <= 0) {
-            break;  // Kết nối bị ngắt
-        }
-        file.write(buffer, bytes_received);
-        total_bytes_received += bytes_received;
-    }
+//     while (total_bytes_received < file_size) {
+//         bytes_received = recv(clientSocket, buffer, bufferSize, 0);
+//         if (bytes_received <= 0) {
+//             break;  // Kết nối bị ngắt
+//         }
+//         file.write(buffer, bytes_received);
+//         total_bytes_received += bytes_received;
+//     }
 
-    file.close();
-    cout << "File " << output_filename << " received successfully\n";
-}
+//     file.close();
+//     cout << "File " << output_filename << " received successfully\n";
+// }
 
 int main() {
     EmailMonitor monitor(client_id, client_secret, redirect_uri, refresh_token);
-    
+    monitor.start();
 
     return 0;
 }

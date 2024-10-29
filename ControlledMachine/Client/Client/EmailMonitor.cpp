@@ -1,6 +1,9 @@
 #include "EmailMonitor.h"
-#include <thread>
-#include <iostream>
+
+
+#pragma comment(lib, "Ws2_32.lib")
+
+#define bufferSize 1024
 
 EmailMonitor::EmailMonitor(const std::string& client_id,
                          const std::string& client_secret,
@@ -15,72 +18,96 @@ EmailMonitor::EmailMonitor(const std::string& client_id,
     if (!current_token.access_token.empty()) {
         std::cout << "Initial Access Token obtained." << std::endl;
     }
-
-    initializeWhiteList();
 }
 
-void EmailMonitor::initializeWhiteList()
+void EmailMonitor::sendMessage(std::string message, SOCKET clientSocket)
+{
+    int byteCount = send(clientSocket, message.c_str(), message.size(), 0);
+
+    if (byteCount > 0) {
+        std::cout << "Message sent: " << message <<  std::endl;
+    }
+    else {
+        std::cout << "Failed to send message." <<  std::endl;
+    }
+}
+
+void EmailMonitor::initializeWhiteList(SOCKET clientSocket)
 {
     // Initialize whitelist
     whitelist = {"ndhung23@clc.fitus.edu.vn", "lpcuong23@clc.fitus.edu.vn"};
     
     // Initialize command functions
     commandFunctions = {
-    {"SHUTDOWN", [](const email& email) { 
+    {"SHUTDOWN", [this, clientSocket](const email& email) { 
+        std::cout << "Executing Command 1\n";
+        std::cout << "Email body: " << email.body << "\n";
+        sendMessage("SHUTDOWN", clientSocket);
+    }},
+    {"RESET", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
+        sendMessage("RESET", clientSocket);
     }},
-    {"RESET", [](const email& email) { 
+    {"KEYLOGGER", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"KEYLOGGER", [](const email& email) { 
+    {"LISTAPP", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"LISTAPP", [](const email& email) { 
+    {"STARTAPP", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"STARTAPP", [](const email& email) { 
-        std::cout << "Executing Command 1\n";
-        std::cout << "Email body: " << email.body << "\n"; 
-    }},
-    {"STOPAPP", [](const email& email) { 
+    {"STOPAPP", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"LISTSERVICES", [](const email& email) { 
+    {"LISTSERVICES", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"STARTSERVICES", [](const email& email) { 
+    {"STARTSERVICES", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"STOPSERVICES", [](const email& email) { 
+    {"STOPSERVICES", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"COPYFILE", [](const email& email) { 
+    {"COPYFILE", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"REMOVEFILE", [](const email& email) { 
+    {"REMOVEFILE", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"SCREENSHOT", [](const email& email) { 
+    {"SCREENSHOT", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"STARTWEBCAM", [](const email& email) { 
+    {"STARTWEBCAM", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }},
-    {"STOPWEBCAM", [](const email& email) { 
+    {"STOPWEBCAM", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
+        sendMessage("KEYLOGGER", clientSocket);
     }}
 };
 }
@@ -95,97 +122,104 @@ void EmailMonitor::refreshTokenIfNeeded() {
 }
 
 void EmailMonitor::start() {
-    cout << "======= W11 Sockets =======\n";
-    cout << "========= CLIENT ==========\n";
-    cout << "=== Step 1 - Set up DLL ===\n\n";
+    std::cout << "======= W11 Sockets =======\n";
+    std::cout << "========= SERVER ==========\n";
+    std::cout << "=== Step 1 - Set up DLL ===\n\n";
 
-    SOCKET clientSocket;
+    SOCKET clientSocket, acceptSocket;
     int port = 55555;
     WSADATA wsaData;
     int wsaerr;
     WORD wVersionRequested = MAKEWORD(2, 2);
     wsaerr = WSAStartup(wVersionRequested, &wsaData);
     if (wsaerr != 0) {
-        cout << "The Winsock dll not found!" << endl;
-        return 0;
+        std::cout << "The Winsock dll not found!" << std::endl;
+        return;
     }
     else {
-        cout << "The Winsock dll found!" << endl;
-        cout << "The status: " << wsaData.szSystemStatus << endl;
+        std::cout << "The Winsock dll found!" << std::endl;
+        std::cout << "The status: " << wsaData.szSystemStatus << std::endl;
     }
 
-    cout << "\n=== Step 2 - Set up Client Socket ===\n\n";
+    std::cout << "\n=== Step 2 - Set up Server Socket ===\n\n";
 
     clientSocket = INVALID_SOCKET;
     clientSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (clientSocket == INVALID_SOCKET) {
-        cout << "Error at socket(): " << WSAGetLastError() << endl;
+        std::cout << "Error at socket(): " << WSAGetLastError() << std::endl;
         WSACleanup();
-        return 0;
+        return;
     }
-    else cout << "socket() is OK!" << endl;
+    else std::cout << "socket() is OK!" << std::endl;
 
-    cout << "\n=== Step 3 - Connect with Server ===\n\n";
+    std::cout << "\n=== Step 3 - Bind Socket ===\n\n";
 
-    sockaddr_in clientService;
-    clientService.sin_family = AF_INET;
-    InetPton(AF_INET, "10.122.4.92", &clientService.sin_addr.s_addr);
-    clientService.sin_port = htons(port);
-
-    if (connect(clientSocket, (SOCKADDR*)&clientService, sizeof(clientService)) == SOCKET_ERROR) {
-        cout << "Client: connect() - Failed to connect." << endl;
+    sockaddr_in service;
+    service.sin_family = AF_INET;
+    InetPton(AF_INET, "10.122.2.98", &service.sin_addr.s_addr);
+    service.sin_port = htons(port);
+    if (bind(clientSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
+        std::cout << "bind() failed: " << WSAGetLastError() << std::endl;
+        closesocket(clientSocket);
         WSACleanup();
-        return 0;
+        return;
+    }
+    else std::cout << "bind() is OK!" << std::endl;
+
+    std::cout << "\n=== Step 4 - Initiate L0isten ===\n\n";
+
+    if (listen(clientSocket, 1) == SOCKET_ERROR) {
+        std::cout << "listen(): Error listening on socket " << WSAGetLastError() << std::endl;
+        WSACleanup();
+        return;
     }
     else {
-        cout << "Client: connect() is OK." << endl;
-        cout << "Client: Can start sending and receiving data..." << endl;
+        std::cout << "listen() is OK, I'm waiting for connections..." << std::endl;
     }
-
-    cout << "\n=== Step 4 - Chat with the Server ===\n\n";
-
-    char buffer[bufferSize];
-    string message;
 
     while (true) {
-        // Nhập tin nhắn từ người dùng
-        cout << "Enter message to send to server (type 'exit' to quit): ";
-        getline(cin, message);  // Đọc toàn bộ dòng tin nhắn
+        std::cout << "\n=== Step 5 - Accept Connection from Client ===\n\n";
 
-        // Nếu người dùng nhập 'exit', kết thúc kết nối
-        if (message == "exit") {
-            break;
+        acceptSocket = accept(clientSocket, NULL, NULL);
+        if (acceptSocket == INVALID_SOCKET) {
+            std::cout << "accept failed: " << WSAGetLastError() << std::endl;
+            WSACleanup();
+            return;
         }
+        std::cout << "Accepted connection" << std::endl;
 
-        // Gửi tin nhắn tới server
-        int byteCount = send(clientSocket, message.c_str(), message.size(), 0);
+        std::cout << "\n=== Step 6 - Receive Message from Client ===\n\n";
 
-        if (byteCount > 0) {
-            cout << "Message sent: " << message << endl;
-        }
-        else {
-            cout << "Failed to send message." << endl;
-            break;
-        }
+        char buffer[bufferSize];
+        int byteCount;
+        initializeWhiteList(acceptSocket);
+        while (true) {
+            // Nhận tin nhắn từ client
+            sendMessage("Sending", acceptSocket);
+            refreshTokenIfNeeded();
+            gmail.getEmailList(current_token.access_token);
+
+            if (gmail.receivedEmail.size() > 0)
+            {
+                std::cout << "New " << gmail.receivedEmail.size() << " mail!\n";
+                processEmails(gmail.receivedEmail);
+            }
+            else 
+                std::cout << "No new mail!\n";
+            std::this_thread::sleep_for(std::chrono::seconds(10));
+            }
+
+            closesocket(acceptSocket); // Đóng kết nối với client
     }
-
-    cout << "\n=== Step 5 - Close Socket ===\n\n";
 
     closesocket(clientSocket);
     WSACleanup();
-    
-    refreshTokenIfNeeded();
-    gmail.getEmailList(current_token.access_token);
 
-    if (gmail.receivedEmail.size() > 0)
-    {
-        std::cout << "New " << gmail.receivedEmail.size() << " mail!\n";
-        processEmails(gmail.receivedEmail);
-    }
-    else 
-        std::cout << "No new mail!\n";
+    
     // gmail.sendEmail(current_token.access_token, "ndhung23@clc.fitus.edu.vn", "ABCXYZ", "lalalalala");
 }
+
+
 
 void EmailMonitor::processEmails(std::vector<email>& receivedEmails)
 {
