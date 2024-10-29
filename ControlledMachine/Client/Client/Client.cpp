@@ -125,12 +125,18 @@
 #include "iostream"
 #include <fstream>
 #include <string>
+#include "EmailMonitor.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
-using namespace std;
-
 #define bufferSize 1024
+
+const std::string client_id = "406151454730-q8sbba0gq585nojc2al4351s27ksog0g.apps.googleusercontent.com";
+const std::string client_secret = "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";
+const std::string redirect_uri = "urn:ietf:wg:oauth:2.0:oob";
+const std::string refresh_token = "1//0eaewHpRVZdWcCgYIARAAGA4SNgF-L9IrFKbFWQHsu52H5UWxLtNDh9VRCsgns-WHr4ageQD4-kPO7Unp7EXyopno-iP1RLweNg"; //"1//0eIEkjQbra3JLCgYIARAAGA4SNgF-L9Irmy1vV95LbvzisbEF4aQMZYpIPU3H4-_lejLLIG43JVL0AlxE3QA6OLw4j0c_NkVfXA";
+    
+    
 
 void receiveFile(SOCKET clientSocket, const char* output_filename) {
     ofstream file(output_filename, ios::binary);
@@ -162,85 +168,8 @@ void receiveFile(SOCKET clientSocket, const char* output_filename) {
 }
 
 int main() {
-
-    cout << "======= W11 Sockets =======\n";
-    cout << "========= CLIENT ==========\n";
-    cout << "=== Step 1 - Set up DLL ===\n\n";
-
-    SOCKET clientSocket;
-    int port = 55555;
-    WSADATA wsaData;
-    int wsaerr;
-    WORD wVersionRequested = MAKEWORD(2, 2);
-    wsaerr = WSAStartup(wVersionRequested, &wsaData);
-    if (wsaerr != 0) {
-        cout << "The Winsock dll not found!" << endl;
-        return 0;
-    }
-    else {
-        cout << "The Winsock dll found!" << endl;
-        cout << "The status: " << wsaData.szSystemStatus << endl;
-    }
-
-    cout << "\n=== Step 2 - Set up Client Socket ===\n\n";
-
-    clientSocket = INVALID_SOCKET;
-    clientSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (clientSocket == INVALID_SOCKET) {
-        cout << "Error at socket(): " << WSAGetLastError() << endl;
-        WSACleanup();
-        return 0;
-    }
-    else cout << "socket() is OK!" << endl;
-
-    cout << "\n=== Step 3 - Connect with Server ===\n\n";
-
-    sockaddr_in clientService;
-    clientService.sin_family = AF_INET;
-    InetPton(AF_INET, L"127.0.0.1", &clientService.sin_addr.s_addr);
-    clientService.sin_port = htons(port);
-
-    if (connect(clientSocket, (SOCKADDR*)&clientService, sizeof(clientService)) == SOCKET_ERROR) {
-        cout << "Client: connect() - Failed to connect." << endl;
-        WSACleanup();
-        return 0;
-    }
-    else {
-        cout << "Client: connect() is OK." << endl;
-        cout << "Client: Can start sending and receiving data..." << endl;
-    }
-
-    cout << "\n=== Step 4 - Chat with the Server ===\n\n";
-
-    char buffer[bufferSize];
-    string message;
-
-    while (true) {
-        // Nhập tin nhắn từ người dùng
-        cout << "Enter message to send to server (type 'exit' to quit): ";
-        getline(cin, message);  // Đọc toàn bộ dòng tin nhắn
-
-        // Nếu người dùng nhập 'exit', kết thúc kết nối
-        if (message == "exit") {
-            break;
-        }
-
-        // Gửi tin nhắn tới server
-        int byteCount = send(clientSocket, message.c_str(), message.size(), 0);
-
-        if (byteCount > 0) {
-            cout << "Message sent: " << message << endl;
-        }
-        else {
-            cout << "Failed to send message." << endl;
-            break;
-        }
-    }
-
-    cout << "\n=== Step 5 - Close Socket ===\n\n";
-
-    closesocket(clientSocket);
-    WSACleanup();
+    EmailMonitor monitor(client_id, client_secret, redirect_uri, refresh_token);
+    
 
     return 0;
 }

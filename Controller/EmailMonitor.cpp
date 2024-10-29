@@ -57,6 +57,7 @@ void EmailMonitor::start() {
     }
     else 
         std::cout << "No new mail!\n";
+    gmail.sendEmail(current_token.access_token, "ndhung23@clc.fitus.edu.vn", "ABCXYZ", "lalalalala");
 }
 
 void EmailMonitor::processEmails(std::vector<email>& receivedEmails)
