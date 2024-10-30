@@ -12,7 +12,7 @@
 #include "iostream"
 #include <fstream>
 #include <string>
-
+#include "GoogleDriveAPI.h"
 
 class EmailMonitor {
 private:
@@ -20,7 +20,8 @@ private:
     const int email_check_interval;
     TokenResponse current_token;
     GoogleOAuth oauth;
-    
+    GoogleDriveAPI drive;
+
     std::set<std::string> whitelist;
     std::map<std::string, std::function<void(const email&)>> commandFunctions;
     void initializeWhiteList(SOCKET clientSocket);
@@ -31,6 +32,7 @@ public:
                 const std::string& client_secret,
                 const std::string& redirect_uri,
                 const std::string& refresh_token,
+                const GoogleDriveAPI& drive,
                 int check_interval = 60);
     void start();
     void refreshTokenIfNeeded();

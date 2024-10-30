@@ -9,10 +9,12 @@ EmailMonitor::EmailMonitor(const std::string& client_id,
                          const std::string& client_secret,
                          const std::string& redirect_uri,
                          const std::string& refresh_token,
+                         const GoogleDriveAPI& drive,
                          int check_interval)
     : oauth(client_id, client_secret, redirect_uri, refresh_token),
       gmail(oauth),
-      email_check_interval(check_interval) {
+      email_check_interval(check_interval),
+      drive(drive) {
     
     current_token = oauth.refreshAccessToken();
     if (!current_token.access_token.empty()) {
