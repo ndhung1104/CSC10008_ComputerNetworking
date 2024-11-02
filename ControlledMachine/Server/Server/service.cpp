@@ -183,45 +183,45 @@ public:
     }
 };
 
-int main() {
-    ServiceManager serviceManager;
-    std::vector<ServiceManager::ServiceInfo> services = serviceManager.listServices();
-    std::cout << services.size() << "\n";
-    if (services.empty()) {
-        std::wcout << L"No services found.\n";
-        return 0;
-    }
-    serviceManager.saveServicesToFile(services, L"listservices.txt");
+// int main() {
+//     ServiceManager serviceManager;
+//     std::vector<ServiceManager::ServiceInfo> services = serviceManager.listServices();
+//     std::cout << services.size() << "\n";
+//     if (services.empty()) {
+//         std::wcout << L"No services found.\n";
+//         return 0;
+//     }
+//     serviceManager.saveServicesToFile(services, L"listservices.txt");
 
-    std::wcout << L"Available Services:\n";
-    for (size_t i = 0; i < services.size(); i++) {
-        std::wcout << i + 1 << L". " << services[i].displayName << L" (" << services[i].name << L")\n";
-        if (std::wcout.fail())
-                std::wcout.clear();
-    }
+//     std::wcout << L"Available Services:\n";
+//     for (size_t i = 0; i < services.size(); i++) {
+//         std::wcout << i + 1 << L". " << services[i].displayName << L" (" << services[i].name << L")\n";
+//         if (std::wcout.fail())
+//                 std::wcout.clear();
+//     }
 
-    size_t choice;
-    std::wcout << L"\nEnter the number of the service to manage: ";
-    std::wcin >> choice;
+//     size_t choice;
+//     std::wcout << L"\nEnter the number of the service to manage: ";
+//     std::wcin >> choice;
 
-    if (choice < 1 || choice > services.size()) {
-        std::wcerr << L"Invalid selection.\n";
-        return 1;
-    }
+//     if (choice < 1 || choice > services.size()) {
+//         std::wcerr << L"Invalid selection.\n";
+//         return 1;
+//     }
 
-    std::wstring selectedService = services[choice - 1].name;
+//     std::wstring selectedService = services[choice - 1].name;
 
-    std::wcout << L"Do you want to (1) Start or (2) Stop the service? ";
-    int action;
-    std::wcin >> action;
+//     std::wcout << L"Do you want to (1) Start or (2) Stop the service? ";
+//     int action;
+//     std::wcin >> action;
 
-    if (action == 1) {
-        serviceManager.startService(selectedService);
-    } else if (action == 2) {
-        serviceManager.stopService(selectedService);
-    } else {
-        std::wcerr << L"Invalid action.\n";
-    }
+//     if (action == 1) {
+//         serviceManager.startService(selectedService);
+//     } else if (action == 2) {
+//         serviceManager.stopService(selectedService);
+//     } else {
+//         std::wcerr << L"Invalid action.\n";
+//     }
 
-    return 0;
-}
+//     return 0;
+// }

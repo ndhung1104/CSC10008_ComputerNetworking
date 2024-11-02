@@ -1,3 +1,6 @@
+#ifndef WEBCAMRECORDER 
+#define WEBCAMRECORDER
+
 #pragma once
 #include <opencv2/opencv.hpp>
 #include <string>
@@ -49,3 +52,5 @@ private:
 
 //     return 0;
 // }
+
+#endif

