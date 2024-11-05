@@ -12,6 +12,7 @@
 #include "iostream"
 #include <fstream>
 #include <string>
+#include <sstream>
 #include "GoogleDriveAPI.h"
 
 class EmailMonitor {
@@ -23,10 +24,11 @@ private:
     GoogleDriveAPI drive;
 
     std::set<std::string> whitelist;
-    std::map<std::string, std::function<void(const email&)>> commandFunctions;
-    void initializeWhiteList(SOCKET clientSocket);
-    void processEmails(std::vector<email>& receivedEmails);
+    std::map<std::string, std::function<void(const email&, const SOCKET&)>> commandFunctions;
+    void initializeWhiteList();
+    void processEmails(std::vector<email>& receivedEmails, const std::vector<SOCKET>& socketVector);
     void sendMessage(std::string message, SOCKET clientSocket);
+    bool findSocketByIP(const std::string& ipAddress, const std::vector<SOCKET>& socketVector, SOCKET& foundSocket);
 public:
     EmailMonitor(const std::string& client_id,
                 const std::string& client_secret,
@@ -34,6 +36,6 @@ public:
                 const std::string& refresh_token,
                 const GoogleDriveAPI& drive,
                 int check_interval = 60);
-    void start();
+    void start(const std::vector<SOCKET>& socketVector);
     void refreshTokenIfNeeded();
 };

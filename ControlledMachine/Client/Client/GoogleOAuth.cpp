@@ -90,10 +90,14 @@ TokenResponse GoogleOAuth::refreshAccessToken() {
 
         CURLcode res = curl_easy_perform(curl);
         if (res == CURLE_OK) {
+            std::cout << readBuffer << std::endl;
             auto [access_token, _, expires_in] = extractTokens(readBuffer);
             tokenResponse.access_token = access_token;
             tokenResponse.expires_in = expires_in;
             updateExpiryTime(expires_in);
+        }
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
         }
 
         curl_easy_cleanup(curl);
