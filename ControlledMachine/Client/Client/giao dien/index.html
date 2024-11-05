@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>client</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Thông Điệp đến Máy Chủ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gửi Thông Điệp đến Máy Chủ</h1>
+    
+    <label for="ipAddress">Địa chỉ IP:</label>
+    <input type="text" id="ipAddress" placeholder="Nhập địa chỉ IP của máy chủ ở đây">
+
+    <label for="message">Tin nhắn:</label>
+    <textarea id="message" placeholder="Nhập thông điệp của bạn ở đây"></textarea>
+    
+    <button id="sendButton">Gửi</button>
+
+    <h2>Các Địa Chỉ IP Client Kết Nối:</h2>
+    <ul id="clientList"></ul> <!-- Danh sách hiển thị địa chỉ IP của client -->
+
+    <script src="script.js"></script>
+</body>
+</html>

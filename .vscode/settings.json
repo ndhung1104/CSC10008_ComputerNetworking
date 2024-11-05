@@ -77,5 +77,6 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "regex": "cpp"
-    }
+    },
+    "liveServer.settings.port": 5501
 }

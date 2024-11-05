@@ -419,6 +419,63 @@ void listenerThread()
     WSACleanup();
 }
 
+void handleClient(SOCKET clientSocket, std::vector<std::string>& clientIPs) {
+    char buffer[BUFFER_SIZE];
+    int byteCount = recv(clientSocket, buffer, BUFFER_SIZE, 0);
+    
+    if (byteCount > 0) {
+        buffer[byteCount] = '\0'; // Kết thúc chuỗi
+        std::string request(buffer);
+        
+        // Kiểm tra yêu cầu OPTIONS
+        if (request.find("OPTIONS") == 0) {
+            std::string response = "HTTP/1.1 204 No Content\r\n"
+                                   "Access-Control-Allow-Origin: http://127.0.0.1:5502\r\n"
+                                   "Access-Control-Allow-Methods: POST, OPTIONS\r\n"
+                                   "Access-Control-Allow-Headers: content-type\r\n"
+                                   "Content-Length: 0\r\n"
+                                   "\r\n";
+            send(clientSocket, response.c_str(), response.size(), 0);
+        }
+        // Kiểm tra yêu cầu POST
+        else if (request.find("POST") == 0) {
+            size_t pos = request.find("Content-Length: ");
+            if (pos != std::string::npos) {
+                pos += 16; // Độ dài của "Content-Length: "
+                size_t endPos = request.find("\r\n", pos);
+                int contentLength = std::stoi(request.substr(pos, endPos - pos));
+                
+                // Đọc thông điệp
+                std::string message(request.substr(request.find("\r\n\r\n") + 4, contentLength));
+                std::string ipAddress = ""; // Biến để lưu địa chỉ IP
+                
+                // Tìm địa chỉ IP trong JSON
+                size_t ipPos = message.find("\"ip\": \"");
+                if (ipPos != std::string::npos) {
+                    ipPos += 8; // Độ dài của "\"ip\": \""
+                    size_t ipEnd = message.find("\"", ipPos);
+                    if (ipEnd != std::string::npos) {
+                        ipAddress = message.substr(ipPos, ipEnd - ipPos);
+                        // Thêm IP vào danh sách
+                        if (std::find(clientIPs.begin(), clientIPs.end(), ipAddress) == clientIPs.end()) {
+                            clientIPs.push_back(ipAddress);
+                        }
+                    }
+                }
+                
+                // In thông điệp và địa chỉ IP
+                std::cout << "Message: " << message << ", IP: " << ipAddress << std::endl;
+
+                // Gửi phản hồi cho yêu cầu POST
+                std::string response = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nThông điệp đã nhận";
+                send(clientSocket, response.c_str(), response.size(), 0);
+            }
+        }
+    }
+
+    closesocket(clientSocket); // Đóng kết nối với client
+}
+
 
 int main() {
     
