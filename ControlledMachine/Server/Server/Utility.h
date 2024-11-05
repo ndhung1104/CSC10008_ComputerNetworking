@@ -7,14 +7,14 @@
 #include<iostream>
 #include<fstream>
 #include<vector>
-// #include "service.cpp"
 #include<thread>
 #include<chrono>
 #include<atomic>
-// #include "WebcamRecorder.h"
+// #include "service.cpp"
+//#include "WebcamRecorder.h"
 #define BUFFER_SIZE 1024
 
-class Computer/* : public ServiceManager, public WebcamRecorder*/
+class Computer// : public ServiceManager //public WebcamRecorder
 {
 public:
 	void shutdown(); // doc lap
@@ -23,7 +23,7 @@ public:
 	void listApp(); // viet ca 2 ben
 	void startApp(std::string name); // doc lap (hoi tiep theo kieu start co thanh cong hay khong va gui nguoc lai cho client)
 	void stopApp(std::string name); // doc lap ////////////
-	void sendFile(SOCKET clientSocket, const std::string& filePath);
+	void copyFile(SOCKET clientSocket, const std::string& filePath);
 	// void listService(); // viet ca 2 ben
 	// void startService(std::string name); // doc lap
 	// void stopService(std::string name); // doc lap
