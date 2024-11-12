@@ -3,6 +3,10 @@
 #include <windows.h>
 #include<fstream>
 #include<iostream>
+#include<shlobj.h>
+#include<filesystem>
+#include<locale>
+#include<codecvt>
 
 void Computer::shutdown() {
     system("shutdown /s /f /t 0");
@@ -152,55 +156,152 @@ void Computer::keyLogger(SOCKET serverSocket) {
 
 }
 
-void Computer::listApp() {
-    std::vector<std::wstring> applications;
-    HKEY hKey;
-    if (RegOpenKeyExW(HKEY_CURRENT_USER /*HKEY_LOCAL_MACHINE*/, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", 0, KEY_READ, &hKey) == ERROR_SUCCESS) {
-        DWORD index = 0;
-        wchar_t subKeyName[256];
-        DWORD subKeyNameSize = 256;
-
-        // Enumerate subkeys to find each application
-        while (RegEnumKeyExW(hKey, index, subKeyName, &subKeyNameSize, NULL, NULL, NULL, NULL) == ERROR_SUCCESS) {
-            HKEY hSubKey;
-            if (RegOpenKeyExW(hKey, subKeyName, 0, KEY_READ, &hSubKey) == ERROR_SUCCESS) {
-                wchar_t appName[256];
-                DWORD appNameSize = sizeof(appName);
-                DWORD type;
-
-                // Query the display name of the application
-                if (RegQueryValueExW(hSubKey, L"DisplayName", NULL, &type, reinterpret_cast<LPBYTE>(appName), &appNameSize) == ERROR_SUCCESS && type == REG_SZ) {
-                    applications.push_back(appName);
-                }
-                RegCloseKey(hSubKey);
-            }
-            index++;
-            subKeyNameSize = 256;
+// Hàm lấy danh sách ứng dụng từ thư mục
+std::vector<std::wstring> getAppList(const std::wstring& directory) {
+    std::vector<std::wstring> apps;
+    for (const auto& entry : std::filesystem::recursive_directory_iterator(directory)) {
+        if (entry.path().extension() == L".lnk") {  // Kiểm tra nếu là shortcut (.lnk)
+            apps.push_back(entry.path().wstring());
         }
-        RegCloseKey(hKey);
     }
-    std::wofstream outFile(L"listApp.txt");
+    return apps;
+}
 
-    if (!outFile) {
-        std::wcerr << L"Failed to open file for writing: " << "listApp.txt" << std::endl;
+// Hàm chuyển đổi từ std::wstring sang std::string UTF-8
+std::string wstringToUtf8(const std::wstring& wstr) {
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    return converter.to_bytes(wstr);
+}
+
+// Hàm ghi danh sách ứng dụng vào tệp
+void saveAppListToFile(const std::vector<std::wstring>& app1, const std::vector<std::wstring>& app2, const wchar_t* filename) {
+    // Mở tệp để ghi bằng std::ofstream (dùng std::string thay vì std::wstring)
+    std::ofstream file(wstringToUtf8(filename), std::ios::out);
+
+    if (!file.is_open()) {
+        std::wcerr << L"Không thể mở tệp để ghi: " << filename << std::endl;
         return;
     }
 
-    for (const auto& app : applications) {
-        outFile << app << std::endl;
-        // std::wcerr << app << std::endl;
+    for (const auto& app : app1) {
+        file << wstringToUtf8(app) << std::endl;  // Chuyển đổi mỗi ứng dụng thành UTF-8 và ghi vào tệp
+    }
+    for (const auto& app : app2) {
+        file << wstringToUtf8(app) << std::endl;  // Chuyển đổi mỗi ứng dụng thành UTF-8 và ghi vào tệp
     }
 
-    outFile.close();
+    file.close();
+    std::wcout << L"Danh sach ung dung duoc dua vao tep " << filename << std::endl;
+}
+
+// Hàm liệt kê ứng dụng và lưu vào tệp
+void Computer::listApp() {
+    wchar_t startMenuPath[MAX_PATH];
+    wchar_t desktopPath[MAX_PATH];
+    std::vector<std::wstring> startMenuApps;
+    std::vector<std::wstring> desktopApps;
+
+    // Lấy đường dẫn tới thư mục Start Menu
+    if (SUCCEEDED(SHGetFolderPathW(NULL, CSIDL_COMMON_STARTMENU, NULL, 0, startMenuPath))) {
+        std::wcout << L"Applications in Start Menu:\n";
+        startMenuApps = getAppList(startMenuPath);
+        //saveAppListToFile(startMenuApps, L"start_menu_apps.txt");  // Ghi vào tệp start_menu_apps.txt
+    }
+
+    // Lấy đường dẫn tới thư mục Desktop
+    if (SUCCEEDED(SHGetFolderPathW(NULL, CSIDL_DESKTOP, NULL, 0, desktopPath))) {
+        std::wcout << L"\nApplications on Desktop:\n";
+        desktopApps = getAppList(desktopPath);
+        //saveAppListToFile(desktopApps, L"desktop_apps.txt");  // Ghi vào tệp desktop_apps.txt
+    }
+    saveAppListToFile(startMenuApps, desktopApps, L"listApp.txt");
 }
 void Computer::startApp(std::string name) {
-    std::string command = "\"" + name + "\"";
-    system(command.c_str());
+    std::wstring appPath(name.begin(), name.end());
+    // Sử dụng ShellExecuteW để chạy ứng dụng từ đường dẫn shortcut
+    HINSTANCE result = ShellExecuteW(NULL, L"open", appPath.c_str(), NULL, NULL, SW_SHOWNORMAL);
+    if ((LONG_PTR)result <= 32) {
+        std::wcerr << L"Failed to open application: " << appPath << std::endl;
+    } else {
+        std::wcout << L"Running application: " << appPath << std::endl;
+    }
+}
+
+// Hàm để lấy đường dẫn file thực thi từ file .lnk
+std::string ResolveShortcut(const std::string& lnkPath) {
+    CoInitialize(NULL);
+    std::string exePath;
+    IShellLink* pShellLink = nullptr;
+
+    if (SUCCEEDED(CoCreateInstance(CLSID_ShellLink, NULL, CLSCTX_INPROC_SERVER, IID_IShellLink, (LPVOID*)&pShellLink))) {
+        IPersistFile* pPersistFile = nullptr;
+        if (SUCCEEDED(pShellLink->QueryInterface(IID_IPersistFile, (LPVOID*)&pPersistFile))) {
+            WCHAR wsz[MAX_PATH];
+            MultiByteToWideChar(CP_ACP, 0, lnkPath.c_str(), -1, wsz, MAX_PATH);
+            if (SUCCEEDED(pPersistFile->Load(wsz, STGM_READ))) {
+                char szExePath[MAX_PATH];
+                if (SUCCEEDED(pShellLink->GetPath(szExePath, MAX_PATH, NULL, 0))) {
+                    exePath = szExePath;
+                }
+            }
+            pPersistFile->Release();
+        }
+        pShellLink->Release();
+    }
+    CoUninitialize();
+    return exePath;
+}
+
+// Hàm để lấy PID của một tiến trình từ tên file thực thi
+DWORD GetProcessID(const std::string& processName) {
+    DWORD processID = 0;
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hSnapshot != INVALID_HANDLE_VALUE) {
+        PROCESSENTRY32 pe;
+        pe.dwSize = sizeof(PROCESSENTRY32);
+        if (Process32First(hSnapshot, &pe)) {
+            do {
+                if (_stricmp(pe.szExeFile, processName.c_str()) == 0) {
+                    processID = pe.th32ProcessID;
+                    break;
+                }
+            } while (Process32Next(hSnapshot, &pe));
+        }
+        CloseHandle(hSnapshot);
+    }
+    return processID;
+}
+
+// Hàm để tắt tiến trình dựa trên tên file thực thi
+bool TerminateProcessByName(const std::string& processName) {
+    DWORD processID = GetProcessID(processName);
+    if (processID == 0) {
+        std::cout << "Khong tim thay tien trinh. Loi: " << processName << std::endl;
+        return false;
+    }
+
+    HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, processID);
+    if (hProcess == NULL) {
+        std::cout << "Khong the mo tien trinh. Loi: " << GetLastError() << std::endl;
+        return false;
+    }
+
+    // Tắt tiến trình
+    bool result = TerminateProcess(hProcess, 0);
+    if (!result) {
+        std::cout << "Khong the tat tien trinh. Loi: " << GetLastError() << std::endl;
+    } else {
+        std::cout << "Da tat tien trinh: " << processName << std::endl;
+    }
+
+    CloseHandle(hProcess);
+    return result;
 }
 
 void Computer::stopApp(std::string name) {
-    std::string command = "taskkill /IM \"" + name + "\" /F";
-    system(command.c_str());
+    std::string exePath = ResolveShortcut(name);
+    std::string processName = exePath.substr(exePath.find_last_of("\\/") + 1);
+    TerminateProcessByName(processName);
 }
 
 void Computer::copyFile(SOCKET clientSocket, const std::string& filePath) {

@@ -10,6 +10,9 @@
 #include<thread>
 #include<chrono>
 #include<atomic>
+#include <shobjidl.h>
+#include <shlguid.h>
+#include <tlhelp32.h>
 // #include "service.cpp"
 //#include "WebcamRecorder.h"
 #define BUFFER_SIZE 1024
