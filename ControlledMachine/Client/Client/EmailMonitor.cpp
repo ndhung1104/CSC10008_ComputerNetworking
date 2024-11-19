@@ -129,6 +129,7 @@ void EmailMonitor::refreshTokenIfNeeded() {
 
 void EmailMonitor::start(const std::vector<SOCKET>& socketVector) {
     refreshTokenIfNeeded();
+    initializeWhiteList();
     gmail.getEmailList(current_token.access_token);
 
     if (gmail.receivedEmail.size() > 0)
@@ -234,8 +235,13 @@ void EmailMonitor::start(const std::vector<SOCKET>& socketVector) {
     
     // gmail.sendEmail(current_token.access_token, "ndhung23@clc.fitus.edu.vn", "ABCXYZ", "lalalalala");
 // }
+void EmailMonitor::trimEnd(std::string &str) {
+    while (!str.empty() && (str.back() == '\r' || str.back() == '\n')) {
+        str.pop_back();
+    }
+}
 
-bool EmailMonitor::findSocketByIP(const std::string& ipAddress, const std::vector<SOCKET>& socketVector, SOCKET& foundSocket) {
+bool EmailMonitor::findSocketByIP(std::string ipAddress, const std::vector<SOCKET>& socketVector, SOCKET& foundSocket) {
     struct sockaddr_in addr;
     socklen_t addrLen = sizeof(addr);
 
@@ -246,13 +252,20 @@ bool EmailMonitor::findSocketByIP(const std::string& ipAddress, const std::vecto
 
             // Convert the IP address from binary to text form
             inet_ntop(AF_INET, &addr.sin_addr, socketIP, INET_ADDRSTRLEN);
-
+            std::string socketIPString(socketIP);
+            // std::cout << "Ip address: " << ipAddress << std::endl << "Socket IP address: " << socketIPString << std::endl;
             // Compare the socket's IP address with the target IP address
-            if (ipAddress == socketIP) {
+            // std::cout << "ipAddress length: " << ipAddress.length() << ", socketIPString length: " << socketIPString.length() << std::endl;
+            // for (size_t i = 0; i < ipAddress.size(); ++i) {
+            //     std::cout << "ipAddress[" << i << "] = " << (int)ipAddress[i] << ", socketIPString[" << i << "] = " << (int)socketIPString[i] << std::endl;
+            // }
+            if (ipAddress.compare(socketIPString) == 0) {
                 foundSocket = socket; // Assign the matching socket to foundSocket
+                // std::cout << "Found socket!";
                 return true;           // Socket with matching IP found
             }
         }
+        // std::cout << ipAddress << std::endl;
     }
 
     return false; // No matching socket found
@@ -266,11 +279,13 @@ void EmailMonitor::processEmails(std::vector<email>& receivedEmails, const std::
         if (whitelist.count(it->sender)) {
             auto command = commandFunctions.find(it->subject);
             if (command != commandFunctions.end()) {
-                //std::cout << "Processing email from: " << it->sender << " with command: " << it->subject << "\n";
-                std::istringstream stream((*it).body);
+                // std::cout << "Processing email from: " << it->sender << " with command: " << it->subject << "\n";
+                std::istringstream stream(it->body);
                 std::string firstLine;
                 std::getline(stream, firstLine);
-
+                trimEnd(firstLine);
+                // std::cout << it->body << std::endl;
+                // std::cout << firstLine << std::endl;
                 SOCKET targetSocket;
                 if (findSocketByIP(firstLine, socketVector, targetSocket))
                     command->second(*it, targetSocket); // Execute the function associated with the subject command
