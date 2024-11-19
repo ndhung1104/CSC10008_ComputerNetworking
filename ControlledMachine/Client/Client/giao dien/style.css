@@ -1,0 +1,91 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style cho trường nhập địa chỉ IP */
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #0077b6;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+    border-color: #005f99;
+}
+
+/* Style cho vùng nhập tin nhắn */
+textarea {
+    width: 80%;
+    height: 150px;
+    padding: 10px;
+    border: 2px solid #0077b6;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+textarea:focus {
+    border-color: #005f99;
+}
+
+button {
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005f99;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #0077b6;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.notification.error {
+    background-color: #e63946;
+}

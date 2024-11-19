@@ -1,12 +1,12 @@
 #pragma once
 #include <string>
-#include <opencv2/opencv.hpp>
+// #include <opencv2/opencv.hpp>
 // #include <opencv2/imgproc.hpp>
 // #include <opencv2/highgui.hpp>
 // #include <opencv2/core.hpp>
 #include <windows.h>
 #include <iostream>
-
+#define BUFFER_SIZE 1024
 
 class Computer
 {

