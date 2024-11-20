@@ -333,7 +333,7 @@ int main() {
 
     sockaddr_in service;
     service.sin_family = AF_INET;
-    InetPton(AF_INET, "10.122.1.138", &service.sin_addr.s_addr);
+    InetPton(AF_INET, "127.0.0.1", &service.sin_addr.s_addr);
     service.sin_port = htons(port);
     if (connect(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
         cout << "Client: connect() - Failed to connect." << endl;
@@ -373,7 +373,7 @@ int main() {
         int byteCount;
         Computer computer;
         ServiceManager service;
-        WebcamRecorder webcam("./");
+        WebcamRecorder webcam("outputWebcam.avi");
         while (true) {
             // Nhận tin nhắn từ client
             byteCount = recv(serverSocket, buffer, bufferSize, 0);

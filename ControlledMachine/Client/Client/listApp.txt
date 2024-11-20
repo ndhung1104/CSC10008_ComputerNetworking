@@ -1,0 +1,167 @@
+C:\ProgramData\Microsoft\Windows\Start Menu\Docker Desktop.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\7-Zip\7-Zip File Manager.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\7-Zip\7-Zip Help.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Access.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessibility\Speech Recognition.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Remote Desktop Connection.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Steps Recorder.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\System Tools\Character Map.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Windows Fax and Scan.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Windows Media Player Legacy.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Wordpad.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\XPS Viewer.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Component Services.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Computer Management.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\dfrgui.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Disk Cleanup.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Event Viewer.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\iSCSI Initiator.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Memory Diagnostics Tool.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\ODBC Data Sources (32-bit).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\ODBC Data Sources (64-bit).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Performance Monitor.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\RecoveryDrive.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Registry Editor.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Resource Monitor.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\services.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\System Configuration.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\System Information.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Task Scheduler.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\Windows Defender Firewall with Advanced Security.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Adobe offers.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Aegisub.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Albion Online\AlbionOnline.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Albion Online\Uninstall.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\ASSDraw3.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Audacity.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Booking.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Brave.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Cheat Engine (32-bit).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Cheat Engine (64-bit SSE4-AVX2).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Cheat Engine (64-bit).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Cheat Engine help.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Cheat Engine tutorial (64-bit).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Cheat Engine tutorial.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Cheat Engine.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Kernel stuff\Unload kernel module.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Lua documentation.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Reset settings.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cheat Engine 7.5\Uninstall Cheat Engine.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\CMake\CMake (cmake-gui).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\CMake\CMake Documentation.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\CMake\Uninstall CMake.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\CrystalDiskInfo\CrystalDiskInfo (32bit).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\CrystalDiskInfo\CrystalDiskInfo (64bit).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\doxygen\Doxygen documentation (compressed HTML).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\doxygen\Doxygen documentation (HTML).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\doxygen\Doxywizard.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\doxygen\Examples Folder.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\doxygen\Uninstall doxygen.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Epic Games Launcher.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Excel.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Firefox Private Browsing.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Firefox.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Bubble Shooter.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Daily Hidden Object.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Daily Jigsaw.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Free Games by wild.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Hidden Object Games.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Jewel Quest.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Mahjong Games.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Mahjongg Candy.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Mahjongg Solitaire.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\New Games .lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\RPG.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Solitaire with Themes.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Solitaire, Poker & More.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Strategy Games.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\Time Management Games.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git\Git Bash.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git\Git CMD.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git\Git GUI.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git\Git Release Notes.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\HP Audio Switch.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\HP Documentation.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LastPass.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools\Database Compare.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools\Office Language Preferences.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools\Skype for Business Recording Manager.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools\Spreadsheet Compare.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools\Telemetry Log for Office.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NVM for Windows\nvm.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NVM for Windows\Uninstall nvm.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneNote.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Outlook (classic).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PostgreSQL 15\Application Stack Builder.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PostgreSQL 15\pgAdmin 4.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PostgreSQL 15\Reload Configuration.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PostgreSQL 15\SQL Shell (psql).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PowerPoint.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Publisher.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Riot Games\League of Legends.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Riot Games\Riot Client.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Skype for Business.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam\Steam.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Sticky Notes (new).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\System Tools\Task Manager.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Tangledeep [GOG.com]\Tangledeep.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Tangledeep [GOG.com]\Uninstall Tangledeep.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\TeXworks\A short manual for TeXworks.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\TeXworks\Petit manuel pour TeXworks.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\TeXworks\TeXworks.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Tiled.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\UniKey.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Microsoft Visual Studio SDK\Tools\Reset the Visual Studio 2022 Experimental Instance.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Microsoft Visual Studio SDK\Tools\Start Experimental Instance of Visual Studio 2022.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\Debuggable Package Manager.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\Developer Command Prompt for VS 2022.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\Developer PowerShell for VS 2022.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\VC\x64 Native Tools Command Prompt for VS 2022.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\VC\x64_x86 Cross Tools Command Prompt for VS 2022.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\VC\x86 Native Tools Command Prompt for VS 2022.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2022\Visual Studio Tools\VC\x86_x64 Cross Tools Command Prompt for VS 2022.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio Installer.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WildTangent Games.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Application Verifier (X64)\Application Verifier (X64).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Application Verifier (X64)\Application Verifier Help.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Application Verifier (X86)\Application Verifier (WOW).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows App Certification Kit\Windows App Cert Kit.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows Software Development Kit\Documentation for Desktop Apps.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows Software Development Kit\Documentation for Windows Store Apps.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows Software Development Kit\Samples for Desktop Apps.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows Software Development Kit\Samples for Windows Store Apps.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows Software Development Kit\Tools for Desktop Apps.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows Software Development Kit\Tools for Windows Store Apps.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Kits\Windows Software Development Kit\Windows Software Development Kit.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell ISE (x86).lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell ISE.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinHTTrack\Documentation.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinHTTrack\WinHTTrack Website Copier.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\Console RAR manual.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\What is new in the latest version.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\WinRAR help.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WinRAR\WinRAR.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Word.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WSL Settings.lnk
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\WSL.lnk
+C:\Users\DMX\Desktop\CrystalDiskInfo.lnk
+C:\Users\DMX\Desktop\Discord.lnk
+C:\Users\DMX\Desktop\Docker Desktop.lnk
+C:\Users\DMX\Desktop\Format Factory.lnk
+C:\Users\DMX\Desktop\Games\DroidCamApp.lnk
+C:\Users\DMX\Desktop\Games\LDMultiPlayer.lnk
+C:\Users\DMX\Desktop\Games\LDPlayer9.lnk
+C:\Users\DMX\Desktop\Games\League of Legends.lnk
+C:\Users\DMX\Desktop\Games\Legend of Mana LinkNeverDie.Com.lnk
+C:\Users\DMX\Desktop\Games\WPS Office.lnk
+C:\Users\DMX\Desktop\GitHub Desktop.lnk
+C:\Users\DMX\Desktop\HTTrack Website Copier.lnk
+C:\Users\DMX\Desktop\Postman.lnk
+C:\Users\DMX\Desktop\Telegram.lnk
+C:\Users\DMX\Desktop\Visual Studio Code.lnk
+C:\Users\DMX\Desktop\Voice.ai - Voice Changer.lnk
+C:\Users\DMX\Desktop\Zalo.lnk
+FileEnd
