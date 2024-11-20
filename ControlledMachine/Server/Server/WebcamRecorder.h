@@ -8,6 +8,7 @@
 #include <thread>
 #include <atomic>
 #include <memory>
+#include <windows.h>
 
 class WebcamRecorder {
 public:
@@ -16,7 +17,7 @@ public:
     void startRecording();
 
     void stopRecording();
-
+    bool screenShot(const std::string& filename);
     ~WebcamRecorder();
 
 private:

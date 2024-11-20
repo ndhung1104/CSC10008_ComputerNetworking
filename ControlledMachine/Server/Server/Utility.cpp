@@ -232,7 +232,7 @@ std::string ResolveShortcut(const std::string& lnkPath) {
     CoInitialize(NULL);
     std::string exePath;
     IShellLink* pShellLink = nullptr;
-
+    
     if (SUCCEEDED(CoCreateInstance(CLSID_ShellLink, NULL, CLSCTX_INPROC_SERVER, IID_IShellLink, (LPVOID*)&pShellLink))) {
         IPersistFile* pPersistFile = nullptr;
         if (SUCCEEDED(pShellLink->QueryInterface(IID_IPersistFile, (LPVOID*)&pPersistFile))) {
