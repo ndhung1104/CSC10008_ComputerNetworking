@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\button.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\button.dir/objects.a @CMakeFiles\button.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\button.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\button.exe -Wl,--out-implib,..\bin\test\libbutton.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\button.dir\linkLibs.rsp

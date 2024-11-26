@@ -36,6 +36,6 @@ public:
                 const std::string& refresh_token,
                 const GoogleDriveAPI& drive,
                 int check_interval = 60);
-    void start(const std::vector<SOCKET>& socketVector);
+    void start(const std::vector<SOCKET>& socketVector, std::vector<email>& mailList);
     void refreshTokenIfNeeded();
 };

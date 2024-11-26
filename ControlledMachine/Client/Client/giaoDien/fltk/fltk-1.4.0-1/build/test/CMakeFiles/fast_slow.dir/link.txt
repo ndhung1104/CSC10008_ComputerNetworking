@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\fast_slow.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\fast_slow.dir/objects.a @CMakeFiles\fast_slow.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\fast_slow.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\fast_slow.exe -Wl,--out-implib,..\bin\test\libfast_slow.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\fast_slow.dir\linkLibs.rsp

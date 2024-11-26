@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\ask.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\ask.dir/objects.a @CMakeFiles\ask.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\ask.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\ask.exe -Wl,--out-implib,..\bin\test\libask.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ask.dir\linkLibs.rsp

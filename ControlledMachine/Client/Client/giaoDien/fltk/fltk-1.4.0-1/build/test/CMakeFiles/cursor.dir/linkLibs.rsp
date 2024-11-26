@@ -1,0 +1,1 @@
+  -L"D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/src/../lib"  ../lib/libfltk.a -lcomctl32 -lws2_32 -lgdiplus -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

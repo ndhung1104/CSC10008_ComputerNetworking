@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\list_visuals.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\list_visuals.dir/objects.a @CMakeFiles\list_visuals.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\list_visuals.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\list_visuals.exe -Wl,--out-implib,..\bin\test\liblist_visuals.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\list_visuals.dir\linkLibs.rsp

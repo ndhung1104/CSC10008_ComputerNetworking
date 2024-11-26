@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\minimum.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\minimum.dir/objects.a @CMakeFiles\minimum.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\minimum.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\minimum.exe -Wl,--out-implib,..\bin\test\libminimum.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\minimum.dir\linkLibs.rsp

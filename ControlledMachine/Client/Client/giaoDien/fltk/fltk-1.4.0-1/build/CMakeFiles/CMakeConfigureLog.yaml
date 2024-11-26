@@ -1,0 +1,1731 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/msys64/ucrt64/bin/cc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/3.31.0-rc1/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/msys64/ucrt64/bin/c++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y1uitn"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y1uitn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y1uitn'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_b6f84/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b6f84.dir\\build.make CMakeFiles/cmTC_b6f84.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y1uitn'
+        Building C object CMakeFiles/cmTC_b6f84.dir/CMakeCCompilerABI.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.1.0 (Rev7, Built by MSYS2 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_b6f84.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_b6f84.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\DMX\\AppData\\Local\\Temp\\cc17LlhT.s
+        GNU C17 (Rev7, Built by MSYS2 project) version 13.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.2.0-p9, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"
+        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
+        ignoring nonexistent directory "/ucrt64/include"
+        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"
+        ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed
+        End of search list.
+        Compiler executable checksum: 5c55b3fa8ea55b4b94e75a405b1f3898
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_b6f84.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj C:\\Users\\DMX\\AppData\\Local\\Temp\\cc17LlhT.s
+        GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_b6f84.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_b6f84.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_b6f84.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_b6f84.dir/objects.a @CMakeFiles\\cmTC_b6f84.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_b6f84.dir/objects.a -Wl,--no-whole-archive -o cmTC_b6f84.exe -Wl,--out-implib,libcmTC_b6f84.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
+        COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.1.0 (Rev7, Built by MSYS2 project) 
+        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b6f84.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_b6f84.'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\ccN47PM7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_b6f84.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_b6f84.dir/objects.a --no-whole-archive --out-implib libcmTC_b6f84.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        collect2 version 13.1.0
+        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\ccN47PM7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_b6f84.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_b6f84.dir/objects.a --no-whole-archive --out-implib libcmTC_b6f84.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        GNU ld (GNU Binutils) 2.40
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b6f84.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_b6f84.'
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y1uitn'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include]
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        end of search list found
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include] ==> [C:/msys64/ucrt64/include]
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        implicit include dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include;C:/msys64/ucrt64/include;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y1uitn']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_b6f84/fast]
+        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b6f84.dir\\build.make CMakeFiles/cmTC_b6f84.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y1uitn']
+        ignore line: [Building C object CMakeFiles/cmTC_b6f84.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.1.0 (Rev7  Built by MSYS2 project) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_b6f84.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_b6f84.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\DMX\\AppData\\Local\\Temp\\cc17LlhT.s]
+        ignore line: [GNU C17 (Rev7  Built by MSYS2 project) version 13.1.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 13.1.0  GMP version 6.2.1  MPFR version 4.2.0-p9  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"]
+        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
+        ignore line: [ignoring nonexistent directory "/ucrt64/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 5c55b3fa8ea55b4b94e75a405b1f3898]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_b6f84.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj C:\\Users\\DMX\\AppData\\Local\\Temp\\cc17LlhT.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_b6f84.dir\\CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_b6f84.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_b6f84.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_b6f84.dir/objects.a]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_b6f84.dir/objects.a @CMakeFiles\\cmTC_b6f84.dir\\objects1.rsp]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\cc.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_b6f84.dir/objects.a -Wl --no-whole-archive -o cmTC_b6f84.exe -Wl --out-implib libcmTC_b6f84.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.1.0 (Rev7  Built by MSYS2 project) ]
+        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b6f84.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_b6f84.']
+        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\ccN47PM7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_b6f84.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_b6f84.dir/objects.a --no-whole-archive --out-implib libcmTC_b6f84.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\ccN47PM7.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_b6f84.exe] ==> ignore
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_b6f84.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_b6f84.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        ignore line: [collect2 version 13.1.0]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\ccN47PM7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_b6f84.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_b6f84.dir/objects.a --no-whole-archive --out-implib libcmTC_b6f84.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        linker tool for 'C': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o] ==> [C:/msys64/ucrt64/lib/crt2.o]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o] ==> [C:/msys64/ucrt64/lib/default-manifest.o]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc] ==> [C:/msys64/ucrt64/lib/gcc]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib] ==> [C:/msys64/ucrt64/lib]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..] ==> [C:/msys64/ucrt64/lib]
+        implicit libs: [mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32]
+        implicit objs: [C:/msys64/ucrt64/lib/crt2.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o;C:/msys64/ucrt64/lib/default-manifest.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        implicit dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0;C:/msys64/ucrt64/lib/gcc;C:/msys64/ucrt64/x86_64-w64-mingw32/lib;C:/msys64/ucrt64/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Running the C compiler's linker: "C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.40
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6jk9gj"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6jk9gj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6jk9gj'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_a0ed1/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a0ed1.dir\\build.make CMakeFiles/cmTC_a0ed1.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6jk9gj'
+        Building CXX object CMakeFiles/cmTC_a0ed1.dir/CMakeCXXCompilerABI.cpp.obj
+        C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.1.0 (Rev7, Built by MSYS2 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a0ed1.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_a0ed1.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\DMX\\AppData\\Local\\Temp\\ccI3XpdR.s
+        GNU C++17 (Rev7, Built by MSYS2 project) version 13.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.2.0-p9, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0"
+        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/x86_64-w64-mingw32"
+        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/backward"
+        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"
+        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
+        ignoring nonexistent directory "/ucrt64/include"
+        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"
+        ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/x86_64-w64-mingw32
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/backward
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed
+        End of search list.
+        Compiler executable checksum: 414907923459f18275b92750c73f2fd6
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a0ed1.dir\\'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\DMX\\AppData\\Local\\Temp\\ccI3XpdR.s
+        GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_a0ed1.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a0ed1.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a0ed1.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_a0ed1.dir/objects.a @CMakeFiles\\cmTC_a0ed1.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\c++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_a0ed1.dir/objects.a -Wl,--no-whole-archive -o cmTC_a0ed1.exe -Wl,--out-implib,libcmTC_a0ed1.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        Using built-in specs.
+        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe
+        COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.1.0 (Rev7, Built by MSYS2 project) 
+        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a0ed1.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a0ed1.'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\cc4UExX7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a0ed1.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a0ed1.dir/objects.a --no-whole-archive --out-implib libcmTC_a0ed1.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        collect2 version 13.1.0
+        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\cc4UExX7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a0ed1.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a0ed1.dir/objects.a --no-whole-archive --out-implib libcmTC_a0ed1.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        GNU ld (GNU Binutils) 2.40
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a0ed1.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a0ed1.'
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6jk9gj'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0]
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/x86_64-w64-mingw32]
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/backward]
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include]
+          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        end of search list found
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0] ==> [C:/msys64/ucrt64/include/c++/13.1.0]
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/x86_64-w64-mingw32] ==> [C:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32]
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/backward] ==> [C:/msys64/ucrt64/include/c++/13.1.0/backward]
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include] ==> [C:/msys64/ucrt64/include]
+        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        implicit include dirs: [C:/msys64/ucrt64/include/c++/13.1.0;C:/msys64/ucrt64/include/c++/13.1.0/x86_64-w64-mingw32;C:/msys64/ucrt64/include/c++/13.1.0/backward;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include;C:/msys64/ucrt64/include;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6jk9gj']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_a0ed1/fast]
+        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a0ed1.dir\\build.make CMakeFiles/cmTC_a0ed1.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6jk9gj']
+        ignore line: [Building CXX object CMakeFiles/cmTC_a0ed1.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.1.0 (Rev7  Built by MSYS2 project) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a0ed1.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_a0ed1.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\DMX\\AppData\\Local\\Temp\\ccI3XpdR.s]
+        ignore line: [GNU C++17 (Rev7  Built by MSYS2 project) version 13.1.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 13.1.0  GMP version 6.2.1  MPFR version 4.2.0-p9  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0"]
+        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/x86_64-w64-mingw32"]
+        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/backward"]
+        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"]
+        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
+        ignore line: [ignoring nonexistent directory "/ucrt64/include"]
+        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/x86_64-w64-mingw32]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include/c++/13.1.0/backward]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include]
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 414907923459f18275b92750c73f2fd6]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a0ed1.dir\\']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\DMX\\AppData\\Local\\Temp\\ccI3XpdR.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a0ed1.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_a0ed1.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a0ed1.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a0ed1.dir/objects.a]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_a0ed1.dir/objects.a @CMakeFiles\\cmTC_a0ed1.dir\\objects1.rsp]
+        ignore line: [C:\\msys64\\ucrt64\\bin\\c++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_a0ed1.dir/objects.a -Wl --no-whole-archive -o cmTC_a0ed1.exe -Wl --out-implib libcmTC_a0ed1.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../gcc-13.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev7, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.1.0 (Rev7  Built by MSYS2 project) ]
+        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a0ed1.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a0ed1.']
+        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\cc4UExX7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a0ed1.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a0ed1.dir/objects.a --no-whole-archive --out-implib libcmTC_a0ed1.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\cc4UExX7.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_a0ed1.exe] ==> ignore
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_a0ed1.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_a0ed1.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o]
+          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        ignore line: [collect2 version 13.1.0]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\DMX\\AppData\\Local\\Temp\\cc4UExX7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a0ed1.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a0ed1.dir/objects.a --no-whole-archive --out-implib libcmTC_a0ed1.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        linker tool for 'CXX': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/crt2.o] ==> [C:/msys64/ucrt64/lib/crt2.o]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/default-manifest.o] ==> [C:/msys64/ucrt64/lib/default-manifest.o]
+        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc] ==> [C:/msys64/ucrt64/lib/gcc]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib] ==> [C:/msys64/ucrt64/lib]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../..] ==> [C:/msys64/ucrt64/lib]
+        implicit libs: [stdc++;mingw32;gcc_s;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex;kernel32]
+        implicit objs: [C:/msys64/ucrt64/lib/crt2.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o;C:/msys64/ucrt64/lib/default-manifest.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        implicit dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0;C:/msys64/ucrt64/lib/gcc;C:/msys64/ucrt64/x86_64-w64-mingw32/lib;C:/msys64/ucrt64/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:39 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.40
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:262 (check_include_file)"
+      - "CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9qa5cv"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9qa5cv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9qa5cv'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_ff874/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ff874.dir\\build.make CMakeFiles/cmTC_ff874.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9qa5cv'
+        Building C object CMakeFiles/cmTC_ff874.dir/CheckIncludeFile.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_ff874.dir\\CheckIncludeFile.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9qa5cv\\CheckIncludeFile.c
+        Linking C executable cmTC_ff874.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ff874.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ff874.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_ff874.dir/objects.a @CMakeFiles\\cmTC_ff874.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_ff874.dir/objects.a -Wl,--no-whole-archive -o cmTC_ff874.exe -Wl,--out-implib,libcmTC_ff874.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_ff874.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9qa5cv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:263 (check_include_file)"
+      - "CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yqotq5"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yqotq5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yqotq5'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_f8139/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f8139.dir\\build.make CMakeFiles/cmTC_f8139.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yqotq5'
+        Building C object CMakeFiles/cmTC_f8139.dir/CheckIncludeFile.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_f8139.dir\\CheckIncludeFile.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yqotq5\\CheckIncludeFile.c
+        Linking C executable cmTC_f8139.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f8139.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_f8139.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_f8139.dir/objects.a @CMakeFiles\\cmTC_f8139.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_f8139.dir/objects.a -Wl,--no-whole-archive -o cmTC_f8139.exe -Wl,--out-implib,libcmTC_f8139.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_f8139.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yqotq5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:264 (check_include_file)"
+      - "CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-s66kx3"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-s66kx3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-s66kx3'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_9eded/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_9eded.dir\\build.make CMakeFiles/cmTC_9eded.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-s66kx3'
+        Building C object CMakeFiles/cmTC_9eded.dir/CheckIncludeFile.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_9eded.dir\\CheckIncludeFile.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s66kx3\\CheckIncludeFile.c
+        Linking C executable cmTC_9eded.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_9eded.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_9eded.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_9eded.dir/objects.a @CMakeFiles\\cmTC_9eded.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_9eded.dir/objects.a -Wl,--no-whole-archive -o cmTC_9eded.exe -Wl,--out-implib,libcmTC_9eded.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_9eded.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-s66kx3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of short"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-45m6q5"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-45m6q5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_SHORT"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-45m6q5'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5d825/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5d825.dir\\build.make CMakeFiles/cmTC_5d825.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-45m6q5'
+        Building C object CMakeFiles/cmTC_5d825.dir/SIZEOF_SHORT.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_5d825.dir\\SIZEOF_SHORT.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45m6q5\\SIZEOF_SHORT.c
+        Linking C executable cmTC_5d825.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5d825.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5d825.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_5d825.dir/objects.a @CMakeFiles\\cmTC_5d825.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_5d825.dir/objects.a -Wl,--no-whole-archive -o cmTC_5d825.exe -Wl,--out-implib,libcmTC_5d825.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_5d825.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-45m6q5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:182 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-lny8w0"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-lny8w0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-lny8w0'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_84f93/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_84f93.dir\\build.make CMakeFiles/cmTC_84f93.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-lny8w0'
+        Building C object CMakeFiles/cmTC_84f93.dir/SIZEOF_INT.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_84f93.dir\\SIZEOF_INT.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lny8w0\\SIZEOF_INT.c
+        Linking C executable cmTC_84f93.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_84f93.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_84f93.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_84f93.dir/objects.a @CMakeFiles\\cmTC_84f93.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_84f93.dir/objects.a -Wl,--no-whole-archive -o cmTC_84f93.exe -Wl,--out-implib,libcmTC_84f93.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_84f93.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-lny8w0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:183 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-phi9sy"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-phi9sy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-phi9sy'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_af66f/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_af66f.dir\\build.make CMakeFiles/cmTC_af66f.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-phi9sy'
+        Building C object CMakeFiles/cmTC_af66f.dir/SIZEOF_LONG.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_af66f.dir\\SIZEOF_LONG.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-phi9sy\\SIZEOF_LONG.c
+        Linking C executable cmTC_af66f.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_af66f.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_af66f.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_af66f.dir/objects.a @CMakeFiles\\cmTC_af66f.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_af66f.dir/objects.a -Wl,--no-whole-archive -o cmTC_af66f.exe -Wl,--out-implib,libcmTC_af66f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_af66f.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-phi9sy'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMake/setup.cmake:184 (CHECK_TYPE_SIZE)"
+      - "CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-89kjfh"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-89kjfh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_HAVE_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-89kjfh'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_849e8/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_849e8.dir\\build.make CMakeFiles/cmTC_849e8.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-89kjfh'
+        Building C object CMakeFiles/cmTC_849e8.dir/HAVE_LONG_LONG.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_849e8.dir\\HAVE_LONG_LONG.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-89kjfh\\HAVE_LONG_LONG.c
+        Linking C executable cmTC_849e8.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_849e8.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_849e8.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_849e8.dir/objects.a @CMakeFiles\\cmTC_849e8.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_849e8.dir/objects.a -Wl,--no-whole-archive -o cmTC_849e8.exe -Wl,--out-implib,libcmTC_849e8.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_849e8.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-89kjfh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:127 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-xyu8ql"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-xyu8ql"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_ALSA_ASOUNDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-xyu8ql'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_4d764/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4d764.dir\\build.make CMakeFiles/cmTC_4d764.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-xyu8ql'
+        Building C object CMakeFiles/cmTC_4d764.dir/HAVE_ALSA_ASOUNDLIB_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_4d764.dir\\HAVE_ALSA_ASOUNDLIB_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyu8ql\\HAVE_ALSA_ASOUNDLIB_H.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyu8ql\\HAVE_ALSA_ASOUNDLIB_H.c:2:10: fatal error: alsa/asoundlib.h: No such file or directory
+            2 | #include <alsa/asoundlib.h>
+              |          ^~~~~~~~~~~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_4d764.dir\\build.make:80: CMakeFiles/cmTC_4d764.dir/HAVE_ALSA_ASOUNDLIB_H.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-xyu8ql'
+        mingw32-make: *** [Makefile:132: cmTC_4d764/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:128 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-x9e64y"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-x9e64y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-x9e64y'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_47459/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_47459.dir\\build.make CMakeFiles/cmTC_47459.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-x9e64y'
+        Building C object CMakeFiles/cmTC_47459.dir/HAVE_DLFCN_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_47459.dir\\HAVE_DLFCN_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x9e64y\\HAVE_DLFCN_H.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x9e64y\\HAVE_DLFCN_H.c:2:10: fatal error: dlfcn.h: No such file or directory
+            2 | #include <dlfcn.h>
+              |          ^~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_47459.dir\\build.make:80: CMakeFiles/cmTC_47459.dir/HAVE_DLFCN_H.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-x9e64y'
+        mingw32-make: *** [Makefile:132: cmTC_47459/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:129 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e5p3lw"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e5p3lw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_GL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e5p3lw'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_58082/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_58082.dir\\build.make CMakeFiles/cmTC_58082.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e5p3lw'
+        Building C object CMakeFiles/cmTC_58082.dir/HAVE_GL_GLU_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_58082.dir\\HAVE_GL_GLU_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e5p3lw\\HAVE_GL_GLU_H.c
+        Linking C executable cmTC_58082.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_58082.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_58082.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_58082.dir/objects.a @CMakeFiles\\cmTC_58082.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_58082.dir/objects.a -Wl,--no-whole-archive -o cmTC_58082.exe -Wl,--out-implib,libcmTC_58082.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_58082.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e5p3lw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:130 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-h9jo8b"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-h9jo8b"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_LOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-h9jo8b'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_de1cc/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_de1cc.dir\\build.make CMakeFiles/cmTC_de1cc.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-h9jo8b'
+        Building C object CMakeFiles/cmTC_de1cc.dir/HAVE_LOCALE_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_de1cc.dir\\HAVE_LOCALE_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h9jo8b\\HAVE_LOCALE_H.c
+        Linking C executable cmTC_de1cc.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_de1cc.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_de1cc.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_de1cc.dir/objects.a @CMakeFiles\\cmTC_de1cc.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_de1cc.dir/objects.a -Wl,--no-whole-archive -o cmTC_de1cc.exe -Wl,--out-implib,libcmTC_de1cc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_de1cc.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-h9jo8b'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:131 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-wc3r5f"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-wc3r5f"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_OPENGL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-wc3r5f'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_b69c2/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b69c2.dir\\build.make CMakeFiles/cmTC_b69c2.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-wc3r5f'
+        Building C object CMakeFiles/cmTC_b69c2.dir/HAVE_OPENGL_GLU_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_b69c2.dir\\HAVE_OPENGL_GLU_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wc3r5f\\HAVE_OPENGL_GLU_H.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wc3r5f\\HAVE_OPENGL_GLU_H.c:2:10: fatal error: OpenGL/glu.h: No such file or directory
+            2 | #include <OpenGL/glu.h>
+              |          ^~~~~~~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_b69c2.dir\\build.make:80: CMakeFiles/cmTC_b69c2.dir/HAVE_OPENGL_GLU_H.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-wc3r5f'
+        mingw32-make: *** [Makefile:132: cmTC_b69c2/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:132 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-unqe8i"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-unqe8i"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_STDIO_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-unqe8i'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_a5de3/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a5de3.dir\\build.make CMakeFiles/cmTC_a5de3.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-unqe8i'
+        Building C object CMakeFiles/cmTC_a5de3.dir/HAVE_STDIO_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_a5de3.dir\\HAVE_STDIO_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-unqe8i\\HAVE_STDIO_H.c
+        Linking C executable cmTC_a5de3.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a5de3.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a5de3.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_a5de3.dir/objects.a @CMakeFiles\\cmTC_a5de3.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_a5de3.dir/objects.a -Wl,--no-whole-archive -o cmTC_a5de3.exe -Wl,--out-implib,libcmTC_a5de3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_a5de3.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-unqe8i'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:133 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-qhw3su"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-qhw3su"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-qhw3su'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_9ac32/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_9ac32.dir\\build.make CMakeFiles/cmTC_9ac32.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-qhw3su'
+        Building C object CMakeFiles/cmTC_9ac32.dir/HAVE_STRINGS_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_9ac32.dir\\HAVE_STRINGS_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qhw3su\\HAVE_STRINGS_H.c
+        Linking C executable cmTC_9ac32.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_9ac32.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_9ac32.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_9ac32.dir/objects.a @CMakeFiles\\cmTC_9ac32.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_9ac32.dir/objects.a -Wl,--no-whole-archive -o cmTC_9ac32.exe -Wl,--out-implib,libcmTC_9ac32.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_9ac32.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-qhw3su'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:134 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-nrkxlj"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-nrkxlj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SYS_SELECT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-nrkxlj'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_0f15d/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_0f15d.dir\\build.make CMakeFiles/cmTC_0f15d.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-nrkxlj'
+        Building C object CMakeFiles/cmTC_0f15d.dir/HAVE_SYS_SELECT_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_0f15d.dir\\HAVE_SYS_SELECT_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nrkxlj\\HAVE_SYS_SELECT_H.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nrkxlj\\HAVE_SYS_SELECT_H.c:2:10: fatal error: sys/select.h: No such file or directory
+            2 | #include <sys/select.h>
+              |          ^~~~~~~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_0f15d.dir\\build.make:80: CMakeFiles/cmTC_0f15d.dir/HAVE_SYS_SELECT_H.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-nrkxlj'
+        mingw32-make: *** [Makefile:132: cmTC_0f15d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:135 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-19dx8o"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-19dx8o"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SYS_STDTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-19dx8o'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_dc3ed/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_dc3ed.dir\\build.make CMakeFiles/cmTC_dc3ed.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-19dx8o'
+        Building C object CMakeFiles/cmTC_dc3ed.dir/HAVE_SYS_STDTYPES_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_dc3ed.dir\\HAVE_SYS_STDTYPES_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-19dx8o\\HAVE_SYS_STDTYPES_H.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-19dx8o\\HAVE_SYS_STDTYPES_H.c:2:10: fatal error: sys/stdtypes.h: No such file or directory
+            2 | #include <sys/stdtypes.h>
+              |          ^~~~~~~~~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_dc3ed.dir\\build.make:80: CMakeFiles/cmTC_dc3ed.dir/HAVE_SYS_STDTYPES_H.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-19dx8o'
+        mingw32-make: *** [Makefile:132: cmTC_dc3ed/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:137 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6aikah"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6aikah"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_X11_XREGION_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6aikah'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_b1364/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b1364.dir\\build.make CMakeFiles/cmTC_b1364.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6aikah'
+        Building C object CMakeFiles/cmTC_b1364.dir/HAVE_X11_XREGION_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_b1364.dir\\HAVE_X11_XREGION_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6aikah\\HAVE_X11_XREGION_H.c
+        In file included from C:/msys64/ucrt64/include/X11/Xlib.h:31,
+                         from D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6aikah\\HAVE_X11_XREGION_H.c:2:
+        C:/msys64/ucrt64/include/X11/X.h:44:26: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'XID'
+           44 | typedef unsigned __int64 XID;
+              |                          ^~~
+        C:/msys64/ucrt64/include/X11/X.h:49:9: error: unknown type name 'XID'
+           49 | typedef XID Window;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/X.h:50:9: error: unknown type name 'XID'
+           50 | typedef XID Drawable;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/X.h:51:9: error: unknown type name 'XID'
+           51 | typedef XID Font;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/X.h:52:9: error: unknown type name 'XID'
+           52 | typedef XID Pixmap;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/X.h:53:9: error: unknown type name 'XID'
+           53 | typedef XID Cursor;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/X.h:54:9: error: unknown type name 'XID'
+           54 | typedef XID Colormap;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/X.h:55:9: error: unknown type name 'XID'
+           55 | typedef XID GContext;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/X.h:56:9: error: unknown type name 'XID'
+           56 | typedef XID KeySym;
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xlib.h:449:9: error: unknown type name 'XID'
+          449 |         XID resource_base;      /* resource ID base */
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xlib.h:450:9: error: unknown type name 'XID'
+          450 |         XID resource_mask;      /* resource ID mask bits */
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xlib.h:451:9: error: unknown type name 'XID'
+          451 |         XID resource_id;        /* allocator current ID */
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xlib.h:453:9: error: expected specifier-qualifier-list before 'XID'
+          453 |         XID (*resource_alloc)(); /* allocator function */
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xlib.h:904:9: error: unknown type name 'XID'
+          904 |         XID resourceid;         /* resource id */
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xlib.h:956:9: error: unknown type name 'XID'
+          956 |         XID pad[24];
+              |         ^~~
+        In file included from C:/msys64/ucrt64/include/tkIntXlibDecls.h:30,
+                         from C:/msys64/ucrt64/include/X11/Xlib.h:1193:
+        C:/msys64/ucrt64/include/X11/Xutil.h:100:9: error: unknown type name 'XID'
+          100 |         XID window_group;       /* id of related window group */
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xutil.h:268:9: error: unknown type name 'XID'
+          268 |         XID killid;                     /* added by ICCCM version 1 */
+              |         ^~~
+        C:/msys64/ucrt64/include/X11/Xutil.h:356:5: error: unknown type name 'XID'; did you mean 'XIC'?
+          356 |     XID                 /* rid */,
+              |     ^~~
+              |     XIC
+        C:/msys64/ucrt64/include/X11/Xutil.h:383:5: error: unknown type name 'XID'; did you mean 'XIC'?
+          383 |     XID                 /* rid */,
+              |     ^~~
+              |     XIC
+        C:/msys64/ucrt64/include/X11/Xutil.h:575:5: error: unknown type name 'XID'; did you mean 'XIC'?
+          575 |     XID                 /* rid */,
+              |     ^~~
+              |     XIC
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6aikah\\HAVE_X11_XREGION_H.c:3:10: fatal error: X11/Xregion.h: No such file or directory
+            3 | #include <X11/Xregion.h>
+              |          ^~~~~~~~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_b1364.dir\\build.make:80: CMakeFiles/cmTC_b1364.dir/HAVE_X11_XREGION_H.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6aikah'
+        mingw32-make: *** [Makefile:132: cmTC_b1364/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "CMake/resources.cmake:34 (check_include_files)"
+      - "CMake/resources.cmake:190 (fl_find_header)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-39yoc3"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-39yoc3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_DIRENT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-39yoc3'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_5e970/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_5e970.dir\\build.make CMakeFiles/cmTC_5e970.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-39yoc3'
+        Building C object CMakeFiles/cmTC_5e970.dir/HAVE_DIRENT_H.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_5e970.dir\\HAVE_DIRENT_H.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-39yoc3\\HAVE_DIRENT_H.c
+        Linking C executable cmTC_5e970.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_5e970.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_5e970.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_5e970.dir/objects.a @CMakeFiles\\cmTC_5e970.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_5e970.dir/objects.a -Wl,--no-whole-archive -o cmTC_5e970.exe -Wl,--out-implib,libcmTC_5e970.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_5e970.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-39yoc3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:257 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6b3e0u"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6b3e0u"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_DLSYM"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6b3e0u'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_ac18c/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ac18c.dir\\build.make CMakeFiles/cmTC_ac18c.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6b3e0u'
+        Building C object CMakeFiles/cmTC_ac18c.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_ac18c.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6b3e0u\\CheckSymbolExists.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6b3e0u\\CheckSymbolExists.c:2:10: fatal error: dlfcn.h: No such file or directory
+            2 | #include <dlfcn.h>
+              |          ^~~~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_ac18c.dir\\build.make:80: CMakeFiles/cmTC_ac18c.dir/CheckSymbolExists.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-6b3e0u'
+        mingw32-make: *** [Makefile:132: cmTC_ac18c/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:260 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yxq3g4"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yxq3g4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_LOCALECONV"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yxq3g4'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_3bde4/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3bde4.dir\\build.make CMakeFiles/cmTC_3bde4.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yxq3g4'
+        Building C object CMakeFiles/cmTC_3bde4.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_3bde4.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yxq3g4\\CheckSymbolExists.c
+        Linking C executable cmTC_3bde4.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3bde4.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3bde4.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_3bde4.dir/objects.a @CMakeFiles\\cmTC_3bde4.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_3bde4.dir/objects.a -Wl,--no-whole-archive -o cmTC_3bde4.exe -Wl,--out-implib,libcmTC_3bde4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_3bde4.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-yxq3g4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:269 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-cem38y"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-cem38y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SCANDIR"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-cem38y'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_17ae5/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_17ae5.dir\\build.make CMakeFiles/cmTC_17ae5.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-cem38y'
+        Building C object CMakeFiles/cmTC_17ae5.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_17ae5.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cem38y\\CheckSymbolExists.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cem38y\\CheckSymbolExists.c: In function 'main':
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cem38y\\CheckSymbolExists.c:8:19: error: 'scandir' undeclared (first use in this function)
+            8 |   return ((int*)(&scandir))[argc];
+              |                   ^~~~~~~
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cem38y\\CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_17ae5.dir\\build.make:80: CMakeFiles/cmTC_17ae5.dir/CheckSymbolExists.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-cem38y'
+        mingw32-make: *** [Makefile:132: cmTC_17ae5/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:270 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e7ulir"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e7ulir"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e7ulir'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_b04e2/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b04e2.dir\\build.make CMakeFiles/cmTC_b04e2.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e7ulir'
+        Building C object CMakeFiles/cmTC_b04e2.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_b04e2.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e7ulir\\CheckSymbolExists.c
+        Linking C executable cmTC_b04e2.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_b04e2.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_b04e2.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_b04e2.dir/objects.a @CMakeFiles\\cmTC_b04e2.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_b04e2.dir/objects.a -Wl,--no-whole-archive -o cmTC_b04e2.exe -Wl,--out-implib,libcmTC_b04e2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_b04e2.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-e7ulir'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:277 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-93upr4"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-93upr4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-93upr4'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_e74b2/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_e74b2.dir\\build.make CMakeFiles/cmTC_e74b2.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-93upr4'
+        Building C object CMakeFiles/cmTC_e74b2.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_e74b2.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-93upr4\\CheckSymbolExists.c
+        Linking C executable cmTC_e74b2.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e74b2.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e74b2.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_e74b2.dir/objects.a @CMakeFiles\\cmTC_e74b2.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_e74b2.dir/objects.a -Wl,--no-whole-archive -o cmTC_e74b2.exe -Wl,--out-implib,libcmTC_e74b2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_e74b2.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-93upr4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:279 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y9uxwv"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y9uxwv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_STRLCAT"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y9uxwv'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_d36c8/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_d36c8.dir\\build.make CMakeFiles/cmTC_d36c8.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y9uxwv'
+        Building C object CMakeFiles/cmTC_d36c8.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_d36c8.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y9uxwv\\CheckSymbolExists.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y9uxwv\\CheckSymbolExists.c: In function 'main':
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y9uxwv\\CheckSymbolExists.c:8:19: error: 'strlcat' undeclared (first use in this function); did you mean 'strncat'?
+            8 |   return ((int*)(&strlcat))[argc];
+              |                   ^~~~~~~
+              |                   strncat
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y9uxwv\\CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_d36c8.dir\\build.make:80: CMakeFiles/cmTC_d36c8.dir/CheckSymbolExists.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-y9uxwv'
+        mingw32-make: *** [Makefile:132: cmTC_d36c8/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:280 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-2e66d4"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-2e66d4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_STRLCPY"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-2e66d4'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_30a29/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_30a29.dir\\build.make CMakeFiles/cmTC_30a29.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-2e66d4'
+        Building C object CMakeFiles/cmTC_30a29.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_30a29.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2e66d4\\CheckSymbolExists.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2e66d4\\CheckSymbolExists.c: In function 'main':
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2e66d4\\CheckSymbolExists.c:8:19: error: 'strlcpy' undeclared (first use in this function); did you mean 'strncpy'?
+            8 |   return ((int*)(&strlcpy))[argc];
+              |                   ^~~~~~~
+              |                   strncpy
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2e66d4\\CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_30a29.dir\\build.make:80: CMakeFiles/cmTC_30a29.dir/CheckSymbolExists.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-2e66d4'
+        mingw32-make: *** [Makefile:132: cmTC_30a29/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:281 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-4t59mo"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-4t59mo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-4t59mo'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_11832/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_11832.dir\\build.make CMakeFiles/cmTC_11832.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-4t59mo'
+        Building C object CMakeFiles/cmTC_11832.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_11832.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4t59mo\\CheckSymbolExists.c
+        Linking C executable cmTC_11832.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_11832.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_11832.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_11832.dir/objects.a @CMakeFiles\\cmTC_11832.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_11832.dir/objects.a -Wl,--no-whole-archive -o cmTC_11832.exe -Wl,--out-implib,libcmTC_11832.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_11832.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-4t59mo'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:283 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9oexa0"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9oexa0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_SETENV"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9oexa0'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_ab341/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ab341.dir\\build.make CMakeFiles/cmTC_ab341.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9oexa0'
+        Building C object CMakeFiles/cmTC_ab341.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_ab341.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9oexa0\\CheckSymbolExists.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9oexa0\\CheckSymbolExists.c: In function 'main':
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9oexa0\\CheckSymbolExists.c:8:19: error: 'setenv' undeclared (first use in this function); did you mean 'getenv'?
+            8 |   return ((int*)(&setenv))[argc];
+              |                   ^~~~~~
+              |                   getenv
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9oexa0\\CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_ab341.dir\\build.make:80: CMakeFiles/cmTC_ab341.dir/CheckSymbolExists.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-9oexa0'
+        mingw32-make: *** [Makefile:132: cmTC_ab341/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/resources.cmake:290 (check_symbol_exists)"
+      - "CMakeLists.txt:73 (include)"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-dxs7ys"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-dxs7ys"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_TRUNC"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-dxs7ys'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_8e2b0/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_8e2b0.dir\\build.make CMakeFiles/cmTC_8e2b0.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-dxs7ys'
+        Building C object CMakeFiles/cmTC_8e2b0.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_8e2b0.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dxs7ys\\CheckSymbolExists.c
+        Linking C executable cmTC_8e2b0.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_8e2b0.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_8e2b0.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_8e2b0.dir/objects.a @CMakeFiles\\cmTC_8e2b0.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_8e2b0.dir/objects.a -Wl,--no-whole-archive -o cmTC_8e2b0.exe -Wl,--out-implib,libcmTC_8e2b0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_8e2b0.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-dxs7ys'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMake/options.cmake:709 (check_symbol_exists)"
+      - "CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for glXGetProcAddressARB"
+    directories:
+      source: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-d6p1yw"
+      binary: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-d6p1yw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/CMake"
+    buildResult:
+      variable: "HAVE_GLXGETPROCADDRESSARB"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-d6p1yw'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_f205e/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f205e.dir\\build.make CMakeFiles/cmTC_f205e.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-d6p1yw'
+        Building C object CMakeFiles/cmTC_f205e.dir/CheckSymbolExists.c.obj
+        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles\\cmTC_f205e.dir\\CheckSymbolExists.c.obj -c D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-d6p1yw\\CheckSymbolExists.c
+        D:\\Project\\CSC10008_ComputerNetworking\\ControlledMachine\\Client\\Client\\giaoDien\\fltk\\fltk-1.4.0-1\\build\\CMakeFiles\\CMakeScratch\\TryCompile-d6p1yw\\CheckSymbolExists.c:2:10: fatal error: glx.h: No such file or directory
+            2 | #include <glx.h>
+              |          ^~~~~~~
+        compilation terminated.
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_f205e.dir\\build.make:80: CMakeFiles/cmTC_f205e.dir/CheckSymbolExists.c.obj] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/CMakeFiles/CMakeScratch/TryCompile-d6p1yw'
+        mingw32-make: *** [Makefile:132: cmTC_f205e/fast] Error 2
+        
+      exitCode: 2
+...

@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\symbols.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\symbols.dir/objects.a @CMakeFiles\symbols.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\symbols.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\symbols.exe -Wl,--out-implib,..\bin\test\libsymbols.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\symbols.dir\linkLibs.rsp

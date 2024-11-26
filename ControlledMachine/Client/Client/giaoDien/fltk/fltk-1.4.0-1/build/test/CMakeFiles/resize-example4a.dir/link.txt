@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\resize-example4a.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\resize-example4a.dir/objects.a @CMakeFiles\resize-example4a.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\resize-example4a.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\resize-example4a.exe -Wl,--out-implib,..\bin\test\libresize-example4a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\resize-example4a.dir\linkLibs.rsp

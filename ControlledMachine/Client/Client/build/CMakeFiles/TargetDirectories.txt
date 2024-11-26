@@ -1,0 +1,3 @@
+D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/build/CMakeFiles/client.dir
+D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/build/CMakeFiles/edit_cache.dir
+D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/build/CMakeFiles/rebuild_cache.dir

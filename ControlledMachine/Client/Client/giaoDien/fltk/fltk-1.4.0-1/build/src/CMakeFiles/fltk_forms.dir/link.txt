@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc ..\lib\libfltk_forms.a CMakeFiles/fltk_forms.dir/forms_compatibility.cxx.obj CMakeFiles/fltk_forms.dir/forms_bitmap.cxx.obj CMakeFiles/fltk_forms.dir/forms_free.cxx.obj CMakeFiles/fltk_forms.dir/forms_fselect.cxx.obj CMakeFiles/fltk_forms.dir/forms_pixmap.cxx.obj CMakeFiles/fltk_forms.dir/forms_timer.cxx.obj
+C:\msys64\ucrt64\bin\ranlib.exe ..\lib\libfltk_forms.a

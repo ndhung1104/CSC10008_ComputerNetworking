@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\pixmap.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\pixmap.dir/objects.a @CMakeFiles\pixmap.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\pixmap.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\pixmap.exe -Wl,--out-implib,..\bin\test\libpixmap.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pixmap.dir\linkLibs.rsp

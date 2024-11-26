@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\valuators.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\valuators.dir/objects.a @CMakeFiles\valuators.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\valuators.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\valuators.exe -Wl,--out-implib,..\bin\test\libvaluators.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\valuators.dir\linkLibs.rsp

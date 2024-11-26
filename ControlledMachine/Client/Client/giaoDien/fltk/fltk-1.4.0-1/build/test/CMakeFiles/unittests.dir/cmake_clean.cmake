@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "../bin/test/libunittests.dll.a"
+  "../bin/test/unittests.exe"
+  "../bin/test/unittests.exe.manifest"
+  "../bin/test/unittests.pdb"
+  "CMakeFiles/unittests.dir/unittest_about.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_about.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_circles.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_circles.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_complex_shapes.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_complex_shapes.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_core.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_core.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_fast_shapes.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_fast_shapes.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_images.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_images.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_points.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_points.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_schemes.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_schemes.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_scrollbarsize.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_scrollbarsize.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_symbol.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_symbol.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_terminal.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_terminal.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_text.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_text.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_unicode.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_unicode.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittest_viewport.cxx.obj"
+  "CMakeFiles/unittests.dir/unittest_viewport.cxx.obj.d"
+  "CMakeFiles/unittests.dir/unittests.cxx.obj"
+  "CMakeFiles/unittests.dir/unittests.cxx.obj.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/unittests.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

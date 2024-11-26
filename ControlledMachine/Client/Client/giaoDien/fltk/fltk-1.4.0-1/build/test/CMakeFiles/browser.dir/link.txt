@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\browser.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\browser.dir/objects.a @CMakeFiles\browser.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\browser.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\browser.exe -Wl,--out-implib,..\bin\test\libbrowser.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\browser.dir\linkLibs.rsp

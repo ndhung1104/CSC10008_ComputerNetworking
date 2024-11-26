@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Thông Điệp đến Máy Chủ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Nửa bên trái hiển thị email -->
+        <div class="left">
+            <h2>Gmail của Bạn</h2>
+            <div class="display-box" id="emailDisplay">
+                <span class="sticker">📧</span> example@gmail.com
+            </div>
+            
+            <h2>Nội dung Gmail được gửi đến</h2>
+            <div class="display-box full-width" id="emailContent">
+                <span class="sticker">✉️</span>
+                <div class="email-section">
+                    <strong>Người gửi:</strong>
+                    <span id="sender">sender@example.com</span>
+                </div>
+                <div class="email-section">
+                    <strong>Chủ đề:</strong>
+                    <span id="subject">Chủ đề email ở đây</span>
+                </div>
+                <div class="email-section">
+                    <strong>Nội dung:</strong>
+                    <p id="body">Nội dung email xuất hiện ở đây.</p>
+                </div>
+            </div>
+
+            <div class="display-box full-width" id="emailContent2">
+                <span class="sticker">📬</span>
+                <div class="email-section">
+                    <strong>Người gửi:</strong>
+                    <span>sender2@example.com</span>
+                </div>
+                <div class="email-section">
+                    <strong>Chủ đề:</strong>
+                    <span>Chủ đề email thứ hai</span>
+                </div>
+                <div class="email-section">
+                    <strong>Nội dung:</strong>
+                    <p>Nội dung email thứ hai xuất hiện ở đây.</p>
+                </div>
+            </div>
+
+            <div class="display-box full-width" id="emailContent3">
+                <span class="sticker">📤</span>
+                <div class="email-section">
+                    <strong>Người gửi:</strong>
+                    <span>sender3@example.com</span>
+                </div>
+                <div class="email-section">
+                    <strong>Chủ đề:</strong>
+                    <span>Chủ đề email thứ ba</span>
+                </div>
+                <div class="email-section">
+                    <strong>Nội dung:</strong>
+                    <p>Nội dung email thứ ba xuất hiện ở đây.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nửa bên phải -->
+        <div class="right">
+            <h1>Thông Tin Client</h1>
+            
+            <h2>Địa chỉ IP của Máy Chủ</h2>
+            <input type="text" id="ipAddress" placeholder="Nhập địa chỉ IP của máy chủ ở đây" value="192.168.1.1">
+
+            <h2>Tin nhắn</h2>
+            <textarea id="message" placeholder="Nhập thông điệp của bạn ở đây">Thông điệp từ máy chủ</textarea>
+
+            <h2>Các Địa Chỉ IP Client Kết Nối</h2>
+            <ul id="clientList">
+                <li class="traffic-light" id="ip1">192.168.1.2</li>
+                <li class="traffic-light" id="ip2">192.168.1.3</li>
+                <li class="traffic-light" id="ip3">192.168.1.4</li>
+            </ul>
+
+            <button id="sendButton">Gửi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

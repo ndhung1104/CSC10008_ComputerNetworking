@@ -1,0 +1,3 @@
+D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/build/CMakeFiles/MyFLTKApp.dir
+D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/build/CMakeFiles/edit_cache.dir
+D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/build/CMakeFiles/rebuild_cache.dir

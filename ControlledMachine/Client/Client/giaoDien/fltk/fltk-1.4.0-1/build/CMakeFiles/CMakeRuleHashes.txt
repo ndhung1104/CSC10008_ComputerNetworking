@@ -1,0 +1,21 @@
+# Hashes of file build rules.
+5aac793f654dd0d79b64b5c5ca15469c CMakeFiles/uninstall
+745be2ded7a1e8022e36465439e7914c documentation/CMakeFiles/docs
+f8805841e9bbaf8923222f88aff891f2 documentation/CMakeFiles/html
+745be2ded7a1e8022e36465439e7914c documentation/CMakeFiles/pdf
+34c5d12b5b356a6624755e71a53cce18 documentation/Doxybook
+5417497b5bbcd89258e99f0d63d0378f documentation/Doxyfile
+444693deac732091e8bb225c0f34d5a0 documentation/fltk.pdf
+209d8cd24b4d9f1738871255035744c4 test/CubeViewUI.cxx
+e843402a8fd2651ff9bbca788b3a509a test/checkers_pieces.cxx
+df858857eebbe6037992e23da6f9d4af test/fast_slow.cxx
+d13f7c685a52a72ea0c04e6801a660c4 test/inactive.cxx
+aed1ea2a3e1abd98b2745f158befbdfd test/keyboard_ui.cxx
+19a68505c74279585eb96c91424d69dd test/mandelbrot_ui.cxx
+500c2aa80e3951fcc531326075dd5a7d test/preferences.cxx
+537025f117c085206e62aaa827da725d test/radio.cxx
+2551d455cc181462a648ce598c3e8542 test/resize.cxx
+29f1a4e41b7d3de48a69d599fc67d8e1 test/tabs.cxx
+65fde001d78d359f9cce5024e1ddc27c test/terminal.cxx
+84b0b7be4570bf59661b713c440f2256 test/tree.cxx
+e62df4e8072b0811b0c27887d9586d27 test/valuators.cxx

@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\coordinates.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\coordinates.dir/objects.a @CMakeFiles\coordinates.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\coordinates.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\coordinates.exe -Wl,--out-implib,..\bin\test\libcoordinates.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\coordinates.dir\linkLibs.rsp

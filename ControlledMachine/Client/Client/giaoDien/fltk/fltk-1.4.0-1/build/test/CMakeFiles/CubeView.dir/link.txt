@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\CubeView.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\CubeView.dir/objects.a @CMakeFiles\CubeView.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\CubeView.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\CubeView.exe -Wl,--out-implib,..\bin\test\libCubeView.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CubeView.dir\linkLibs.rsp

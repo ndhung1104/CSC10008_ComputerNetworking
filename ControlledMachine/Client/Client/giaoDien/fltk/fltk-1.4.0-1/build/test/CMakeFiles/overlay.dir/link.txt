@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\overlay.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\overlay.dir/objects.a @CMakeFiles\overlay.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\overlay.dir/objects.a -Wl,--no-whole-archive -o ..\bin\test\overlay.exe -Wl,--out-implib,..\bin\test\liboverlay.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\overlay.dir\linkLibs.rsp

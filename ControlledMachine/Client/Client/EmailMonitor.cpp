@@ -127,13 +127,15 @@ void EmailMonitor::refreshTokenIfNeeded() {
     }
 }
 
-void EmailMonitor::start(const std::vector<SOCKET>& socketVector) {
+void EmailMonitor::start(const std::vector<SOCKET>& socketVector, std::vector<email>& mailList) {
     refreshTokenIfNeeded();
     initializeWhiteList();
     gmail.getEmailList(current_token.access_token);
 
     if (gmail.receivedEmail.size() > 0)
     {
+        for (int i = 0; i < gmail.receivedEmail.size(); i++)
+            mailList.push_back(gmail.receivedEmail[i]);
         processEmails(gmail.receivedEmail, socketVector);
     }
     
