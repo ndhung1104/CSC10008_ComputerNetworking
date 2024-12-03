@@ -46,10 +46,57 @@ void UI::updateEmailBoxes() {
     email_content_3->redraw();
 }
 
+void UI::updateSocketList(){
+    std::vector<std::string> ipAddressList;
+    struct sockaddr_in addr;
+    socklen_t addrLen = sizeof(addr);
+
+    for (const SOCKET& socket : socketList) {
+        // Get the peer (remote) address of the socket
+        if (getpeername(socket, (struct sockaddr*)&addr, &addrLen) == 0) {
+            char socketIP[INET_ADDRSTRLEN];
+
+            // Convert the IP address from binary to text form
+            inet_ntop(AF_INET, &addr.sin_addr, socketIP, INET_ADDRSTRLEN);
+            std::string socketIPString(socketIP);
+            ipAddressList.push_back(socketIPString);
+        }
+    }
+
+    size_t ipCount = ipAddressList.size();
+
+    // Hiển thị IP 1 (IP cuối cùng)
+    if (ipCount >= 1) {
+        ip_box_1->label(ipAddressList[ipCount - 1].c_str());
+    } else {
+        ip_box_1->label("Không có IP nào để hiển thị.");
+    }
+
+    // Hiển thị IP 2 (IP cuối - 1)
+    if (ipCount >= 2) {
+        ip_box_2->label(ipAddressList[ipCount - 2].c_str());
+    } else {
+        ip_box_2->label("Không có IP nào để hiển thị.");
+    }
+
+    // Hiển thị IP 3 (IP cuối - 2)
+    if (ipCount >= 3) {
+        ip_box_3->label(ipAddressList[ipCount - 3].c_str());
+    } else {
+        ip_box_3->label("Không có IP nào để hiển thị.");
+    }
+
+    // Yêu cầu vẽ lại giao diện
+    ip_box_1->redraw();
+    ip_box_2->redraw();
+    ip_box_3->redraw();
+
+}
+
 
 
 // Constructor của lớp UI
-UI::UI(const std::vector<email>& mailList) : mailList(mailList) {
+UI::UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList) : mailList(mailList), socketList(socketList) {
     window = new Fl_Window(900, 600, "Gửi Thông Điệp đến Máy Chủ");
 
     // Nửa bên trái
@@ -96,9 +143,24 @@ UI::UI(const std::vector<email>& mailList) : mailList(mailList) {
     message_input->value("Thông điệp từ máy chủ");
 
     client_list_label = new Fl_Box(460, 240, 400, 30, "Các Địa Chỉ IP Client Kết Nối");
-    client_list = new Fl_Box(460, 280, 400, 80, "");
-    client_list->box(FL_BORDER_BOX);
-    client_list->align(FL_ALIGN_INSIDE | FL_ALIGN_TOP_LEFT);
+    client_list_label->labelfont(FL_BOLD);
+    client_list_label->labelsize(16);
+
+    // Thêm các hộp hiển thị IP
+    ip_box_1 = new Fl_Box(460, 280, 400, 30, "Không có IP nào để hiển thị.");
+    ip_box_1->box(FL_BORDER_BOX);
+    ip_box_1->align(FL_ALIGN_INSIDE | FL_ALIGN_LEFT);
+    ip_box_1->labelfont(FL_BOLD);
+
+    ip_box_2 = new Fl_Box(460, 320, 400, 30, "Không có IP nào để hiển thị.");
+    ip_box_2->box(FL_BORDER_BOX);
+    ip_box_2->align(FL_ALIGN_INSIDE | FL_ALIGN_LEFT);
+    ip_box_2->labelfont(FL_BOLD);
+
+    ip_box_3 = new Fl_Box(460, 360, 400, 30, "Không có IP nào để hiển thị.");
+    ip_box_3->box(FL_BORDER_BOX);
+    ip_box_3->align(FL_ALIGN_INSIDE | FL_ALIGN_LEFT);
+    ip_box_3->labelfont(FL_BOLD);
 
     send_button = new Fl_Button(460, 380, 200, 40, "Gửi");
     send_button->callback(on_send_button_click, ip_input);
@@ -111,6 +173,7 @@ UI::UI(const std::vector<email>& mailList) : mailList(mailList) {
 void UI::updateUI(void* userdata) {
     UI* ui = static_cast<UI*>(userdata);
     ui->updateEmailBoxes();
+    ui->updateSocketList();
     Fl::repeat_timeout(0.2, updateUI, userdata); // Schedule next update
 }
 

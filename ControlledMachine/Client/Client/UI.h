@@ -1,6 +1,7 @@
 #ifndef UI_H
 #define UI_H
-
+#include <ws2tcpip.h>
+#include <winsock2.h>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Text_Display.H>
@@ -14,6 +15,7 @@
 class UI {
 private:
     const std::vector<email>& mailList;
+    const std::vector<SOCKET>& socketList;
     Fl_Window* window;
 
     // Các thành phần UI
@@ -38,17 +40,22 @@ private:
     Fl_Input* message_input;
     Fl_Box* client_list_label;
     Fl_Box* client_list; // Hiển thị danh sách client
+    Fl_Box* ip_box_1; // Hộp hiển thị IP gần nhất
+    Fl_Box* ip_box_2; // Hộp hiển thị IP gần thứ hai
+    Fl_Box* ip_box_3; // Hộp hiển thị IP gần thứ ba
     Fl_Button* send_button;
+
+
 
     // Hàm cập nhật nội dung 3 email
     void updateEmailBoxes();
-
+    void updateSocketList();
     // Hàm callback cho nút gửi và UI
     static void updateUI(void* userdata);
     static void on_send_button_click(Fl_Widget* w, void* userdata);
 
 public:
-    UI(const std::vector<email>& mailList); // Constructor
+    UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList); // Constructor
     void update_client_list(const std::vector<std::string>& clients); // Cập nhật danh sách client
     void run(); // Chạy giao diện
 };

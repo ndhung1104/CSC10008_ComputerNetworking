@@ -7,7 +7,7 @@
 
 #define BUFFER_SIZE 1024
 
-const std::string client_ip = "172.0.0.1";
+// const std::string client_ip = "127.0.0.1";
 
 const std::string client_id = "406151454730-q8sbba0gq585nojc2al4351s27ksog0g.apps.googleusercontent.com";
 const std::string client_secret = "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";
@@ -19,12 +19,12 @@ const std::string client_secret_drive = "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";
 const std::string redirect_uri_drive = "urn:ietf:wg:oauth:2.0:oob";
 // const std::string refresh_token_drive = "1//0eil6wzo5TCouCgYIARAAGA4SNgF-L9IrcbAuj5no4Yu9P8WNKaHjLIznp1MsLqh1jI-WGqEPBRFe6IkpRMArqDgNb7sul45ntg"; //4/1AVG7fiRaDYVTeSLweVkc9j3hhLiF-BfSQmICL2IFN9UHgjTIRFl6CdNeods    "1//0eIEkjQbra3JLCgYIARAAGA4SNgF-L9Irmy1vV95LbvzisbEF4aQMZYpIPU3H4-_lejLLIG43JVL0AlxE3QA6OLw4j0c_NkVfXA";
 
-std::string client_ip1, refresh_token, refresh_token_drive; //4/1AVG7fiRaDYVTeSLweVkc9j3hhLiF-BfSQmICL2IFN9UHgjTIRFl6CdNeods    "1//0eIEkjQbra3JLCgYIARAAGA4SNgF-L9Irmy1vV95LbvzisbEF4aQMZYpIPU3H4-_lejLLIG43JVL0AlxE3QA6OLw4j0c_NkVfXA";
+std::string client_ip, refresh_token, refresh_token_drive; //4/1AVG7fiRaDYVTeSLweVkc9j3hhLiF-BfSQmICL2IFN9UHgjTIRFl6CdNeods    "1//0eIEkjQbra3JLCgYIARAAGA4SNgF-L9Irmy1vV95LbvzisbEF4aQMZYpIPU3H4-_lejLLIG43JVL0AlxE3QA6OLw4j0c_NkVfXA";
 
 void initializeParameters()
 {
     std::ifstream ifs("parameters.txt");
-    getline(ifs, client_ip1);
+    getline(ifs, client_ip);
     getline(ifs, refresh_token);
     getline(ifs, refresh_token_drive);
     std::cout << client_ip << " " << client_ip.size() << "\n" << refresh_token << " " << refresh_token.size() << "\n" << refresh_token_drive << " " << refresh_token_drive.size() << " \n";
@@ -113,7 +113,7 @@ void checkingForMessage(SOCKET clientSocket) {
     // Receive initial file header
     int bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
     if (bytesReceived <= 0) {
-        std::cerr << "Error receiving file header or client disconnected." << std::endl;
+        // std::cerr << "Error receiving file header or client disconnected." << std::endl;
         return;
     }
     buffer[bytesReceived] = '\0';
@@ -338,13 +338,14 @@ void handleClient(SOCKET clientSocket, std::vector<std::string>& clientIPs) {
 
 void uiRunning(const std::vector<email>& mailList)
 {
-    UI ui(mailList);      // Khởi tạo đối tượng UI
+    UI ui(mailList, socketVector);      // Khởi tạo đối tượng UI
     ui.run();   // Chạy giao diện người dùng
 }
 
 
 int main() {
     std::vector<email> mailList;
+    std::vector<std::string> clientList;
     initializeParameters();
 
     std::thread uiThread(uiRunning, std::ref(mailList));
