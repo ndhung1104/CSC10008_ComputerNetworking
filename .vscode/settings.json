@@ -78,7 +78,15 @@
         "xutility": "cpp",
         "regex": "cpp",
         "codecvt": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "any": "cpp",
+        "bitset": "cpp",
+        "cinttypes": "cpp",
+        "complex": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "unordered_set": "cpp",
+        "variant": "cpp"
     },
     "liveServer.settings.port": 5501
 }

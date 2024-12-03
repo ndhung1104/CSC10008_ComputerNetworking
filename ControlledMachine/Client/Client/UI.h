@@ -53,7 +53,7 @@ private:
     // Hàm callback cho nút gửi và UI
     static void updateUI(void* userdata);
     static void on_send_button_click(Fl_Widget* w, void* userdata);
-
+    void sendMessage(std::string message, const SOCKET& clientSocket);
 public:
     UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList); // Constructor
     void update_client_list(const std::vector<std::string>& clients); // Cập nhật danh sách client

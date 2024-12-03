@@ -3,6 +3,18 @@
 #include <iostream>
 #include <sstream>
 
+void UI::sendMessage(std::string message, const SOCKET& clientSocket)
+{
+    int byteCount = send(clientSocket, message.c_str(), message.size(), 0);
+
+    if (byteCount > 0) {
+        std::cout << "Message sent: " << message <<  std::endl;
+    }
+    else {
+        std::cout << "Failed to send message." <<  std::endl;
+    }
+}
+
 void UI::updateEmailBoxes() {
     // Kiểm tra số lượng email có sẵn trong danh sách
     size_t emailCount = mailList.size();
@@ -162,7 +174,7 @@ UI::UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList
     ip_box_3->align(FL_ALIGN_INSIDE | FL_ALIGN_LEFT);
     ip_box_3->labelfont(FL_BOLD);
 
-    send_button = new Fl_Button(460, 380, 200, 40, "Gửi");
+    send_button = new Fl_Button(560, 420, 200, 40, "Gửi"); // Repositioned
     send_button->callback(on_send_button_click, ip_input);
 
     window->end();
@@ -179,10 +191,34 @@ void UI::updateUI(void* userdata) {
 
 
 // Hàm callback khi nhấn nút Gửi
+// void UI::on_send_button_click(Fl_Widget* w, void* userdata) {
+//     Fl_Input* ip_input = static_cast<Fl_Input*>(userdata);
+//     std::string message = std::string(ip_input->value());
+//     for (const SOCKET& socket : socketList)
+//         sendMessage(message, socket);
+//     fl_message(message.c_str());
+// }
+
 void UI::on_send_button_click(Fl_Widget* w, void* userdata) {
-    Fl_Input* ip_input = static_cast<Fl_Input*>(userdata);
-    std::string message = "Gửi đến IP: " + std::string(ip_input->value());
-    fl_message(message.c_str());
+    UI* ui = static_cast<UI*>(userdata); // Cast userdata back to UI instance
+    std::string message = ui->message_input->value(); // Get the message from the input field
+
+    if (message.empty()) {
+        fl_message("Message cannot be empty!");
+        return;
+    }
+
+    if (ui->socketList.empty()) {
+        fl_message("No connected clients to send the message.");
+        return;
+    }
+
+    // Send the message to all clients in the socket list
+    for (const SOCKET& socket : ui->socketList) {
+        ui->sendMessage(message, socket);
+    }
+
+    fl_message(("Message sent to all clients: " + message).c_str());
 }
 
 // Cập nhật danh sách client từ vector
