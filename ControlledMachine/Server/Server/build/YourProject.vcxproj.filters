@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\Server.cpp">
+    <ClCompile Include="C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\Server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\Utility.cpp">
+    <ClCompile Include="C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\service.cpp">
+    <ClCompile Include="C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\service.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\WebcamRecorder.cpp">
+    <ClCompile Include="C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\WebcamRecorder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Server\Server\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D1805859-412A-35F9-95F4-B9C94409FACE}</UniqueIdentifier>
+      <UniqueIdentifier>{C4DBA8EC-4B53-3242-A115-C63D926C41EF}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

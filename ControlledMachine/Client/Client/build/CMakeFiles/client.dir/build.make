@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client
+CMAKE_SOURCE_DIR = C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build
+CMAKE_BINARY_DIR = C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/client.dir/depend.make
@@ -73,108 +73,108 @@ CMakeFiles/client.dir/codegen:
 
 CMakeFiles/client.dir/Client.cpp.obj: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/Client.cpp.obj: CMakeFiles/client.dir/includes_CXX.rsp
-CMakeFiles/client.dir/Client.cpp.obj: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/Client.cpp
+CMakeFiles/client.dir/Client.cpp.obj: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/Client.cpp
 CMakeFiles/client.dir/Client.cpp.obj: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/Client.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/Client.cpp.obj -MF CMakeFiles\client.dir\Client.cpp.obj.d -o CMakeFiles\client.dir\Client.cpp.obj -c D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\Client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/Client.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/Client.cpp.obj -MF CMakeFiles\client.dir\Client.cpp.obj.d -o CMakeFiles\client.dir\Client.cpp.obj -c C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\Client.cpp
 
 CMakeFiles/client.dir/Client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/Client.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\Client.cpp > CMakeFiles\client.dir\Client.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\Client.cpp > CMakeFiles\client.dir\Client.cpp.i
 
 CMakeFiles/client.dir/Client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/Client.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\Client.cpp -o CMakeFiles\client.dir\Client.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\Client.cpp -o CMakeFiles\client.dir\Client.cpp.s
 
 CMakeFiles/client.dir/jsoncpp.cpp.obj: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/jsoncpp.cpp.obj: CMakeFiles/client.dir/includes_CXX.rsp
-CMakeFiles/client.dir/jsoncpp.cpp.obj: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/jsoncpp.cpp
+CMakeFiles/client.dir/jsoncpp.cpp.obj: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/jsoncpp.cpp
 CMakeFiles/client.dir/jsoncpp.cpp.obj: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/jsoncpp.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/jsoncpp.cpp.obj -MF CMakeFiles\client.dir\jsoncpp.cpp.obj.d -o CMakeFiles\client.dir\jsoncpp.cpp.obj -c D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\jsoncpp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/jsoncpp.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/jsoncpp.cpp.obj -MF CMakeFiles\client.dir\jsoncpp.cpp.obj.d -o CMakeFiles\client.dir\jsoncpp.cpp.obj -c C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\jsoncpp.cpp
 
 CMakeFiles/client.dir/jsoncpp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/jsoncpp.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\jsoncpp.cpp > CMakeFiles\client.dir\jsoncpp.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\jsoncpp.cpp > CMakeFiles\client.dir\jsoncpp.cpp.i
 
 CMakeFiles/client.dir/jsoncpp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/jsoncpp.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\jsoncpp.cpp -o CMakeFiles\client.dir\jsoncpp.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\jsoncpp.cpp -o CMakeFiles\client.dir\jsoncpp.cpp.s
 
 CMakeFiles/client.dir/EmailMonitor.cpp.obj: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/EmailMonitor.cpp.obj: CMakeFiles/client.dir/includes_CXX.rsp
-CMakeFiles/client.dir/EmailMonitor.cpp.obj: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/EmailMonitor.cpp
+CMakeFiles/client.dir/EmailMonitor.cpp.obj: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/EmailMonitor.cpp
 CMakeFiles/client.dir/EmailMonitor.cpp.obj: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/client.dir/EmailMonitor.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/EmailMonitor.cpp.obj -MF CMakeFiles\client.dir\EmailMonitor.cpp.obj.d -o CMakeFiles\client.dir\EmailMonitor.cpp.obj -c D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\EmailMonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/client.dir/EmailMonitor.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/EmailMonitor.cpp.obj -MF CMakeFiles\client.dir\EmailMonitor.cpp.obj.d -o CMakeFiles\client.dir\EmailMonitor.cpp.obj -c C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\EmailMonitor.cpp
 
 CMakeFiles/client.dir/EmailMonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/EmailMonitor.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\EmailMonitor.cpp > CMakeFiles\client.dir\EmailMonitor.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\EmailMonitor.cpp > CMakeFiles\client.dir\EmailMonitor.cpp.i
 
 CMakeFiles/client.dir/EmailMonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/EmailMonitor.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\EmailMonitor.cpp -o CMakeFiles\client.dir\EmailMonitor.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\EmailMonitor.cpp -o CMakeFiles\client.dir\EmailMonitor.cpp.s
 
 CMakeFiles/client.dir/GmailAPI.cpp.obj: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/GmailAPI.cpp.obj: CMakeFiles/client.dir/includes_CXX.rsp
-CMakeFiles/client.dir/GmailAPI.cpp.obj: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/GmailAPI.cpp
+CMakeFiles/client.dir/GmailAPI.cpp.obj: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/GmailAPI.cpp
 CMakeFiles/client.dir/GmailAPI.cpp.obj: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/client.dir/GmailAPI.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/GmailAPI.cpp.obj -MF CMakeFiles\client.dir\GmailAPI.cpp.obj.d -o CMakeFiles\client.dir\GmailAPI.cpp.obj -c D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GmailAPI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/client.dir/GmailAPI.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/GmailAPI.cpp.obj -MF CMakeFiles\client.dir\GmailAPI.cpp.obj.d -o CMakeFiles\client.dir\GmailAPI.cpp.obj -c C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GmailAPI.cpp
 
 CMakeFiles/client.dir/GmailAPI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/GmailAPI.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GmailAPI.cpp > CMakeFiles\client.dir\GmailAPI.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GmailAPI.cpp > CMakeFiles\client.dir\GmailAPI.cpp.i
 
 CMakeFiles/client.dir/GmailAPI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/GmailAPI.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GmailAPI.cpp -o CMakeFiles\client.dir\GmailAPI.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GmailAPI.cpp -o CMakeFiles\client.dir\GmailAPI.cpp.s
 
 CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj: CMakeFiles/client.dir/includes_CXX.rsp
-CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/GoogleDriveAPI.cpp
+CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/GoogleDriveAPI.cpp
 CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj -MF CMakeFiles\client.dir\GoogleDriveAPI.cpp.obj.d -o CMakeFiles\client.dir\GoogleDriveAPI.cpp.obj -c D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleDriveAPI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj -MF CMakeFiles\client.dir\GoogleDriveAPI.cpp.obj.d -o CMakeFiles\client.dir\GoogleDriveAPI.cpp.obj -c C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleDriveAPI.cpp
 
 CMakeFiles/client.dir/GoogleDriveAPI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/GoogleDriveAPI.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleDriveAPI.cpp > CMakeFiles\client.dir\GoogleDriveAPI.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleDriveAPI.cpp > CMakeFiles\client.dir\GoogleDriveAPI.cpp.i
 
 CMakeFiles/client.dir/GoogleDriveAPI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/GoogleDriveAPI.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleDriveAPI.cpp -o CMakeFiles\client.dir\GoogleDriveAPI.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleDriveAPI.cpp -o CMakeFiles\client.dir\GoogleDriveAPI.cpp.s
 
 CMakeFiles/client.dir/GoogleOAuth.cpp.obj: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/GoogleOAuth.cpp.obj: CMakeFiles/client.dir/includes_CXX.rsp
-CMakeFiles/client.dir/GoogleOAuth.cpp.obj: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/GoogleOAuth.cpp
+CMakeFiles/client.dir/GoogleOAuth.cpp.obj: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/GoogleOAuth.cpp
 CMakeFiles/client.dir/GoogleOAuth.cpp.obj: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/client.dir/GoogleOAuth.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/GoogleOAuth.cpp.obj -MF CMakeFiles\client.dir\GoogleOAuth.cpp.obj.d -o CMakeFiles\client.dir\GoogleOAuth.cpp.obj -c D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleOAuth.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/client.dir/GoogleOAuth.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/GoogleOAuth.cpp.obj -MF CMakeFiles\client.dir\GoogleOAuth.cpp.obj.d -o CMakeFiles\client.dir\GoogleOAuth.cpp.obj -c C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleOAuth.cpp
 
 CMakeFiles/client.dir/GoogleOAuth.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/GoogleOAuth.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleOAuth.cpp > CMakeFiles\client.dir\GoogleOAuth.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleOAuth.cpp > CMakeFiles\client.dir\GoogleOAuth.cpp.i
 
 CMakeFiles/client.dir/GoogleOAuth.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/GoogleOAuth.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleOAuth.cpp -o CMakeFiles\client.dir\GoogleOAuth.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\GoogleOAuth.cpp -o CMakeFiles\client.dir\GoogleOAuth.cpp.s
 
 CMakeFiles/client.dir/UI.cpp.obj: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/UI.cpp.obj: CMakeFiles/client.dir/includes_CXX.rsp
-CMakeFiles/client.dir/UI.cpp.obj: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/UI.cpp
+CMakeFiles/client.dir/UI.cpp.obj: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/UI.cpp
 CMakeFiles/client.dir/UI.cpp.obj: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/client.dir/UI.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/UI.cpp.obj -MF CMakeFiles\client.dir\UI.cpp.obj.d -o CMakeFiles\client.dir\UI.cpp.obj -c D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\UI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/client.dir/UI.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/UI.cpp.obj -MF CMakeFiles\client.dir\UI.cpp.obj.d -o CMakeFiles\client.dir\UI.cpp.obj -c C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\UI.cpp
 
 CMakeFiles/client.dir/UI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/client.dir/UI.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\UI.cpp > CMakeFiles\client.dir\UI.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\UI.cpp > CMakeFiles\client.dir\UI.cpp.i
 
 CMakeFiles/client.dir/UI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/client.dir/UI.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\UI.cpp -o CMakeFiles\client.dir\UI.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\UI.cpp -o CMakeFiles\client.dir\UI.cpp.s
 
 # Object files for target client
 client_OBJECTS = \
@@ -197,14 +197,14 @@ client.exe: CMakeFiles/client.dir/GoogleDriveAPI.cpp.obj
 client.exe: CMakeFiles/client.dir/GoogleOAuth.cpp.obj
 client.exe: CMakeFiles/client.dir/UI.cpp.obj
 client.exe: CMakeFiles/client.dir/build.make
-client.exe: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk.a
-client.exe: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk_forms.a
-client.exe: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk_images.a
-client.exe: D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk_gl.a
+client.exe: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk.a
+client.exe: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk_forms.a
+client.exe: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk_images.a
+client.exe: C:/Users/HP/source/repos/CSC10008_ComputerNetworking/ControlledMachine/Client/Client/giaoDien/fltk/fltk-1.4.0-1/build/lib/libfltk_gl.a
 client.exe: CMakeFiles/client.dir/linkLibs.rsp
 client.exe: CMakeFiles/client.dir/objects1.rsp
 client.exe: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable client.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable client.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\client.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -216,6 +216,6 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 CMakeFiles/client.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles\client.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles\client.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/client.dir/depend
 

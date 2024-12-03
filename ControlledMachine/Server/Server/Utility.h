@@ -27,6 +27,7 @@ public:
 	void startApp(std::string name); // doc lap (hoi tiep theo kieu start co thanh cong hay khong va gui nguoc lai cho client)
 	void stopApp(std::string name); // doc lap ////////////
 	void copyFile(SOCKET clientSocket, const std::string& filePath);
+	void deleteFile(const std::string& filePath);
 	// using ServiceManager::listServices(); // viet ca 2 ben
 	// using ServiceManager::startService(std::string name); // doc lap
 	// using ServiceManager::stopService(std::string name); // doc lap

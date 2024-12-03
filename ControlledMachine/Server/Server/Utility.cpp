@@ -352,6 +352,18 @@ void Computer::copyFile(SOCKET clientSocket, const std::string& filePath) {
     std::cout << "File sent successfully. Total bytes sent: " << totalSent << std::endl;
 }
 
+void Computer::deleteFile(const std::string& filePath) {
+    try {
+        if (std::filesystem::remove(filePath)) {
+            std::cout << "File deleted successfully: " << filePath << std::endl;
+        } else {
+            std::cout << "File not found or could not be deleted: " << filePath << std::endl;
+        }
+    } catch (const std::filesystem::filesystem_error& e) {
+        std::cerr << "Error deleting file: " << e.what() << std::endl;
+    }
+}
+
 // void listService();
 // void startService(std::string name);
 // void stopService(std::string name);

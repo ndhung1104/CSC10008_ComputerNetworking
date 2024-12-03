@@ -317,9 +317,15 @@ void handleClient(SOCKET clientSocket, std::vector<std::string>& clientIPs) {
                     if (ipEnd != std::string::npos) {
                         ipAddress = message.substr(ipPos, ipEnd - ipPos);
                         // Thêm IP vào danh sách
-                        if (std::find(clientIPs.begin(), clientIPs.end(), ipAddress) == clientIPs.end()) {
-                            clientIPs.push_back(ipAddress);
-                        }
+                        bool found = 0;
+                        for (int i = 0; i < clientIPs.size(); i++)
+                            if (clientIPs[i] == ipAddress)
+                                found = 1;
+                        if (found == 0)
+                            clientIPs.push_back(std::string(ipAddress));
+                        // if (std::find(clientIPs.begin(), clientIPs.end(), std::string(ipAddress)) == clientIPs.end()) {
+                        //     clientIPs.push_back(std::string(ipAddress));
+                        // }
                     }
                 }
                 
