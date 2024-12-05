@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 3.16)
 project(YourProject)
+set(CMAKE_BUILD_TYPE Release)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Set the vcpkg toolchain file
-# set(CMAKE_TOOLCHAIN_FILE "D:/Project/lib/vcpkg-master/vcpkg-master/scripts/buildsystems/vcpkg.cmake")
+set(CMAKE_TOOLCHAIN_FILE "D:/Project/lib/vcpkg-master/vcpkg-master/scripts/buildsystems/vcpkg.cmake")
 
 # # Set directories for OpenCV and Protobuf
-set(OpenCV_DIR "C:/opencv/build")
-# set(Protobuf_DIR "D:/Project/lib/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf")
+set(OpenCV_DIR "D:/Project/lib/vcpkg-master/vcpkg-master/installed/x64-windows/share/opencv4")
+set(Protobuf_DIR "D:/Project/lib/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf")
 
 # # Explicitly set prefix path
 # list(APPEND CMAKE_PREFIX_PATH 

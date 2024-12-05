@@ -1,0 +1,10 @@
+^D:\PROJECT\CSC10008_COMPUTERNETWORKING\CONTROLLEDMACHINE\SERVER\SERVER\BUILD\CMAKEFILES\4FD7D35851E275887A5366561690AF68\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Project/CSC10008_ComputerNetworking/ControlledMachine/Server/Server -BD:/Project/CSC10008_ComputerNetworking/ControlledMachine/Server/Server/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Project/CSC10008_ComputerNetworking/ControlledMachine/Server/Server/build/YourProject.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

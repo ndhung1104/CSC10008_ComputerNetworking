@@ -28,7 +28,7 @@ std::string GoogleDriveAPI::getMimeType(const std::string& filename) {
 std::string GoogleDriveAPI::uploadFile(const std::string& filePath, const std::string& fileName, const std::vector<std::string>& emailAddresses) {
     std::string mimeType = getMimeType(fileName);
     std::string accessToken = oauth.refreshAccessToken().access_token;
-
+    std::cout << "1";
     CURL* curl = curl_easy_init();
     if (!curl) {
         std::cerr << "Failed to initialize CURL" << std::endl;
@@ -112,7 +112,7 @@ std::string GoogleDriveAPI::uploadFile(const std::string& filePath, const std::s
 
 bool GoogleDriveAPI::shareFile(const std::string& fileId, const std::vector<std::string>& emailAddresses) {
     std::string accessToken = oauth.refreshAccessToken().access_token;
-
+    std::cout << "1";
     CURL* curl = curl_easy_init();
     if (!curl) {
         std::cerr << "Failed to initialize CURL" << std::endl;

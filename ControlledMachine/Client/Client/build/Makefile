@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client
+CMAKE_SOURCE_DIR = D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build
+CMAKE_BINARY_DIR = D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\source\repos\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Project\CSC10008_ComputerNetworking\ControlledMachine\Client\Client\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

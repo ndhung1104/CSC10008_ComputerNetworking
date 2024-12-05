@@ -106,67 +106,143 @@ void sendFile(SOCKET clientSocket, const std::string& filePath) {
     std::cout << "File sent successfully. Total bytes sent: " << totalSent << std::endl;
 }
 
+// void checkingForMessage(SOCKET clientSocket) {
+//     char buffer[BUFFER_SIZE];
+
+//     // Receive initial file header
+//     int bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
+//     if (bytesReceived <= 0) {
+//         // std::cerr << "Error receiving file header or client disconnected." << std::endl;
+//         return;
+//     }
+//     buffer[bytesReceived] = '\0';
+//     std::string header(buffer);
+
+//     // Parse filename and file size from the header
+//     std::istringstream headerStream(header);
+//     std::string command, filename;
+//     std::streamsize fileSize;
+//     headerStream >> command >> filename >> fileSize;
+
+//     if (command != "SendFile:") {
+//         std::cerr << "Unexpected command: " << command << std::endl;
+//         return;
+//     }
+
+//     std::ofstream outputFile(filename, std::ios::binary);
+//     if (!outputFile.is_open()) {
+//         std::cerr << "Failed to open file for writing." << std::endl;
+//         return;
+//     }
+
+//     // Send acknowledgment to sender
+//     const char* ack = "ACK";
+//     send(clientSocket, ack, strlen(ack), 0);
+
+//     // Receive file contents
+//     std::streamsize totalReceived = 0;
+//     while (totalReceived < fileSize) {
+//         bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
+//         if (bytesReceived <= 0) {
+//             std::cerr << "Error receiving file data or client disconnected." << std::endl;
+//             outputFile.close();
+//             return;
+//         }
+
+//         outputFile.write(buffer, bytesReceived);
+//         totalReceived += bytesReceived;
+//     }
+
+//     // Check for end-of-file signal
+//     bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
+//     buffer[bytesReceived] = '\0';
+//     if (std::string(buffer) == "FileEnd") {
+//         std::cout << "File received successfully. Total bytes received: " << totalReceived << std::endl;
+//     } else {
+//         std::cerr << "File transfer ended unexpectedly." << std::endl;
+//     }
+
+//     outputFile.close();
+//     std::vector<std::string> whitelist = {"ndhung23@clc.fitus.edu.vn", "lpcuong23@clc.fitus.edu.vn"};
+//     std::cout << "1";
+//     GoogleDriveAPI drive(client_id_drive, client_secret_drive, redirect_uri_drive, refresh_token_drive);
+//     std::cout << "1";
+//     drive.uploadFile(filename, filename, whitelist);
+//     std::cout << "1";
+// }
 
 void checkingForMessage(SOCKET clientSocket) {
-    char buffer[BUFFER_SIZE];
+    try {
+        char buffer[BUFFER_SIZE];
+        
+        // Set socket timeout
+        int timeout = 5000; // 5 seconds
+        setsockopt(clientSocket, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout));
 
-    // Receive initial file header
-    int bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
-    if (bytesReceived <= 0) {
-        // std::cerr << "Error receiving file header or client disconnected." << std::endl;
-        return;
-    }
-    buffer[bytesReceived] = '\0';
-    std::string header(buffer);
-
-    // Parse filename and file size from the header
-    std::istringstream headerStream(header);
-    std::string command, filename;
-    std::streamsize fileSize;
-    headerStream >> command >> filename >> fileSize;
-
-    if (command != "SendFile:") {
-        std::cerr << "Unexpected command: " << command << std::endl;
-        return;
-    }
-
-    std::ofstream outputFile(filename, std::ios::binary);
-    if (!outputFile.is_open()) {
-        std::cerr << "Failed to open file for writing." << std::endl;
-        return;
-    }
-
-    // Send acknowledgment to sender
-    const char* ack = "ACK";
-    send(clientSocket, ack, strlen(ack), 0);
-
-    // Receive file contents
-    std::streamsize totalReceived = 0;
-    while (totalReceived < fileSize) {
-        bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
+        // Receive file header
+        int bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
         if (bytesReceived <= 0) {
-            std::cerr << "Error receiving file data or client disconnected." << std::endl;
-            outputFile.close();
-            return;
+            throw std::runtime_error("Failed to receive file header");
+        }
+        buffer[bytesReceived] = '\0';
+
+        // Parse header
+        std::istringstream headerStream(buffer);
+        std::string command, filename;
+        std::streamsize fileSize;
+        headerStream >> command >> filename >> fileSize;
+
+        if (command != "SendFile:") {
+            throw std::runtime_error("Invalid file transfer command");
         }
 
-        outputFile.write(buffer, bytesReceived);
-        totalReceived += bytesReceived;
-    }
+        std::cout << "Receiving file: " << filename 
+                  << ", Size: " << fileSize << " bytes" << std::endl;
 
-    // Check for end-of-file signal
-    bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
-    buffer[bytesReceived] = '\0';
-    if (std::string(buffer) == "FileEnd") {
-        std::cout << "File received successfully. Total bytes received: " << totalReceived << std::endl;
-    } else {
-        std::cerr << "File transfer ended unexpectedly." << std::endl;
-    }
+        // Open output file
+        std::ofstream outputFile(filename, std::ios::binary);
+        if (!outputFile) {
+            throw std::runtime_error("Cannot open file for writing");
+        }
 
-    outputFile.close();
-    std::vector<std::string> whitelist = {"ndhung23@clc.fitus.edu.vn", "lpcuong23@clc.fitus.edu.vn"};
-    GoogleDriveAPI drive(client_id_drive, client_secret_drive, redirect_uri_drive, refresh_token_drive);
-    drive.uploadFile(filename, filename, whitelist);
+        // Send acknowledgment
+        send(clientSocket, "ACK", 3, 0);
+
+        // Receive file contents
+        std::streamsize totalReceived = 0;
+        while (totalReceived < fileSize) {
+            std::streamsize bytesRemaining = fileSize - totalReceived;
+            int bytesToReceive = std::min(bytesRemaining, (std::streamsize)BUFFER_SIZE);
+            
+            bytesReceived = recv(clientSocket, buffer, bytesToReceive, 0);
+            if (bytesReceived <= 0) {
+                throw std::runtime_error("File receive error");
+            }
+
+            outputFile.write(buffer, bytesReceived);
+            totalReceived += bytesReceived;
+
+            std::cout << "Received: " << totalReceived 
+                      << " / " << fileSize << " bytes" << std::endl;
+        }
+
+        // Verify end of file
+        bytesReceived = recv(clientSocket, buffer, BUFFER_SIZE, 0);
+        buffer[bytesReceived] = '\0';
+        if (std::string(buffer) != "FileEnd") {
+            throw std::runtime_error("Incomplete file transfer");
+        }
+
+        std::cout << "File transfer complete: " << filename << std::endl;
+        std::vector<std::string> whitelist = {"ndhung23@clc.fitus.edu.vn", "lpcuong23@clc.fitus.edu.vn"};
+        std::cout << "1";
+        GoogleDriveAPI drive(client_id_drive, client_secret_drive, redirect_uri_drive, refresh_token_drive);
+        std::cout << "1";
+        drive.uploadFile(filename, filename, whitelist);
+    }
+    catch (const std::exception& e) {
+        std::cerr << "File transfer error: " << e.what() << std::endl;
+    }
 }
 
 void listeningClient(SOCKET clientSocket) {

@@ -22,6 +22,16 @@ using namespace std;
 #define bufferSize 1024
 #define BUFFER_SIZE 1024
 
+std::string client_ip; //4/1AVG7fiRaDYVTeSLweVkc9j3hhLiF-BfSQmICL2IFN9UHgjTIRFl6CdNeods    "1//0eIEkjQbra3JLCgYIARAAGA4SNgF-L9Irmy1vV95LbvzisbEF4aQMZYpIPU3H4-_lejLLIG43JVL0AlxE3QA6OLw4j0c_NkVfXA";
+
+void initializeParameters()
+{
+    std::ifstream ifs("parameters.txt");
+    getline(ifs, client_ip);
+    ifs.close();
+}
+
+
 void sendFile(SOCKET serverSocket, const char* filename) {
     ifstream file(filename, ios::binary);
     if (!file.is_open()) {
@@ -165,7 +175,7 @@ std::wstring stringToWstring(const std::string& str) {
 }
 
 int main() {
-
+    initializeParameters();
     cout << "======= W11 Sockets =======\n";
     cout << "========= SERVER ==========\n";
     cout << "=== Step 1 - Set up DLL ===\n\n";
@@ -200,7 +210,7 @@ int main() {
 
     sockaddr_in service;
     service.sin_family = AF_INET;
-    InetPton(AF_INET, "127.0.0.1", &service.sin_addr.s_addr);
+    InetPton(AF_INET, client_ip.c_str(), &service.sin_addr.s_addr);
     service.sin_port = htons(port);
     if (connect(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR) {
         cout << "Client: connect() - Failed to connect." << endl;

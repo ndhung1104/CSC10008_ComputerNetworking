@@ -175,7 +175,7 @@ UI::UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList
     ip_box_3->labelfont(FL_BOLD);
 
     send_button = new Fl_Button(560, 420, 200, 40, "Gửi"); // Repositioned
-    send_button->callback(on_send_button_click, ip_input);
+    send_button->callback(on_send_button_click, this);
 
     window->end();
     window->show();
@@ -200,8 +200,8 @@ void UI::updateUI(void* userdata) {
 // }
 
 void UI::on_send_button_click(Fl_Widget* w, void* userdata) {
-    UI* ui = static_cast<UI*>(userdata); // Cast userdata back to UI instance
-    std::string message = ui->message_input->value(); // Get the message from the input field
+    UI* ui = static_cast<UI*>(userdata); // Cast userdata về UI*
+    std::string message = ui->message_input->value(); // Truy cập trường message_input trong UI
 
     if (message.empty()) {
         fl_message("Message cannot be empty!");
@@ -213,7 +213,7 @@ void UI::on_send_button_click(Fl_Widget* w, void* userdata) {
         return;
     }
 
-    // Send the message to all clients in the socket list
+    // Gửi thông điệp đến tất cả client trong socketList
     for (const SOCKET& socket : ui->socketList) {
         ui->sendMessage(message, socket);
     }
