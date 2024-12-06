@@ -145,4 +145,4 @@ C:\Users\HP\Desktop\PowerPoint.lnk
 C:\Users\HP\Desktop\Visual Studio Code.lnk
 C:\Users\HP\Desktop\Word.lnk
 C:\Users\HP\Desktop\Zalo.lnk
-C:\Users\HP\Desktop\Zoom.lnk
+C:\Users\HP\Desktop\Zoom Workplace.lnk

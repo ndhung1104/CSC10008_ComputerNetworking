@@ -420,7 +420,7 @@ void handleClient(SOCKET clientSocket, std::vector<std::string>& clientIPs) {
 
 void uiRunning(const std::vector<email>& mailList)
 {
-    UI ui(mailList, socketVector);      // Khởi tạo đối tượng UI
+    UI ui(mailList, socketVector, client_ip);      // Khởi tạo đối tượng UI
     ui.run();   // Chạy giao diện người dùng
 }
 

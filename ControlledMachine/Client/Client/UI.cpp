@@ -108,7 +108,7 @@ void UI::updateSocketList(){
 
 
 // Constructor của lớp UI
-UI::UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList) : mailList(mailList), socketList(socketList) {
+UI::UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList, const std::string& ip_address) : mailList(mailList), socketList(socketList), ip_address(ip_address) {
     window = new Fl_Window(900, 600, "Gửi Thông Điệp đến Máy Chủ");
 
     // Nửa bên trái
@@ -148,7 +148,7 @@ UI::UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList
 
     server_ip_label = new Fl_Box(460, 60, 400, 30, "Địa chỉ IP của Máy Chủ");
     ip_input = new Fl_Input(460, 100, 400, 30, nullptr);
-    ip_input->value("192.168.1.1");
+    ip_input->value(ip_address.c_str());
 
     message_label = new Fl_Box(460, 150, 400, 30, "Tin nhắn");
     message_input = new Fl_Input(460, 190, 400, 30, nullptr);

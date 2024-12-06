@@ -45,7 +45,7 @@ private:
     Fl_Box* ip_box_3; // Hộp hiển thị IP gần thứ ba
     Fl_Button* send_button;
 
-
+    std::string ip_address;
 
     // Hàm cập nhật nội dung 3 email
     void updateEmailBoxes();
@@ -55,7 +55,7 @@ private:
     static void on_send_button_click(Fl_Widget* w, void* userdata);
     void sendMessage(std::string message, const SOCKET& clientSocket);
 public:
-    UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList); // Constructor
+    UI(const std::vector<email>& mailList, const std::vector<SOCKET>& socketList, const std::string& ip_address); // Constructor
     void update_client_list(const std::vector<std::string>& clients); // Cập nhật danh sách client
     void run(); // Chạy giao diện
 };
