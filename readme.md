@@ -1,17 +1,27 @@
-ĐỒ ÁN MÔN HỌC MẠNG MÁY TÍNH
+COMPUTER NETWORKS COURSE PROJECT
 
-VIẾT HỆ PHẦN MỀM ĐIỀU KHIỂN MÁY TÍNH TỪ XA DÙNG E-MAIL
+DEVELOPING A REMOTE COMPUTER CONTROL SYSTEM USING E-MAIL
 
-Mô tả : Người dùng or Admin thực hiện các công việc điều khiển một máy tính nào đó trong LAN (định danh bằng IP address), như : Shutdown; Reset; Chụp màn hình; Keyloger; List/Start/Stop các apps. và processes ; Copy/Del files ; Start/Stop Webcam
+Description:
+The system allows a user or admin to remotely control a specific computer within a LAN (identified by its IP address) to perform actions such as:
 
-Hệ phần mềm gồm có 2 module chính :
++ Shutdown
++ Reset
++ Screen capture
++ Keylogging
++ Listing/Starting/Stopping applications and processes
++ Copying/Deleting files
++ Starting/Stopping the webcam
 
-[1]. SERVER : chạy trên máy bị điều khiển, tiếp nhận những yêu cầu điều khiển gởi từ CLIENT, và thi hành những yêu cầu đó như : shutdown, reset, chụp màn hình, keyloger, list/start/stop apps …. rồi gởi kết quả về cho CLIENT.
+The software system consists of two main modules:
 
-[2]. CLIENT : thực hiện các công việc chính :
+[1]. SERVER
++ Runs on the controlled computer.
++ Receives control commands sent from the CLIENT and executes them, such as shutdown, reset, screen capture, keylogging, listing/starting/stopping apps, etc.
++ Sends the results back to the CLIENT after execution.
 
-1. Check mail để nhận lệnh điều khiển từ user or admin
-
-2. Dựa vào nội dung mail, gởi yêu cầu điều khiển đến SERVER
-
-3. Gởi mail trả lời kết quả cho user or admin
+[2]. CLIENT
++ Performs the following main tasks:
++ Checks emails to receive control commands from the user or admin.
++ Based on the email content, sends corresponding control requests to the SERVER.
++ Sends an email reply with the results to the user or admin.
