@@ -1,3 +1,5 @@
+Please find the complete project inside the final folder!
+
 COMPUTER NETWORKS COURSE PROJECT
 
 DEVELOPING A REMOTE COMPUTER CONTROL SYSTEM USING E-MAIL
