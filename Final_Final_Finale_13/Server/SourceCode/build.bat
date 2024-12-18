@@ -12,7 +12,7 @@ mkdir build
 cd build
 
 :: Chạy CMake để tạo cấu hình
-cmake .. -DCMAKE_PREFIX_PATH=D:/Project/lib/vcpkg-master/vcpkg-master/installed/x64-windows -DCMAKE_BUILD_TYPE=Release -DCMAKE_CONFIGURATION_TYPES=Release
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CONFIGURATION_TYPES=Release
 
 :: Biên dịch dự án với make
 cmake --build . --config Release
